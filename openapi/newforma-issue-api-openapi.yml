@@ -1,0 +1,4539 @@
+openapi: 3.0.4
+info:
+  title: Newforma Konekt Hub Issue API
+  description: "<br><div>\r\n**Important:** API versioning is now optional. If no version is specified, the system defaults to using version 3 (`/v3`).\r\n</div><br>"
+  version: '3'
+servers:
+- url: https://api.bimtrackapp.co
+security:
+- Bearer: []
+tags:
+- name: Issue
+paths:
+  /v3/hubs/{hubId}/projects/{projectId}/archivedissues:
+    get:
+      tags:
+      - Issue
+      summary: Get archived issues
+      operationId: GetArchivedIssues_V3
+      parameters:
+      - name: hubId
+        in: path
+        required: true
+        schema:
+          minLength: 1
+          type: string
+      - name: projectId
+        in: path
+        required: true
+        schema:
+          minimum: 1
+          type: integer
+          format: int32
+      - name: Query
+        in: query
+        schema:
+          type: string
+      - name: QueryExtendedSearch
+        in: query
+        schema:
+          type: boolean
+      - name: IncludeIssueAdditionalInfo
+        in: query
+        schema:
+          type: boolean
+      - name: Term
+        in: query
+        schema:
+          type: string
+      - name: Description
+        in: query
+        schema:
+          type: string
+      - name: AssignedToUserIds
+        in: query
+        schema:
+          type: array
+          items:
+            type: integer
+            format: int32
+      - name: AuthorUserIds
+        in: query
+        schema:
+          type: array
+          items:
+            type: integer
+            format: int32
+      - name: LastModificationAuthorUserIds
+        in: query
+        schema:
+          type: array
+          items:
+            type: integer
+            format: int32
+      - name: IssueGroups
+        in: query
+        schema:
+          type: array
+          items:
+            type: string
+      - name: PriorityIds
+        in: query
+        schema:
+          type: array
+          items:
+            type: integer
+            format: int32
+      - name: ProjectPhaseIds
+        in: query
+        schema:
+          type: array
+          items:
+            type: integer
+            format: int32
+      - name: ConfidentialityIds
+        in: query
+        schema:
+          type: array
+          items:
+            type: integer
+            format: int32
+      - name: ProjectZoneIds
+        in: query
+        schema:
+          type: array
+          items:
+            type: integer
+            format: int32
+      - name: StatusIds
+        in: query
+        schema:
+          type: array
+          items:
+            type: integer
+            format: int32
+      - name: DisciplineIds
+        in: query
+        schema:
+          type: array
+          items:
+            type: integer
+            format: int32
+      - name: TypeIds
+        in: query
+        schema:
+          type: array
+          items:
+            type: integer
+            format: int32
+      - name: CreationDateStart
+        in: query
+        schema:
+          type: string
+          format: date-time
+      - name: CreationDateEnd
+        in: query
+        schema:
+          type: string
+          format: date-time
+      - name: LastModificationDateStart
+        in: query
+        schema:
+          type: string
+          format: date-time
+      - name: LastModificationDateEnd
+        in: query
+        schema:
+          type: string
+          format: date-time
+      - name: DueDateStart
+        in: query
+        schema:
+          type: string
+          format: date-time
+      - name: DueDateEnd
+        in: query
+        schema:
+          type: string
+          format: date-time
+      - name: Visibility
+        in: query
+        schema:
+          type: integer
+          format: int32
+      - name: CustomAttributes
+        in: query
+        schema:
+          type: array
+          items:
+            type: string
+      - name: IsUnlinked
+        in: query
+        schema:
+          type: boolean
+      - name: IssueIds
+        in: query
+        schema:
+          type: array
+          items:
+            type: integer
+            format: int32
+      - name: ActivityOperationId
+        in: query
+        schema:
+          type: string
+      - name: sort
+        in: query
+        schema:
+          type: string
+          default: -Number
+      - name: startRecord
+        in: query
+        schema:
+          type: integer
+          format: int32
+          default: 1
+      - name: returnCount
+        in: query
+        schema:
+          type: integer
+          format: int32
+          default: 100
+      - name: assignedToUserId
+        in: query
+        schema:
+          type: integer
+          format: int32
+          default: 0
+      - name: priorityId
+        in: query
+        schema:
+          type: integer
+          format: int32
+          default: 0
+      - name: statusId
+        in: query
+        schema:
+          type: integer
+          format: int32
+          default: 0
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json;odata.metadata=minimal;odata.streaming=true:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/BIMOne.BIMTrack.WebAPI.Models.Model.v2.IssueSummary'
+            application/json;odata.metadata=minimal;odata.streaming=false:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/BIMOne.BIMTrack.WebAPI.Models.Model.v2.IssueSummary'
+            application/json;odata.metadata=minimal:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/BIMOne.BIMTrack.WebAPI.Models.Model.v2.IssueSummary'
+            application/json;odata.metadata=full;odata.streaming=true:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/BIMOne.BIMTrack.WebAPI.Models.Model.v2.IssueSummary'
+            application/json;odata.metadata=full;odata.streaming=false:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/BIMOne.BIMTrack.WebAPI.Models.Model.v2.IssueSummary'
+            application/json;odata.metadata=full:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/BIMOne.BIMTrack.WebAPI.Models.Model.v2.IssueSummary'
+            application/json;odata.metadata=none;odata.streaming=true:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/BIMOne.BIMTrack.WebAPI.Models.Model.v2.IssueSummary'
+            application/json;odata.metadata=none;odata.streaming=false:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/BIMOne.BIMTrack.WebAPI.Models.Model.v2.IssueSummary'
+            application/json;odata.metadata=none:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/BIMOne.BIMTrack.WebAPI.Models.Model.v2.IssueSummary'
+            application/json;odata.streaming=true:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/BIMOne.BIMTrack.WebAPI.Models.Model.v2.IssueSummary'
+            application/json;odata.streaming=false:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/BIMOne.BIMTrack.WebAPI.Models.Model.v2.IssueSummary'
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/BIMOne.BIMTrack.WebAPI.Models.Model.v2.IssueSummary'
+            application/xml:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/BIMOne.BIMTrack.WebAPI.Models.Model.v2.IssueSummary'
+            text/plain:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/BIMOne.BIMTrack.WebAPI.Models.Model.v2.IssueSummary'
+            application/octet-stream:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/BIMOne.BIMTrack.WebAPI.Models.Model.v2.IssueSummary'
+            text/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/BIMOne.BIMTrack.WebAPI.Models.Model.v2.IssueSummary'
+  /v3/hubs/{hubId}/projects/{projectId}/archivedissues/{issueId}:
+    get:
+      tags:
+      - Issue
+      summary: Get archived issue
+      parameters:
+      - name: hubId
+        in: path
+        required: true
+        schema:
+          minLength: 1
+          type: string
+      - name: projectId
+        in: path
+        required: true
+        schema:
+          minimum: 1
+          type: integer
+          format: int32
+      - name: issueId
+        in: path
+        required: true
+        schema:
+          minimum: 1
+          type: integer
+          format: int32
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json;odata.metadata=minimal;odata.streaming=true:
+              schema:
+                $ref: '#/components/schemas/BIMOne.BIMTrack.WebAPI.Models.Model.v2.IssueDetail'
+            application/json;odata.metadata=minimal;odata.streaming=false:
+              schema:
+                $ref: '#/components/schemas/BIMOne.BIMTrack.WebAPI.Models.Model.v2.IssueDetail'
+            application/json;odata.metadata=minimal:
+              schema:
+                $ref: '#/components/schemas/BIMOne.BIMTrack.WebAPI.Models.Model.v2.IssueDetail'
+            application/json;odata.metadata=full;odata.streaming=true:
+              schema:
+                $ref: '#/components/schemas/BIMOne.BIMTrack.WebAPI.Models.Model.v2.IssueDetail'
+            application/json;odata.metadata=full;odata.streaming=false:
+              schema:
+                $ref: '#/components/schemas/BIMOne.BIMTrack.WebAPI.Models.Model.v2.IssueDetail'
+            application/json;odata.metadata=full:
+              schema:
+                $ref: '#/components/schemas/BIMOne.BIMTrack.WebAPI.Models.Model.v2.IssueDetail'
+            application/json;odata.metadata=none;odata.streaming=true:
+              schema:
+                $ref: '#/components/schemas/BIMOne.BIMTrack.WebAPI.Models.Model.v2.IssueDetail'
+            application/json;odata.metadata=none;odata.streaming=false:
+              schema:
+                $ref: '#/components/schemas/BIMOne.BIMTrack.WebAPI.Models.Model.v2.IssueDetail'
+            application/json;odata.metadata=none:
+              schema:
+                $ref: '#/components/schemas/BIMOne.BIMTrack.WebAPI.Models.Model.v2.IssueDetail'
+            application/json;odata.streaming=true:
+              schema:
+                $ref: '#/components/schemas/BIMOne.BIMTrack.WebAPI.Models.Model.v2.IssueDetail'
+            application/json;odata.streaming=false:
+              schema:
+                $ref: '#/components/schemas/BIMOne.BIMTrack.WebAPI.Models.Model.v2.IssueDetail'
+            application/json:
+              schema:
+                $ref: '#/components/schemas/BIMOne.BIMTrack.WebAPI.Models.Model.v2.IssueDetail'
+            application/xml:
+              schema:
+                $ref: '#/components/schemas/BIMOne.BIMTrack.WebAPI.Models.Model.v2.IssueDetail'
+            text/plain:
+              schema:
+                $ref: '#/components/schemas/BIMOne.BIMTrack.WebAPI.Models.Model.v2.IssueDetail'
+            application/octet-stream:
+              schema:
+                $ref: '#/components/schemas/BIMOne.BIMTrack.WebAPI.Models.Model.v2.IssueDetail'
+            text/json:
+              schema:
+                $ref: '#/components/schemas/BIMOne.BIMTrack.WebAPI.Models.Model.v2.IssueDetail'
+  /v3/hubs/{hubId}/projects/{projectId}/archivedissues/{archivedIssueId}:
+    patch:
+      tags:
+      - Issue
+      summary: Restore issue
+      parameters:
+      - name: hubId
+        in: path
+        required: true
+        schema:
+          minLength: 1
+          type: string
+      - name: projectId
+        in: path
+        required: true
+        schema:
+          minimum: 1
+          type: integer
+          format: int32
+      - name: archivedIssueId
+        in: path
+        required: true
+        schema:
+          minimum: 1
+          type: integer
+          format: int32
+      requestBody:
+        content:
+          application/json;odata.metadata=minimal;odata.streaming=true:
+            schema:
+              $ref: '#/components/schemas/BIMOne.BIMTrack.WebAPI.Models.Model.v2.IssuePatchRestore'
+          application/json;odata.metadata=minimal;odata.streaming=false:
+            schema:
+              $ref: '#/components/schemas/BIMOne.BIMTrack.WebAPI.Models.Model.v2.IssuePatchRestore'
+          application/json;odata.metadata=minimal:
+            schema:
+              $ref: '#/components/schemas/BIMOne.BIMTrack.WebAPI.Models.Model.v2.IssuePatchRestore'
+          application/json;odata.metadata=full;odata.streaming=true:
+            schema:
+              $ref: '#/components/schemas/BIMOne.BIMTrack.WebAPI.Models.Model.v2.IssuePatchRestore'
+          application/json;odata.metadata=full;odata.streaming=false:
+            schema:
+              $ref: '#/components/schemas/BIMOne.BIMTrack.WebAPI.Models.Model.v2.IssuePatchRestore'
+          application/json;odata.metadata=full:
+            schema:
+              $ref: '#/components/schemas/BIMOne.BIMTrack.WebAPI.Models.Model.v2.IssuePatchRestore'
+          application/json;odata.metadata=none;odata.streaming=true:
+            schema:
+              $ref: '#/components/schemas/BIMOne.BIMTrack.WebAPI.Models.Model.v2.IssuePatchRestore'
+          application/json;odata.metadata=none;odata.streaming=false:
+            schema:
+              $ref: '#/components/schemas/BIMOne.BIMTrack.WebAPI.Models.Model.v2.IssuePatchRestore'
+          application/json;odata.metadata=none:
+            schema:
+              $ref: '#/components/schemas/BIMOne.BIMTrack.WebAPI.Models.Model.v2.IssuePatchRestore'
+          application/json;odata.streaming=true:
+            schema:
+              $ref: '#/components/schemas/BIMOne.BIMTrack.WebAPI.Models.Model.v2.IssuePatchRestore'
+          application/json;odata.streaming=false:
+            schema:
+              $ref: '#/components/schemas/BIMOne.BIMTrack.WebAPI.Models.Model.v2.IssuePatchRestore'
+          application/json:
+            schema:
+              $ref: '#/components/schemas/BIMOne.BIMTrack.WebAPI.Models.Model.v2.IssuePatchRestore'
+          application/xml:
+            schema:
+              $ref: '#/components/schemas/BIMOne.BIMTrack.WebAPI.Models.Model.v2.IssuePatchRestore'
+          text/plain:
+            schema:
+              $ref: '#/components/schemas/BIMOne.BIMTrack.WebAPI.Models.Model.v2.IssuePatchRestore'
+          text/json:
+            schema:
+              $ref: '#/components/schemas/BIMOne.BIMTrack.WebAPI.Models.Model.v2.IssuePatchRestore'
+          application/*+json:
+            schema:
+              $ref: '#/components/schemas/BIMOne.BIMTrack.WebAPI.Models.Model.v2.IssuePatchRestore'
+      responses:
+        '200':
+          description: OK
+    delete:
+      tags:
+      - Issue
+      summary: Delete archived issue
+      parameters:
+      - name: hubId
+        in: path
+        required: true
+        schema:
+          minLength: 1
+          type: string
+      - name: projectId
+        in: path
+        required: true
+        schema:
+          minimum: 1
+          type: integer
+          format: int32
+      - name: archivedIssueId
+        in: path
+        required: true
+        schema:
+          minimum: 1
+          type: integer
+          format: int32
+      responses:
+        '200':
+          description: OK
+  /v3/hubs/{hubId}/projects/{projectId}/issues/{issueId}/attachments:
+    get:
+      tags:
+      - Issue
+      summary: Get issue attachments list
+      parameters:
+      - name: hubId
+        in: path
+        required: true
+        schema:
+          minLength: 1
+          type: string
+      - name: projectId
+        in: path
+        required: true
+        schema:
+          minimum: 1
+          type: integer
+          format: int32
+      - name: issueId
+        in: path
+        required: true
+        schema:
+          minimum: 1
+          type: integer
+          format: int32
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json;odata.metadata=minimal;odata.streaming=true:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/BIMOne.BIMTrack.WebAPI.Models.Model.v2.AttachmentWithThumbnail'
+            application/json;odata.metadata=minimal;odata.streaming=false:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/BIMOne.BIMTrack.WebAPI.Models.Model.v2.AttachmentWithThumbnail'
+            application/json;odata.metadata=minimal:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/BIMOne.BIMTrack.WebAPI.Models.Model.v2.AttachmentWithThumbnail'
+            application/json;odata.metadata=full;odata.streaming=true:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/BIMOne.BIMTrack.WebAPI.Models.Model.v2.AttachmentWithThumbnail'
+            application/json;odata.metadata=full;odata.streaming=false:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/BIMOne.BIMTrack.WebAPI.Models.Model.v2.AttachmentWithThumbnail'
+            application/json;odata.metadata=full:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/BIMOne.BIMTrack.WebAPI.Models.Model.v2.AttachmentWithThumbnail'
+            application/json;odata.metadata=none;odata.streaming=true:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/BIMOne.BIMTrack.WebAPI.Models.Model.v2.AttachmentWithThumbnail'
+            application/json;odata.metadata=none;odata.streaming=false:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/BIMOne.BIMTrack.WebAPI.Models.Model.v2.AttachmentWithThumbnail'
+            application/json;odata.metadata=none:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/BIMOne.BIMTrack.WebAPI.Models.Model.v2.AttachmentWithThumbnail'
+            application/json;odata.streaming=true:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/BIMOne.BIMTrack.WebAPI.Models.Model.v2.AttachmentWithThumbnail'
+            application/json;odata.streaming=false:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/BIMOne.BIMTrack.WebAPI.Models.Model.v2.AttachmentWithThumbnail'
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/BIMOne.BIMTrack.WebAPI.Models.Model.v2.AttachmentWithThumbnail'
+            application/xml:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/BIMOne.BIMTrack.WebAPI.Models.Model.v2.AttachmentWithThumbnail'
+            text/plain:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/BIMOne.BIMTrack.WebAPI.Models.Model.v2.AttachmentWithThumbnail'
+            application/octet-stream:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/BIMOne.BIMTrack.WebAPI.Models.Model.v2.AttachmentWithThumbnail'
+            text/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/BIMOne.BIMTrack.WebAPI.Models.Model.v2.AttachmentWithThumbnail'
+    post:
+      tags:
+      - Issue
+      summary: Create issue attachment
+      parameters:
+      - name: hubId
+        in: path
+        required: true
+        schema:
+          minLength: 1
+          type: string
+      - name: projectId
+        in: path
+        required: true
+        schema:
+          minimum: 1
+          type: integer
+          format: int32
+      - name: issueId
+        in: path
+        required: true
+        schema:
+          minimum: 1
+          type: integer
+          format: int32
+      requestBody:
+        content:
+          multipart/form-data:
+            schema:
+              type: object
+              properties:
+                file:
+                  type: string
+                  format: binary
+        required: true
+      responses:
+        '201':
+          description: Created
+  /v3/hubs/{hubId}/projects/{projectId}/issues/{issueId}/attachments/{attachmentId}:
+    delete:
+      tags:
+      - Issue
+      summary: Delete issue attachment
+      parameters:
+      - name: hubId
+        in: path
+        required: true
+        schema:
+          minLength: 1
+          type: string
+      - name: projectId
+        in: path
+        required: true
+        schema:
+          minimum: 1
+          type: integer
+          format: int32
+      - name: issueId
+        in: path
+        required: true
+        schema:
+          minimum: 1
+          type: integer
+          format: int32
+      - name: attachmentId
+        in: path
+        required: true
+        schema:
+          minimum: 1
+          type: integer
+          format: int32
+      responses:
+        '200':
+          description: OK
+  /v3/hubs/{hubId}/projects/{projectId}/issues/{issueId}/comments:
+    get:
+      tags:
+      - Issue
+      summary: Get issue comments
+      parameters:
+      - name: hubId
+        in: path
+        required: true
+        schema:
+          minLength: 1
+          type: string
+      - name: projectId
+        in: path
+        required: true
+        schema:
+          minimum: 1
+          type: integer
+          format: int32
+      - name: issueId
+        in: path
+        required: true
+        schema:
+          minimum: 1
+          type: integer
+          format: int32
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json;odata.metadata=minimal;odata.streaming=true:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/BIMOne.BIMTrack.WebAPI.Models.Model.v2.CommentSummary'
+            application/json;odata.metadata=minimal;odata.streaming=false:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/BIMOne.BIMTrack.WebAPI.Models.Model.v2.CommentSummary'
+            application/json;odata.metadata=minimal:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/BIMOne.BIMTrack.WebAPI.Models.Model.v2.CommentSummary'
+            application/json;odata.metadata=full;odata.streaming=true:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/BIMOne.BIMTrack.WebAPI.Models.Model.v2.CommentSummary'
+            application/json;odata.metadata=full;odata.streaming=false:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/BIMOne.BIMTrack.WebAPI.Models.Model.v2.CommentSummary'
+            application/json;odata.metadata=full:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/BIMOne.BIMTrack.WebAPI.Models.Model.v2.CommentSummary'
+            application/json;odata.metadata=none;odata.streaming=true:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/BIMOne.BIMTrack.WebAPI.Models.Model.v2.CommentSummary'
+            application/json;odata.metadata=none;odata.streaming=false:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/BIMOne.BIMTrack.WebAPI.Models.Model.v2.CommentSummary'
+            application/json;odata.metadata=none:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/BIMOne.BIMTrack.WebAPI.Models.Model.v2.CommentSummary'
+            application/json;odata.streaming=true:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/BIMOne.BIMTrack.WebAPI.Models.Model.v2.CommentSummary'
+            application/json;odata.streaming=false:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/BIMOne.BIMTrack.WebAPI.Models.Model.v2.CommentSummary'
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/BIMOne.BIMTrack.WebAPI.Models.Model.v2.CommentSummary'
+            application/xml:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/BIMOne.BIMTrack.WebAPI.Models.Model.v2.CommentSummary'
+            text/plain:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/BIMOne.BIMTrack.WebAPI.Models.Model.v2.CommentSummary'
+            application/octet-stream:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/BIMOne.BIMTrack.WebAPI.Models.Model.v2.CommentSummary'
+            text/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/BIMOne.BIMTrack.WebAPI.Models.Model.v2.CommentSummary'
+    post:
+      tags:
+      - Issue
+      summary: Create issue comment
+      parameters:
+      - name: hubId
+        in: path
+        required: true
+        schema:
+          minLength: 1
+          type: string
+      - name: projectId
+        in: path
+        required: true
+        schema:
+          minimum: 1
+          type: integer
+          format: int32
+      - name: issueId
+        in: path
+        required: true
+        schema:
+          minimum: 1
+          type: integer
+          format: int32
+      requestBody:
+        content:
+          application/json;odata.metadata=minimal;odata.streaming=true:
+            schema:
+              $ref: '#/components/schemas/BIMOne.BIMTrack.WebAPI.Models.Model.v2.IssueCommentInput'
+          application/json;odata.metadata=minimal;odata.streaming=false:
+            schema:
+              $ref: '#/components/schemas/BIMOne.BIMTrack.WebAPI.Models.Model.v2.IssueCommentInput'
+          application/json;odata.metadata=minimal:
+            schema:
+              $ref: '#/components/schemas/BIMOne.BIMTrack.WebAPI.Models.Model.v2.IssueCommentInput'
+          application/json;odata.metadata=full;odata.streaming=true:
+            schema:
+              $ref: '#/components/schemas/BIMOne.BIMTrack.WebAPI.Models.Model.v2.IssueCommentInput'
+          application/json;odata.metadata=full;odata.streaming=false:
+            schema:
+              $ref: '#/components/schemas/BIMOne.BIMTrack.WebAPI.Models.Model.v2.IssueCommentInput'
+          application/json;odata.metadata=full:
+            schema:
+              $ref: '#/components/schemas/BIMOne.BIMTrack.WebAPI.Models.Model.v2.IssueCommentInput'
+          application/json;odata.metadata=none;odata.streaming=true:
+            schema:
+              $ref: '#/components/schemas/BIMOne.BIMTrack.WebAPI.Models.Model.v2.IssueCommentInput'
+          application/json;odata.metadata=none;odata.streaming=false:
+            schema:
+              $ref: '#/components/schemas/BIMOne.BIMTrack.WebAPI.Models.Model.v2.IssueCommentInput'
+          application/json;odata.metadata=none:
+            schema:
+              $ref: '#/components/schemas/BIMOne.BIMTrack.WebAPI.Models.Model.v2.IssueCommentInput'
+          application/json;odata.streaming=true:
+            schema:
+              $ref: '#/components/schemas/BIMOne.BIMTrack.WebAPI.Models.Model.v2.IssueCommentInput'
+          application/json;odata.streaming=false:
+            schema:
+              $ref: '#/components/schemas/BIMOne.BIMTrack.WebAPI.Models.Model.v2.IssueCommentInput'
+          application/json:
+            schema:
+              $ref: '#/components/schemas/BIMOne.BIMTrack.WebAPI.Models.Model.v2.IssueCommentInput'
+          application/xml:
+            schema:
+              $ref: '#/components/schemas/BIMOne.BIMTrack.WebAPI.Models.Model.v2.IssueCommentInput'
+          text/plain:
+            schema:
+              $ref: '#/components/schemas/BIMOne.BIMTrack.WebAPI.Models.Model.v2.IssueCommentInput'
+          text/json:
+            schema:
+              $ref: '#/components/schemas/BIMOne.BIMTrack.WebAPI.Models.Model.v2.IssueCommentInput'
+          application/*+json:
+            schema:
+              $ref: '#/components/schemas/BIMOne.BIMTrack.WebAPI.Models.Model.v2.IssueCommentInput'
+      responses:
+        '201':
+          description: Created
+          content:
+            application/json;odata.metadata=minimal;odata.streaming=true:
+              schema:
+                $ref: '#/components/schemas/BIMOne.BIMTrack.WebAPI.Models.Model.v2.CommentSummary'
+            application/json;odata.metadata=minimal;odata.streaming=false:
+              schema:
+                $ref: '#/components/schemas/BIMOne.BIMTrack.WebAPI.Models.Model.v2.CommentSummary'
+            application/json;odata.metadata=minimal:
+              schema:
+                $ref: '#/components/schemas/BIMOne.BIMTrack.WebAPI.Models.Model.v2.CommentSummary'
+            application/json;odata.metadata=full;odata.streaming=true:
+              schema:
+                $ref: '#/components/schemas/BIMOne.BIMTrack.WebAPI.Models.Model.v2.CommentSummary'
+            application/json;odata.metadata=full;odata.streaming=false:
+              schema:
+                $ref: '#/components/schemas/BIMOne.BIMTrack.WebAPI.Models.Model.v2.CommentSummary'
+            application/json;odata.metadata=full:
+              schema:
+                $ref: '#/components/schemas/BIMOne.BIMTrack.WebAPI.Models.Model.v2.CommentSummary'
+            application/json;odata.metadata=none;odata.streaming=true:
+              schema:
+                $ref: '#/components/schemas/BIMOne.BIMTrack.WebAPI.Models.Model.v2.CommentSummary'
+            application/json;odata.metadata=none;odata.streaming=false:
+              schema:
+                $ref: '#/components/schemas/BIMOne.BIMTrack.WebAPI.Models.Model.v2.CommentSummary'
+            application/json;odata.metadata=none:
+              schema:
+                $ref: '#/components/schemas/BIMOne.BIMTrack.WebAPI.Models.Model.v2.CommentSummary'
+            application/json;odata.streaming=true:
+              schema:
+                $ref: '#/components/schemas/BIMOne.BIMTrack.WebAPI.Models.Model.v2.CommentSummary'
+            application/json;odata.streaming=false:
+              schema:
+                $ref: '#/components/schemas/BIMOne.BIMTrack.WebAPI.Models.Model.v2.CommentSummary'
+            application/json:
+              schema:
+                $ref: '#/components/schemas/BIMOne.BIMTrack.WebAPI.Models.Model.v2.CommentSummary'
+            application/xml:
+              schema:
+                $ref: '#/components/schemas/BIMOne.BIMTrack.WebAPI.Models.Model.v2.CommentSummary'
+            text/plain:
+              schema:
+                $ref: '#/components/schemas/BIMOne.BIMTrack.WebAPI.Models.Model.v2.CommentSummary'
+            application/octet-stream:
+              schema:
+                $ref: '#/components/schemas/BIMOne.BIMTrack.WebAPI.Models.Model.v2.CommentSummary'
+            text/json:
+              schema:
+                $ref: '#/components/schemas/BIMOne.BIMTrack.WebAPI.Models.Model.v2.CommentSummary'
+  /v3/hubs/{hubId}/projects/{projectId}/issues/{issueId}/comments/{issueCommentId}:
+    delete:
+      tags:
+      - Issue
+      summary: Delete issue comment
+      parameters:
+      - name: hubId
+        in: path
+        required: true
+        schema:
+          minLength: 1
+          type: string
+      - name: projectId
+        in: path
+        required: true
+        schema:
+          minimum: 1
+          type: integer
+          format: int32
+      - name: issueId
+        in: path
+        required: true
+        schema:
+          minimum: 1
+          type: integer
+          format: int32
+      - name: issueCommentId
+        in: path
+        required: true
+        schema:
+          minimum: 1
+          type: integer
+          format: int32
+      responses:
+        '200':
+          description: OK
+  /v3/hubs/{hubId}/projects/{projectId}/issues:
+    get:
+      tags:
+      - Issue
+      summary: Get issues
+      operationId: GetIssues_V3
+      parameters:
+      - name: hubId
+        in: path
+        required: true
+        schema:
+          minLength: 1
+          type: string
+      - name: projectId
+        in: path
+        required: true
+        schema:
+          minimum: 1
+          type: integer
+          format: int32
+      - name: Query
+        in: query
+        schema:
+          type: string
+      - name: QueryExtendedSearch
+        in: query
+        schema:
+          type: boolean
+      - name: IncludeIssueAdditionalInfo
+        in: query
+        schema:
+          type: boolean
+      - name: Term
+        in: query
+        schema:
+          type: string
+      - name: Description
+        in: query
+        schema:
+          type: string
+      - name: AssignedToUserIds
+        in: query
+        schema:
+          type: array
+          items:
+            type: integer
+            format: int32
+      - name: AuthorUserIds
+        in: query
+        schema:
+          type: array
+          items:
+            type: integer
+            format: int32
+      - name: LastModificationAuthorUserIds
+        in: query
+        schema:
+          type: array
+          items:
+            type: integer
+            format: int32
+      - name: IssueGroups
+        in: query
+        schema:
+          type: array
+          items:
+            type: string
+      - name: PriorityIds
+        in: query
+        schema:
+          type: array
+          items:
+            type: integer
+            format: int32
+      - name: ProjectPhaseIds
+        in: query
+        schema:
+          type: array
+          items:
+            type: integer
+            format: int32
+      - name: ConfidentialityIds
+        in: query
+        schema:
+          type: array
+          items:
+            type: integer
+            format: int32
+      - name: ProjectZoneIds
+        in: query
+        schema:
+          type: array
+          items:
+            type: integer
+            format: int32
+      - name: StatusIds
+        in: query
+        schema:
+          type: array
+          items:
+            type: integer
+            format: int32
+      - name: DisciplineIds
+        in: query
+        schema:
+          type: array
+          items:
+            type: integer
+            format: int32
+      - name: TypeIds
+        in: query
+        schema:
+          type: array
+          items:
+            type: integer
+            format: int32
+      - name: CreationDateStart
+        in: query
+        schema:
+          type: string
+          format: date-time
+      - name: CreationDateEnd
+        in: query
+        schema:
+          type: string
+          format: date-time
+      - name: LastModificationDateStart
+        in: query
+        schema:
+          type: string
+          format: date-time
+      - name: LastModificationDateEnd
+        in: query
+        schema:
+          type: string
+          format: date-time
+      - name: DueDateStart
+        in: query
+        schema:
+          type: string
+          format: date-time
+      - name: DueDateEnd
+        in: query
+        schema:
+          type: string
+          format: date-time
+      - name: Visibility
+        in: query
+        schema:
+          type: integer
+          format: int32
+      - name: CustomAttributes
+        in: query
+        schema:
+          type: array
+          items:
+            type: string
+      - name: IsUnlinked
+        in: query
+        schema:
+          type: boolean
+      - name: IssueIds
+        in: query
+        schema:
+          type: array
+          items:
+            type: integer
+            format: int32
+      - name: ActivityOperationId
+        in: query
+        schema:
+          type: string
+      - name: additionalIncludes
+        in: query
+        schema:
+          type: string
+      - name: sort
+        in: query
+        schema:
+          type: string
+          default: -Number
+      - name: startRecord
+        in: query
+        schema:
+          type: integer
+          format: int32
+          default: 1
+      - name: returnCount
+        in: query
+        schema:
+          type: integer
+          format: int32
+          default: 100
+      - name: assignedToUserId
+        in: query
+        schema:
+          type: integer
+          format: int32
+          default: 0
+      - name: priorityId
+        in: query
+        schema:
+          type: integer
+          format: int32
+          default: 0
+      - name: statusId
+        in: query
+        schema:
+          type: integer
+          format: int32
+          default: 0
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json;odata.metadata=minimal;odata.streaming=true:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/BIMOne.BIMTrack.WebAPI.Models.Model.v2.IssueSummary'
+            application/json;odata.metadata=minimal;odata.streaming=false:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/BIMOne.BIMTrack.WebAPI.Models.Model.v2.IssueSummary'
+            application/json;odata.metadata=minimal:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/BIMOne.BIMTrack.WebAPI.Models.Model.v2.IssueSummary'
+            application/json;odata.metadata=full;odata.streaming=true:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/BIMOne.BIMTrack.WebAPI.Models.Model.v2.IssueSummary'
+            application/json;odata.metadata=full;odata.streaming=false:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/BIMOne.BIMTrack.WebAPI.Models.Model.v2.IssueSummary'
+            application/json;odata.metadata=full:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/BIMOne.BIMTrack.WebAPI.Models.Model.v2.IssueSummary'
+            application/json;odata.metadata=none;odata.streaming=true:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/BIMOne.BIMTrack.WebAPI.Models.Model.v2.IssueSummary'
+            application/json;odata.metadata=none;odata.streaming=false:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/BIMOne.BIMTrack.WebAPI.Models.Model.v2.IssueSummary'
+            application/json;odata.metadata=none:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/BIMOne.BIMTrack.WebAPI.Models.Model.v2.IssueSummary'
+            application/json;odata.streaming=true:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/BIMOne.BIMTrack.WebAPI.Models.Model.v2.IssueSummary'
+            application/json;odata.streaming=false:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/BIMOne.BIMTrack.WebAPI.Models.Model.v2.IssueSummary'
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/BIMOne.BIMTrack.WebAPI.Models.Model.v2.IssueSummary'
+            application/xml:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/BIMOne.BIMTrack.WebAPI.Models.Model.v2.IssueSummary'
+            text/plain:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/BIMOne.BIMTrack.WebAPI.Models.Model.v2.IssueSummary'
+            application/octet-stream:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/BIMOne.BIMTrack.WebAPI.Models.Model.v2.IssueSummary'
+            text/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/BIMOne.BIMTrack.WebAPI.Models.Model.v2.IssueSummary'
+    post:
+      tags:
+      - Issue
+      summary: Create issue
+      parameters:
+      - name: hubId
+        in: path
+        required: true
+        schema:
+          minLength: 1
+          type: string
+      - name: projectId
+        in: path
+        required: true
+        schema:
+          minimum: 1
+          type: integer
+          format: int32
+      requestBody:
+        content:
+          application/json;odata.metadata=minimal;odata.streaming=true:
+            schema:
+              $ref: '#/components/schemas/BIMOne.BIMTrack.WebAPI.Models.Model.v2.IssueSummaryInput'
+          application/json;odata.metadata=minimal;odata.streaming=false:
+            schema:
+              $ref: '#/components/schemas/BIMOne.BIMTrack.WebAPI.Models.Model.v2.IssueSummaryInput'
+          application/json;odata.metadata=minimal:
+            schema:
+              $ref: '#/components/schemas/BIMOne.BIMTrack.WebAPI.Models.Model.v2.IssueSummaryInput'
+          application/json;odata.metadata=full;odata.streaming=true:
+            schema:
+              $ref: '#/components/schemas/BIMOne.BIMTrack.WebAPI.Models.Model.v2.IssueSummaryInput'
+          application/json;odata.metadata=full;odata.streaming=false:
+            schema:
+              $ref: '#/components/schemas/BIMOne.BIMTrack.WebAPI.Models.Model.v2.IssueSummaryInput'
+          application/json;odata.metadata=full:
+            schema:
+              $ref: '#/components/schemas/BIMOne.BIMTrack.WebAPI.Models.Model.v2.IssueSummaryInput'
+          application/json;odata.metadata=none;odata.streaming=true:
+            schema:
+              $ref: '#/components/schemas/BIMOne.BIMTrack.WebAPI.Models.Model.v2.IssueSummaryInput'
+          application/json;odata.metadata=none;odata.streaming=false:
+            schema:
+              $ref: '#/components/schemas/BIMOne.BIMTrack.WebAPI.Models.Model.v2.IssueSummaryInput'
+          application/json;odata.metadata=none:
+            schema:
+              $ref: '#/components/schemas/BIMOne.BIMTrack.WebAPI.Models.Model.v2.IssueSummaryInput'
+          application/json;odata.streaming=true:
+            schema:
+              $ref: '#/components/schemas/BIMOne.BIMTrack.WebAPI.Models.Model.v2.IssueSummaryInput'
+          application/json;odata.streaming=false:
+            schema:
+              $ref: '#/components/schemas/BIMOne.BIMTrack.WebAPI.Models.Model.v2.IssueSummaryInput'
+          application/json:
+            schema:
+              $ref: '#/components/schemas/BIMOne.BIMTrack.WebAPI.Models.Model.v2.IssueSummaryInput'
+          application/xml:
+            schema:
+              $ref: '#/components/schemas/BIMOne.BIMTrack.WebAPI.Models.Model.v2.IssueSummaryInput'
+          text/plain:
+            schema:
+              $ref: '#/components/schemas/BIMOne.BIMTrack.WebAPI.Models.Model.v2.IssueSummaryInput'
+          text/json:
+            schema:
+              $ref: '#/components/schemas/BIMOne.BIMTrack.WebAPI.Models.Model.v2.IssueSummaryInput'
+          application/*+json:
+            schema:
+              $ref: '#/components/schemas/BIMOne.BIMTrack.WebAPI.Models.Model.v2.IssueSummaryInput'
+      responses:
+        '201':
+          description: Created
+          content:
+            application/json;odata.metadata=minimal;odata.streaming=true:
+              schema:
+                $ref: '#/components/schemas/BIMOne.BIMTrack.WebAPI.Models.Model.v2.IssueModificationSummary'
+            application/json;odata.metadata=minimal;odata.streaming=false:
+              schema:
+                $ref: '#/components/schemas/BIMOne.BIMTrack.WebAPI.Models.Model.v2.IssueModificationSummary'
+            application/json;odata.metadata=minimal:
+              schema:
+                $ref: '#/components/schemas/BIMOne.BIMTrack.WebAPI.Models.Model.v2.IssueModificationSummary'
+            application/json;odata.metadata=full;odata.streaming=true:
+              schema:
+                $ref: '#/components/schemas/BIMOne.BIMTrack.WebAPI.Models.Model.v2.IssueModificationSummary'
+            application/json;odata.metadata=full;odata.streaming=false:
+              schema:
+                $ref: '#/components/schemas/BIMOne.BIMTrack.WebAPI.Models.Model.v2.IssueModificationSummary'
+            application/json;odata.metadata=full:
+              schema:
+                $ref: '#/components/schemas/BIMOne.BIMTrack.WebAPI.Models.Model.v2.IssueModificationSummary'
+            application/json;odata.metadata=none;odata.streaming=true:
+              schema:
+                $ref: '#/components/schemas/BIMOne.BIMTrack.WebAPI.Models.Model.v2.IssueModificationSummary'
+            application/json;odata.metadata=none;odata.streaming=false:
+              schema:
+                $ref: '#/components/schemas/BIMOne.BIMTrack.WebAPI.Models.Model.v2.IssueModificationSummary'
+            application/json;odata.metadata=none:
+              schema:
+                $ref: '#/components/schemas/BIMOne.BIMTrack.WebAPI.Models.Model.v2.IssueModificationSummary'
+            application/json;odata.streaming=true:
+              schema:
+                $ref: '#/components/schemas/BIMOne.BIMTrack.WebAPI.Models.Model.v2.IssueModificationSummary'
+            application/json;odata.streaming=false:
+              schema:
+                $ref: '#/components/schemas/BIMOne.BIMTrack.WebAPI.Models.Model.v2.IssueModificationSummary'
+            application/json:
+              schema:
+                $ref: '#/components/schemas/BIMOne.BIMTrack.WebAPI.Models.Model.v2.IssueModificationSummary'
+            application/xml:
+              schema:
+                $ref: '#/components/schemas/BIMOne.BIMTrack.WebAPI.Models.Model.v2.IssueModificationSummary'
+            text/plain:
+              schema:
+                $ref: '#/components/schemas/BIMOne.BIMTrack.WebAPI.Models.Model.v2.IssueModificationSummary'
+            application/octet-stream:
+              schema:
+                $ref: '#/components/schemas/BIMOne.BIMTrack.WebAPI.Models.Model.v2.IssueModificationSummary'
+            text/json:
+              schema:
+                $ref: '#/components/schemas/BIMOne.BIMTrack.WebAPI.Models.Model.v2.IssueModificationSummary'
+    patch:
+      tags:
+      - Issue
+      summary: Multi edit issues
+      parameters:
+      - name: hubId
+        in: path
+        required: true
+        schema:
+          minLength: 1
+          type: string
+      - name: projectId
+        in: path
+        required: true
+        schema:
+          minimum: 1
+          type: integer
+          format: int32
+      requestBody:
+        content:
+          application/json;odata.metadata=minimal;odata.streaming=true:
+            schema:
+              $ref: '#/components/schemas/BIMOne.BIMTrack.WebAPI.Models.Model.v2.AspNetCore.IssuesPatchInput'
+          application/json;odata.metadata=minimal;odata.streaming=false:
+            schema:
+              $ref: '#/components/schemas/BIMOne.BIMTrack.WebAPI.Models.Model.v2.AspNetCore.IssuesPatchInput'
+          application/json;odata.metadata=minimal:
+            schema:
+              $ref: '#/components/schemas/BIMOne.BIMTrack.WebAPI.Models.Model.v2.AspNetCore.IssuesPatchInput'
+          application/json;odata.metadata=full;odata.streaming=true:
+            schema:
+              $ref: '#/components/schemas/BIMOne.BIMTrack.WebAPI.Models.Model.v2.AspNetCore.IssuesPatchInput'
+          application/json;odata.metadata=full;odata.streaming=false:
+            schema:
+              $ref: '#/components/schemas/BIMOne.BIMTrack.WebAPI.Models.Model.v2.AspNetCore.IssuesPatchInput'
+          application/json;odata.metadata=full:
+            schema:
+              $ref: '#/components/schemas/BIMOne.BIMTrack.WebAPI.Models.Model.v2.AspNetCore.IssuesPatchInput'
+          application/json;odata.metadata=none;odata.streaming=true:
+            schema:
+              $ref: '#/components/schemas/BIMOne.BIMTrack.WebAPI.Models.Model.v2.AspNetCore.IssuesPatchInput'
+          application/json;odata.metadata=none;odata.streaming=false:
+            schema:
+              $ref: '#/components/schemas/BIMOne.BIMTrack.WebAPI.Models.Model.v2.AspNetCore.IssuesPatchInput'
+          application/json;odata.metadata=none:
+            schema:
+              $ref: '#/components/schemas/BIMOne.BIMTrack.WebAPI.Models.Model.v2.AspNetCore.IssuesPatchInput'
+          application/json;odata.streaming=true:
+            schema:
+              $ref: '#/components/schemas/BIMOne.BIMTrack.WebAPI.Models.Model.v2.AspNetCore.IssuesPatchInput'
+          application/json;odata.streaming=false:
+            schema:
+              $ref: '#/components/schemas/BIMOne.BIMTrack.WebAPI.Models.Model.v2.AspNetCore.IssuesPatchInput'
+          application/json:
+            schema:
+              $ref: '#/components/schemas/BIMOne.BIMTrack.WebAPI.Models.Model.v2.AspNetCore.IssuesPatchInput'
+          application/xml:
+            schema:
+              $ref: '#/components/schemas/BIMOne.BIMTrack.WebAPI.Models.Model.v2.AspNetCore.IssuesPatchInput'
+          text/plain:
+            schema:
+              $ref: '#/components/schemas/BIMOne.BIMTrack.WebAPI.Models.Model.v2.AspNetCore.IssuesPatchInput'
+          text/json:
+            schema:
+              $ref: '#/components/schemas/BIMOne.BIMTrack.WebAPI.Models.Model.v2.AspNetCore.IssuesPatchInput'
+          application/*+json:
+            schema:
+              $ref: '#/components/schemas/BIMOne.BIMTrack.WebAPI.Models.Model.v2.AspNetCore.IssuesPatchInput'
+      responses:
+        '200':
+          description: OK
+  /v3/hubs/{hubId}/projects/{projectId}/issues/search:
+    get:
+      tags:
+      - Issue
+      summary: Search issues with filters
+      operationId: SearchIssues_V3
+      parameters:
+      - name: hubId
+        in: path
+        required: true
+        schema:
+          minLength: 1
+          type: string
+      - name: projectId
+        in: path
+        required: true
+        schema:
+          minimum: 1
+          type: integer
+          format: int32
+      - name: Query
+        in: query
+        schema:
+          type: string
+      - name: QueryExtendedSearch
+        in: query
+        schema:
+          type: boolean
+      - name: IncludeIssueAdditionalInfo
+        in: query
+        schema:
+          type: boolean
+      - name: Term
+        in: query
+        schema:
+          type: string
+      - name: Description
+        in: query
+        schema:
+          type: string
+      - name: AssignedToUserIds
+        in: query
+        schema:
+          type: array
+          items:
+            type: integer
+            format: int32
+      - name: AuthorUserIds
+        in: query
+        schema:
+          type: array
+          items:
+            type: integer
+            format: int32
+      - name: LastModificationAuthorUserIds
+        in: query
+        schema:
+          type: array
+          items:
+            type: integer
+            format: int32
+      - name: IssueGroups
+        in: query
+        schema:
+          type: array
+          items:
+            type: string
+      - name: PriorityIds
+        in: query
+        schema:
+          type: array
+          items:
+            type: integer
+            format: int32
+      - name: ProjectPhaseIds
+        in: query
+        schema:
+          type: array
+          items:
+            type: integer
+            format: int32
+      - name: ConfidentialityIds
+        in: query
+        schema:
+          type: array
+          items:
+            type: integer
+            format: int32
+      - name: ProjectZoneIds
+        in: query
+        schema:
+          type: array
+          items:
+            type: integer
+            format: int32
+      - name: StatusIds
+        in: query
+        schema:
+          type: array
+          items:
+            type: integer
+            format: int32
+      - name: DisciplineIds
+        in: query
+        schema:
+          type: array
+          items:
+            type: integer
+            format: int32
+      - name: TypeIds
+        in: query
+        schema:
+          type: array
+          items:
+            type: integer
+            format: int32
+      - name: CreationDateStart
+        in: query
+        schema:
+          type: string
+          format: date-time
+      - name: CreationDateEnd
+        in: query
+        schema:
+          type: string
+          format: date-time
+      - name: LastModificationDateStart
+        in: query
+        schema:
+          type: string
+          format: date-time
+      - name: LastModificationDateEnd
+        in: query
+        schema:
+          type: string
+          format: date-time
+      - name: DueDateStart
+        in: query
+        schema:
+          type: string
+          format: date-time
+      - name: DueDateEnd
+        in: query
+        schema:
+          type: string
+          format: date-time
+      - name: Visibility
+        in: query
+        schema:
+          type: integer
+          format: int32
+      - name: CustomAttributes
+        in: query
+        schema:
+          type: array
+          items:
+            type: string
+      - name: IsUnlinked
+        in: query
+        schema:
+          type: boolean
+      - name: IssueIds
+        in: query
+        schema:
+          type: array
+          items:
+            type: integer
+            format: int32
+      - name: ActivityOperationId
+        in: query
+        schema:
+          type: string
+      - name: additionalIncludes
+        in: query
+        schema:
+          type: string
+      - name: sort
+        in: query
+        schema:
+          type: string
+          default: -Number
+      - name: startRecord
+        in: query
+        schema:
+          type: integer
+          format: int32
+          default: 1
+      - name: returnCount
+        in: query
+        schema:
+          type: integer
+          format: int32
+          default: 100
+      - name: assignedToUserId
+        in: query
+        schema:
+          type: integer
+          format: int32
+          default: 0
+      - name: priorityId
+        in: query
+        schema:
+          type: integer
+          format: int32
+          default: 0
+      - name: statusId
+        in: query
+        schema:
+          type: integer
+          format: int32
+          default: 0
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json;odata.metadata=minimal;odata.streaming=true:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/BIMOne.BIMTrack.WebAPI.Models.Model.v2.IssueSummary'
+            application/json;odata.metadata=minimal;odata.streaming=false:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/BIMOne.BIMTrack.WebAPI.Models.Model.v2.IssueSummary'
+            application/json;odata.metadata=minimal:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/BIMOne.BIMTrack.WebAPI.Models.Model.v2.IssueSummary'
+            application/json;odata.metadata=full;odata.streaming=true:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/BIMOne.BIMTrack.WebAPI.Models.Model.v2.IssueSummary'
+            application/json;odata.metadata=full;odata.streaming=false:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/BIMOne.BIMTrack.WebAPI.Models.Model.v2.IssueSummary'
+            application/json;odata.metadata=full:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/BIMOne.BIMTrack.WebAPI.Models.Model.v2.IssueSummary'
+            application/json;odata.metadata=none;odata.streaming=true:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/BIMOne.BIMTrack.WebAPI.Models.Model.v2.IssueSummary'
+            application/json;odata.metadata=none;odata.streaming=false:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/BIMOne.BIMTrack.WebAPI.Models.Model.v2.IssueSummary'
+            application/json;odata.metadata=none:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/BIMOne.BIMTrack.WebAPI.Models.Model.v2.IssueSummary'
+            application/json;odata.streaming=true:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/BIMOne.BIMTrack.WebAPI.Models.Model.v2.IssueSummary'
+            application/json;odata.streaming=false:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/BIMOne.BIMTrack.WebAPI.Models.Model.v2.IssueSummary'
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/BIMOne.BIMTrack.WebAPI.Models.Model.v2.IssueSummary'
+            application/xml:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/BIMOne.BIMTrack.WebAPI.Models.Model.v2.IssueSummary'
+            text/plain:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/BIMOne.BIMTrack.WebAPI.Models.Model.v2.IssueSummary'
+            application/octet-stream:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/BIMOne.BIMTrack.WebAPI.Models.Model.v2.IssueSummary'
+            text/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/BIMOne.BIMTrack.WebAPI.Models.Model.v2.IssueSummary'
+  /v3/hubs/{hubId}/projects/{projectId}/issues/details:
+    get:
+      tags:
+      - Issue
+      summary: Get issues details
+      operationId: GetIssuesDetails_V3
+      parameters:
+      - name: hubId
+        in: path
+        required: true
+        schema:
+          minLength: 1
+          type: string
+      - name: projectId
+        in: path
+        required: true
+        schema:
+          minimum: 1
+          type: integer
+          format: int32
+      - name: Query
+        in: query
+        schema:
+          type: string
+      - name: QueryExtendedSearch
+        in: query
+        schema:
+          type: boolean
+      - name: IncludeIssueAdditionalInfo
+        in: query
+        schema:
+          type: boolean
+      - name: Term
+        in: query
+        schema:
+          type: string
+      - name: Description
+        in: query
+        schema:
+          type: string
+      - name: AssignedToUserIds
+        in: query
+        schema:
+          type: array
+          items:
+            type: integer
+            format: int32
+      - name: AuthorUserIds
+        in: query
+        schema:
+          type: array
+          items:
+            type: integer
+            format: int32
+      - name: LastModificationAuthorUserIds
+        in: query
+        schema:
+          type: array
+          items:
+            type: integer
+            format: int32
+      - name: IssueGroups
+        in: query
+        schema:
+          type: array
+          items:
+            type: string
+      - name: PriorityIds
+        in: query
+        schema:
+          type: array
+          items:
+            type: integer
+            format: int32
+      - name: ProjectPhaseIds
+        in: query
+        schema:
+          type: array
+          items:
+            type: integer
+            format: int32
+      - name: ConfidentialityIds
+        in: query
+        schema:
+          type: array
+          items:
+            type: integer
+            format: int32
+      - name: ProjectZoneIds
+        in: query
+        schema:
+          type: array
+          items:
+            type: integer
+            format: int32
+      - name: StatusIds
+        in: query
+        schema:
+          type: array
+          items:
+            type: integer
+            format: int32
+      - name: DisciplineIds
+        in: query
+        schema:
+          type: array
+          items:
+            type: integer
+            format: int32
+      - name: TypeIds
+        in: query
+        schema:
+          type: array
+          items:
+            type: integer
+            format: int32
+      - name: CreationDateStart
+        in: query
+        schema:
+          type: string
+          format: date-time
+      - name: CreationDateEnd
+        in: query
+        schema:
+          type: string
+          format: date-time
+      - name: LastModificationDateStart
+        in: query
+        schema:
+          type: string
+          format: date-time
+      - name: LastModificationDateEnd
+        in: query
+        schema:
+          type: string
+          format: date-time
+      - name: DueDateStart
+        in: query
+        schema:
+          type: string
+          format: date-time
+      - name: DueDateEnd
+        in: query
+        schema:
+          type: string
+          format: date-time
+      - name: Visibility
+        in: query
+        schema:
+          type: integer
+          format: int32
+      - name: CustomAttributes
+        in: query
+        schema:
+          type: array
+          items:
+            type: string
+      - name: IsUnlinked
+        in: query
+        schema:
+          type: boolean
+      - name: IssueIds
+        in: query
+        schema:
+          type: array
+          items:
+            type: integer
+            format: int32
+      - name: ActivityOperationId
+        in: query
+        schema:
+          type: string
+      - name: additionalIncludes
+        in: query
+        schema:
+          type: string
+      - name: sort
+        in: query
+        schema:
+          type: string
+          default: -Number
+      - name: startRecord
+        in: query
+        schema:
+          type: integer
+          format: int32
+          default: 1
+      - name: returnCount
+        in: query
+        schema:
+          type: integer
+          format: int32
+          default: 100
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json;odata.metadata=minimal;odata.streaming=true:
+              schema:
+                $ref: '#/components/schemas/BIMOne.BIMTrack.WebAPI.Models.Model.v3.Issue.ProjectIssuesDetails'
+            application/json;odata.metadata=minimal;odata.streaming=false:
+              schema:
+                $ref: '#/components/schemas/BIMOne.BIMTrack.WebAPI.Models.Model.v3.Issue.ProjectIssuesDetails'
+            application/json;odata.metadata=minimal:
+              schema:
+                $ref: '#/components/schemas/BIMOne.BIMTrack.WebAPI.Models.Model.v3.Issue.ProjectIssuesDetails'
+            application/json;odata.metadata=full;odata.streaming=true:
+              schema:
+                $ref: '#/components/schemas/BIMOne.BIMTrack.WebAPI.Models.Model.v3.Issue.ProjectIssuesDetails'
+            application/json;odata.metadata=full;odata.streaming=false:
+              schema:
+                $ref: '#/components/schemas/BIMOne.BIMTrack.WebAPI.Models.Model.v3.Issue.ProjectIssuesDetails'
+            application/json;odata.metadata=full:
+              schema:
+                $ref: '#/components/schemas/BIMOne.BIMTrack.WebAPI.Models.Model.v3.Issue.ProjectIssuesDetails'
+            application/json;odata.metadata=none;odata.streaming=true:
+              schema:
+                $ref: '#/components/schemas/BIMOne.BIMTrack.WebAPI.Models.Model.v3.Issue.ProjectIssuesDetails'
+            application/json;odata.metadata=none;odata.streaming=false:
+              schema:
+                $ref: '#/components/schemas/BIMOne.BIMTrack.WebAPI.Models.Model.v3.Issue.ProjectIssuesDetails'
+            application/json;odata.metadata=none:
+              schema:
+                $ref: '#/components/schemas/BIMOne.BIMTrack.WebAPI.Models.Model.v3.Issue.ProjectIssuesDetails'
+            application/json;odata.streaming=true:
+              schema:
+                $ref: '#/components/schemas/BIMOne.BIMTrack.WebAPI.Models.Model.v3.Issue.ProjectIssuesDetails'
+            application/json;odata.streaming=false:
+              schema:
+                $ref: '#/components/schemas/BIMOne.BIMTrack.WebAPI.Models.Model.v3.Issue.ProjectIssuesDetails'
+            application/json:
+              schema:
+                $ref: '#/components/schemas/BIMOne.BIMTrack.WebAPI.Models.Model.v3.Issue.ProjectIssuesDetails'
+            application/xml:
+              schema:
+                $ref: '#/components/schemas/BIMOne.BIMTrack.WebAPI.Models.Model.v3.Issue.ProjectIssuesDetails'
+            text/plain:
+              schema:
+                $ref: '#/components/schemas/BIMOne.BIMTrack.WebAPI.Models.Model.v3.Issue.ProjectIssuesDetails'
+            application/octet-stream:
+              schema:
+                $ref: '#/components/schemas/BIMOne.BIMTrack.WebAPI.Models.Model.v3.Issue.ProjectIssuesDetails'
+            text/json:
+              schema:
+                $ref: '#/components/schemas/BIMOne.BIMTrack.WebAPI.Models.Model.v3.Issue.ProjectIssuesDetails'
+  /v3/hubs/{hubId}/projects/{projectId}/issues/{issueId}:
+    get:
+      tags:
+      - Issue
+      summary: Get Issue
+      operationId: GetIssue_V3
+      parameters:
+      - name: hubId
+        in: path
+        required: true
+        schema:
+          minLength: 1
+          type: string
+      - name: projectId
+        in: path
+        required: true
+        schema:
+          minimum: 1
+          type: integer
+          format: int32
+      - name: issueId
+        in: path
+        required: true
+        schema:
+          minimum: 1
+          type: integer
+          format: int32
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json;odata.metadata=minimal;odata.streaming=true:
+              schema:
+                $ref: '#/components/schemas/BIMOne.BIMTrack.WebAPI.Models.Model.v2.IssueDetail'
+            application/json;odata.metadata=minimal;odata.streaming=false:
+              schema:
+                $ref: '#/components/schemas/BIMOne.BIMTrack.WebAPI.Models.Model.v2.IssueDetail'
+            application/json;odata.metadata=minimal:
+              schema:
+                $ref: '#/components/schemas/BIMOne.BIMTrack.WebAPI.Models.Model.v2.IssueDetail'
+            application/json;odata.metadata=full;odata.streaming=true:
+              schema:
+                $ref: '#/components/schemas/BIMOne.BIMTrack.WebAPI.Models.Model.v2.IssueDetail'
+            application/json;odata.metadata=full;odata.streaming=false:
+              schema:
+                $ref: '#/components/schemas/BIMOne.BIMTrack.WebAPI.Models.Model.v2.IssueDetail'
+            application/json;odata.metadata=full:
+              schema:
+                $ref: '#/components/schemas/BIMOne.BIMTrack.WebAPI.Models.Model.v2.IssueDetail'
+            application/json;odata.metadata=none;odata.streaming=true:
+              schema:
+                $ref: '#/components/schemas/BIMOne.BIMTrack.WebAPI.Models.Model.v2.IssueDetail'
+            application/json;odata.metadata=none;odata.streaming=false:
+              schema:
+                $ref: '#/components/schemas/BIMOne.BIMTrack.WebAPI.Models.Model.v2.IssueDetail'
+            application/json;odata.metadata=none:
+              schema:
+                $ref: '#/components/schemas/BIMOne.BIMTrack.WebAPI.Models.Model.v2.IssueDetail'
+            application/json;odata.streaming=true:
+              schema:
+                $ref: '#/components/schemas/BIMOne.BIMTrack.WebAPI.Models.Model.v2.IssueDetail'
+            application/json;odata.streaming=false:
+              schema:
+                $ref: '#/components/schemas/BIMOne.BIMTrack.WebAPI.Models.Model.v2.IssueDetail'
+            application/json:
+              schema:
+                $ref: '#/components/schemas/BIMOne.BIMTrack.WebAPI.Models.Model.v2.IssueDetail'
+            application/xml:
+              schema:
+                $ref: '#/components/schemas/BIMOne.BIMTrack.WebAPI.Models.Model.v2.IssueDetail'
+            text/plain:
+              schema:
+                $ref: '#/components/schemas/BIMOne.BIMTrack.WebAPI.Models.Model.v2.IssueDetail'
+            application/octet-stream:
+              schema:
+                $ref: '#/components/schemas/BIMOne.BIMTrack.WebAPI.Models.Model.v2.IssueDetail'
+            text/json:
+              schema:
+                $ref: '#/components/schemas/BIMOne.BIMTrack.WebAPI.Models.Model.v2.IssueDetail'
+    put:
+      tags:
+      - Issue
+      summary: Update issue
+      parameters:
+      - name: hubId
+        in: path
+        required: true
+        schema:
+          minLength: 1
+          type: string
+      - name: projectId
+        in: path
+        required: true
+        schema:
+          minimum: 1
+          type: integer
+          format: int32
+      - name: issueId
+        in: path
+        required: true
+        schema:
+          minimum: 1
+          type: integer
+          format: int32
+      requestBody:
+        content:
+          application/json;odata.metadata=minimal;odata.streaming=true:
+            schema:
+              $ref: '#/components/schemas/BIMOne.BIMTrack.WebAPI.Models.Model.v2.IssueSummaryUpdateInput'
+          application/json;odata.metadata=minimal;odata.streaming=false:
+            schema:
+              $ref: '#/components/schemas/BIMOne.BIMTrack.WebAPI.Models.Model.v2.IssueSummaryUpdateInput'
+          application/json;odata.metadata=minimal:
+            schema:
+              $ref: '#/components/schemas/BIMOne.BIMTrack.WebAPI.Models.Model.v2.IssueSummaryUpdateInput'
+          application/json;odata.metadata=full;odata.streaming=true:
+            schema:
+              $ref: '#/components/schemas/BIMOne.BIMTrack.WebAPI.Models.Model.v2.IssueSummaryUpdateInput'
+          application/json;odata.metadata=full;odata.streaming=false:
+            schema:
+              $ref: '#/components/schemas/BIMOne.BIMTrack.WebAPI.Models.Model.v2.IssueSummaryUpdateInput'
+          application/json;odata.metadata=full:
+            schema:
+              $ref: '#/components/schemas/BIMOne.BIMTrack.WebAPI.Models.Model.v2.IssueSummaryUpdateInput'
+          application/json;odata.metadata=none;odata.streaming=true:
+            schema:
+              $ref: '#/components/schemas/BIMOne.BIMTrack.WebAPI.Models.Model.v2.IssueSummaryUpdateInput'
+          application/json;odata.metadata=none;odata.streaming=false:
+            schema:
+              $ref: '#/components/schemas/BIMOne.BIMTrack.WebAPI.Models.Model.v2.IssueSummaryUpdateInput'
+          application/json;odata.metadata=none:
+            schema:
+              $ref: '#/components/schemas/BIMOne.BIMTrack.WebAPI.Models.Model.v2.IssueSummaryUpdateInput'
+          application/json;odata.streaming=true:
+            schema:
+              $ref: '#/components/schemas/BIMOne.BIMTrack.WebAPI.Models.Model.v2.IssueSummaryUpdateInput'
+          application/json;odata.streaming=false:
+            schema:
+              $ref: '#/components/schemas/BIMOne.BIMTrack.WebAPI.Models.Model.v2.IssueSummaryUpdateInput'
+          application/json:
+            schema:
+              $ref: '#/components/schemas/BIMOne.BIMTrack.WebAPI.Models.Model.v2.IssueSummaryUpdateInput'
+          application/xml:
+            schema:
+              $ref: '#/components/schemas/BIMOne.BIMTrack.WebAPI.Models.Model.v2.IssueSummaryUpdateInput'
+          text/plain:
+            schema:
+              $ref: '#/components/schemas/BIMOne.BIMTrack.WebAPI.Models.Model.v2.IssueSummaryUpdateInput'
+          text/json:
+            schema:
+              $ref: '#/components/schemas/BIMOne.BIMTrack.WebAPI.Models.Model.v2.IssueSummaryUpdateInput'
+          application/*+json:
+            schema:
+              $ref: '#/components/schemas/BIMOne.BIMTrack.WebAPI.Models.Model.v2.IssueSummaryUpdateInput'
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json;odata.metadata=minimal;odata.streaming=true:
+              schema:
+                $ref: '#/components/schemas/BIMOne.BIMTrack.WebAPI.Models.Model.v2.IssueModificationSummary'
+            application/json;odata.metadata=minimal;odata.streaming=false:
+              schema:
+                $ref: '#/components/schemas/BIMOne.BIMTrack.WebAPI.Models.Model.v2.IssueModificationSummary'
+            application/json;odata.metadata=minimal:
+              schema:
+                $ref: '#/components/schemas/BIMOne.BIMTrack.WebAPI.Models.Model.v2.IssueModificationSummary'
+            application/json;odata.metadata=full;odata.streaming=true:
+              schema:
+                $ref: '#/components/schemas/BIMOne.BIMTrack.WebAPI.Models.Model.v2.IssueModificationSummary'
+            application/json;odata.metadata=full;odata.streaming=false:
+              schema:
+                $ref: '#/components/schemas/BIMOne.BIMTrack.WebAPI.Models.Model.v2.IssueModificationSummary'
+            application/json;odata.metadata=full:
+              schema:
+                $ref: '#/components/schemas/BIMOne.BIMTrack.WebAPI.Models.Model.v2.IssueModificationSummary'
+            application/json;odata.metadata=none;odata.streaming=true:
+              schema:
+                $ref: '#/components/schemas/BIMOne.BIMTrack.WebAPI.Models.Model.v2.IssueModificationSummary'
+            application/json;odata.metadata=none;odata.streaming=false:
+              schema:
+                $ref: '#/components/schemas/BIMOne.BIMTrack.WebAPI.Models.Model.v2.IssueModificationSummary'
+            application/json;odata.metadata=none:
+              schema:
+                $ref: '#/components/schemas/BIMOne.BIMTrack.WebAPI.Models.Model.v2.IssueModificationSummary'
+            application/json;odata.streaming=true:
+              schema:
+                $ref: '#/components/schemas/BIMOne.BIMTrack.WebAPI.Models.Model.v2.IssueModificationSummary'
+            application/json;odata.streaming=false:
+              schema:
+                $ref: '#/components/schemas/BIMOne.BIMTrack.WebAPI.Models.Model.v2.IssueModificationSummary'
+            application/json:
+              schema:
+                $ref: '#/components/schemas/BIMOne.BIMTrack.WebAPI.Models.Model.v2.IssueModificationSummary'
+            application/xml:
+              schema:
+                $ref: '#/components/schemas/BIMOne.BIMTrack.WebAPI.Models.Model.v2.IssueModificationSummary'
+            text/plain:
+              schema:
+                $ref: '#/components/schemas/BIMOne.BIMTrack.WebAPI.Models.Model.v2.IssueModificationSummary'
+            application/octet-stream:
+              schema:
+                $ref: '#/components/schemas/BIMOne.BIMTrack.WebAPI.Models.Model.v2.IssueModificationSummary'
+            text/json:
+              schema:
+                $ref: '#/components/schemas/BIMOne.BIMTrack.WebAPI.Models.Model.v2.IssueModificationSummary'
+    patch:
+      tags:
+      - Issue
+      summary: Archive an issue
+      parameters:
+      - name: hubId
+        in: path
+        required: true
+        schema:
+          minLength: 1
+          type: string
+      - name: projectId
+        in: path
+        required: true
+        schema:
+          minimum: 1
+          type: integer
+          format: int32
+      - name: issueId
+        in: path
+        required: true
+        schema:
+          minimum: 1
+          type: integer
+          format: int32
+      requestBody:
+        content:
+          application/json;odata.metadata=minimal;odata.streaming=true:
+            schema:
+              $ref: '#/components/schemas/BIMOne.BIMTrack.WebAPI.Models.Model.v2.IssuePatchArchive'
+          application/json;odata.metadata=minimal;odata.streaming=false:
+            schema:
+              $ref: '#/components/schemas/BIMOne.BIMTrack.WebAPI.Models.Model.v2.IssuePatchArchive'
+          application/json;odata.metadata=minimal:
+            schema:
+              $ref: '#/components/schemas/BIMOne.BIMTrack.WebAPI.Models.Model.v2.IssuePatchArchive'
+          application/json;odata.metadata=full;odata.streaming=true:
+            schema:
+              $ref: '#/components/schemas/BIMOne.BIMTrack.WebAPI.Models.Model.v2.IssuePatchArchive'
+          application/json;odata.metadata=full;odata.streaming=false:
+            schema:
+              $ref: '#/components/schemas/BIMOne.BIMTrack.WebAPI.Models.Model.v2.IssuePatchArchive'
+          application/json;odata.metadata=full:
+            schema:
+              $ref: '#/components/schemas/BIMOne.BIMTrack.WebAPI.Models.Model.v2.IssuePatchArchive'
+          application/json;odata.metadata=none;odata.streaming=true:
+            schema:
+              $ref: '#/components/schemas/BIMOne.BIMTrack.WebAPI.Models.Model.v2.IssuePatchArchive'
+          application/json;odata.metadata=none;odata.streaming=false:
+            schema:
+              $ref: '#/components/schemas/BIMOne.BIMTrack.WebAPI.Models.Model.v2.IssuePatchArchive'
+          application/json;odata.metadata=none:
+            schema:
+              $ref: '#/components/schemas/BIMOne.BIMTrack.WebAPI.Models.Model.v2.IssuePatchArchive'
+          application/json;odata.streaming=true:
+            schema:
+              $ref: '#/components/schemas/BIMOne.BIMTrack.WebAPI.Models.Model.v2.IssuePatchArchive'
+          application/json;odata.streaming=false:
+            schema:
+              $ref: '#/components/schemas/BIMOne.BIMTrack.WebAPI.Models.Model.v2.IssuePatchArchive'
+          application/json:
+            schema:
+              $ref: '#/components/schemas/BIMOne.BIMTrack.WebAPI.Models.Model.v2.IssuePatchArchive'
+          application/xml:
+            schema:
+              $ref: '#/components/schemas/BIMOne.BIMTrack.WebAPI.Models.Model.v2.IssuePatchArchive'
+          text/plain:
+            schema:
+              $ref: '#/components/schemas/BIMOne.BIMTrack.WebAPI.Models.Model.v2.IssuePatchArchive'
+          text/json:
+            schema:
+              $ref: '#/components/schemas/BIMOne.BIMTrack.WebAPI.Models.Model.v2.IssuePatchArchive'
+          application/*+json:
+            schema:
+              $ref: '#/components/schemas/BIMOne.BIMTrack.WebAPI.Models.Model.v2.IssuePatchArchive'
+      responses:
+        '200':
+          description: OK
+  /v3/hubs/{hubId}/projects/{projectId}/issues/multiple:
+    get:
+      tags:
+      - Issue
+      summary: Get multiple issues
+      description: Fetch multiple issues by their unique identifiers with options for archived and viewpoint inclusion.
+      operationId: GetMultiple
+      parameters:
+      - name: hubId
+        in: path
+        required: true
+        schema:
+          minLength: 1
+          type: string
+      - name: projectId
+        in: path
+        required: true
+        schema:
+          minimum: 1
+          type: integer
+          format: int32
+      - name: id
+        in: query
+        schema:
+          maxItems: 100
+          type: array
+          items:
+            type: integer
+            format: int32
+      - name: limitViewpointsToDefault
+        in: query
+        schema:
+          type: boolean
+          default: false
+      - name: includeArchived
+        in: query
+        schema:
+          type: boolean
+          default: false
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json;odata.metadata=minimal;odata.streaming=true:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/BIMOne.BIMTrack.WebAPI.Models.Model.v2.IssueSummary'
+            application/json;odata.metadata=minimal;odata.streaming=false:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/BIMOne.BIMTrack.WebAPI.Models.Model.v2.IssueSummary'
+            application/json;odata.metadata=minimal:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/BIMOne.BIMTrack.WebAPI.Models.Model.v2.IssueSummary'
+            application/json;odata.metadata=full;odata.streaming=true:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/BIMOne.BIMTrack.WebAPI.Models.Model.v2.IssueSummary'
+            application/json;odata.metadata=full;odata.streaming=false:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/BIMOne.BIMTrack.WebAPI.Models.Model.v2.IssueSummary'
+            application/json;odata.metadata=full:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/BIMOne.BIMTrack.WebAPI.Models.Model.v2.IssueSummary'
+            application/json;odata.metadata=none;odata.streaming=true:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/BIMOne.BIMTrack.WebAPI.Models.Model.v2.IssueSummary'
+            application/json;odata.metadata=none;odata.streaming=false:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/BIMOne.BIMTrack.WebAPI.Models.Model.v2.IssueSummary'
+            application/json;odata.metadata=none:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/BIMOne.BIMTrack.WebAPI.Models.Model.v2.IssueSummary'
+            application/json;odata.streaming=true:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/BIMOne.BIMTrack.WebAPI.Models.Model.v2.IssueSummary'
+            application/json;odata.streaming=false:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/BIMOne.BIMTrack.WebAPI.Models.Model.v2.IssueSummary'
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/BIMOne.BIMTrack.WebAPI.Models.Model.v2.IssueSummary'
+            application/xml:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/BIMOne.BIMTrack.WebAPI.Models.Model.v2.IssueSummary'
+            text/plain:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/BIMOne.BIMTrack.WebAPI.Models.Model.v2.IssueSummary'
+            application/octet-stream:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/BIMOne.BIMTrack.WebAPI.Models.Model.v2.IssueSummary'
+            text/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/BIMOne.BIMTrack.WebAPI.Models.Model.v2.IssueSummary'
+  /v3/hubs/{hubId}/projects/{projectId}/issues/number/{issueNumber}:
+    get:
+      tags:
+      - Issue
+      summary: Get issue by issue number
+      parameters:
+      - name: hubId
+        in: path
+        required: true
+        schema:
+          minLength: 1
+          type: string
+      - name: projectId
+        in: path
+        required: true
+        schema:
+          minimum: 1
+          type: integer
+          format: int32
+      - name: issueNumber
+        in: path
+        required: true
+        schema:
+          minimum: 1
+          type: integer
+          format: int32
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json;odata.metadata=minimal;odata.streaming=true:
+              schema:
+                $ref: '#/components/schemas/BIMOne.BIMTrack.WebAPI.Models.Model.v2.IssueSummary'
+            application/json;odata.metadata=minimal;odata.streaming=false:
+              schema:
+                $ref: '#/components/schemas/BIMOne.BIMTrack.WebAPI.Models.Model.v2.IssueSummary'
+            application/json;odata.metadata=minimal:
+              schema:
+                $ref: '#/components/schemas/BIMOne.BIMTrack.WebAPI.Models.Model.v2.IssueSummary'
+            application/json;odata.metadata=full;odata.streaming=true:
+              schema:
+                $ref: '#/components/schemas/BIMOne.BIMTrack.WebAPI.Models.Model.v2.IssueSummary'
+            application/json;odata.metadata=full;odata.streaming=false:
+              schema:
+                $ref: '#/components/schemas/BIMOne.BIMTrack.WebAPI.Models.Model.v2.IssueSummary'
+            application/json;odata.metadata=full:
+              schema:
+                $ref: '#/components/schemas/BIMOne.BIMTrack.WebAPI.Models.Model.v2.IssueSummary'
+            application/json;odata.metadata=none;odata.streaming=true:
+              schema:
+                $ref: '#/components/schemas/BIMOne.BIMTrack.WebAPI.Models.Model.v2.IssueSummary'
+            application/json;odata.metadata=none;odata.streaming=false:
+              schema:
+                $ref: '#/components/schemas/BIMOne.BIMTrack.WebAPI.Models.Model.v2.IssueSummary'
+            application/json;odata.metadata=none:
+              schema:
+                $ref: '#/components/schemas/BIMOne.BIMTrack.WebAPI.Models.Model.v2.IssueSummary'
+            application/json;odata.streaming=true:
+              schema:
+                $ref: '#/components/schemas/BIMOne.BIMTrack.WebAPI.Models.Model.v2.IssueSummary'
+            application/json;odata.streaming=false:
+              schema:
+                $ref: '#/components/schemas/BIMOne.BIMTrack.WebAPI.Models.Model.v2.IssueSummary'
+            application/json:
+              schema:
+                $ref: '#/components/schemas/BIMOne.BIMTrack.WebAPI.Models.Model.v2.IssueSummary'
+            application/xml:
+              schema:
+                $ref: '#/components/schemas/BIMOne.BIMTrack.WebAPI.Models.Model.v2.IssueSummary'
+            text/plain:
+              schema:
+                $ref: '#/components/schemas/BIMOne.BIMTrack.WebAPI.Models.Model.v2.IssueSummary'
+            application/octet-stream:
+              schema:
+                $ref: '#/components/schemas/BIMOne.BIMTrack.WebAPI.Models.Model.v2.IssueSummary'
+            text/json:
+              schema:
+                $ref: '#/components/schemas/BIMOne.BIMTrack.WebAPI.Models.Model.v2.IssueSummary'
+  /v3/hubs/{hubId}/projects/{projectId}/issues/archiveissues:
+    patch:
+      tags:
+      - Issue
+      summary: Archive multiple issues
+      parameters:
+      - name: hubId
+        in: path
+        required: true
+        schema:
+          type: string
+      - name: projectId
+        in: path
+        required: true
+        schema:
+          type: string
+      requestBody:
+        content:
+          application/json;odata.metadata=minimal;odata.streaming=true:
+            schema:
+              $ref: '#/components/schemas/BIMOne.BIMTrack.WebAPI.Models.Model.v3.Issue.IssuePatchArchiveIssues'
+          application/json;odata.metadata=minimal;odata.streaming=false:
+            schema:
+              $ref: '#/components/schemas/BIMOne.BIMTrack.WebAPI.Models.Model.v3.Issue.IssuePatchArchiveIssues'
+          application/json;odata.metadata=minimal:
+            schema:
+              $ref: '#/components/schemas/BIMOne.BIMTrack.WebAPI.Models.Model.v3.Issue.IssuePatchArchiveIssues'
+          application/json;odata.metadata=full;odata.streaming=true:
+            schema:
+              $ref: '#/components/schemas/BIMOne.BIMTrack.WebAPI.Models.Model.v3.Issue.IssuePatchArchiveIssues'
+          application/json;odata.metadata=full;odata.streaming=false:
+            schema:
+              $ref: '#/components/schemas/BIMOne.BIMTrack.WebAPI.Models.Model.v3.Issue.IssuePatchArchiveIssues'
+          application/json;odata.metadata=full:
+            schema:
+              $ref: '#/components/schemas/BIMOne.BIMTrack.WebAPI.Models.Model.v3.Issue.IssuePatchArchiveIssues'
+          application/json;odata.metadata=none;odata.streaming=true:
+            schema:
+              $ref: '#/components/schemas/BIMOne.BIMTrack.WebAPI.Models.Model.v3.Issue.IssuePatchArchiveIssues'
+          application/json;odata.metadata=none;odata.streaming=false:
+            schema:
+              $ref: '#/components/schemas/BIMOne.BIMTrack.WebAPI.Models.Model.v3.Issue.IssuePatchArchiveIssues'
+          application/json;odata.metadata=none:
+            schema:
+              $ref: '#/components/schemas/BIMOne.BIMTrack.WebAPI.Models.Model.v3.Issue.IssuePatchArchiveIssues'
+          application/json;odata.streaming=true:
+            schema:
+              $ref: '#/components/schemas/BIMOne.BIMTrack.WebAPI.Models.Model.v3.Issue.IssuePatchArchiveIssues'
+          application/json;odata.streaming=false:
+            schema:
+              $ref: '#/components/schemas/BIMOne.BIMTrack.WebAPI.Models.Model.v3.Issue.IssuePatchArchiveIssues'
+          application/json:
+            schema:
+              $ref: '#/components/schemas/BIMOne.BIMTrack.WebAPI.Models.Model.v3.Issue.IssuePatchArchiveIssues'
+          application/xml:
+            schema:
+              $ref: '#/components/schemas/BIMOne.BIMTrack.WebAPI.Models.Model.v3.Issue.IssuePatchArchiveIssues'
+          text/plain:
+            schema:
+              $ref: '#/components/schemas/BIMOne.BIMTrack.WebAPI.Models.Model.v3.Issue.IssuePatchArchiveIssues'
+          text/json:
+            schema:
+              $ref: '#/components/schemas/BIMOne.BIMTrack.WebAPI.Models.Model.v3.Issue.IssuePatchArchiveIssues'
+          application/*+json:
+            schema:
+              $ref: '#/components/schemas/BIMOne.BIMTrack.WebAPI.Models.Model.v3.Issue.IssuePatchArchiveIssues'
+      responses:
+        '200':
+          description: OK
+  /v3/hubs/{hubId}/projects/{projectId}/issues/{issueId}/history:
+    get:
+      tags:
+      - Issue
+      summary: Get issue history
+      parameters:
+      - name: hubId
+        in: path
+        required: true
+        schema:
+          minLength: 1
+          type: string
+      - name: projectId
+        in: path
+        required: true
+        schema:
+          minimum: 1
+          type: integer
+          format: int32
+      - name: issueId
+        in: path
+        required: true
+        schema:
+          minimum: 1
+          type: integer
+          format: int32
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json;odata.metadata=minimal;odata.streaming=true:
+              schema:
+                $ref: '#/components/schemas/BIMOne.BIMTrack.WebAPI.Models.Model.v2.IssueHistory'
+            application/json;odata.metadata=minimal;odata.streaming=false:
+              schema:
+                $ref: '#/components/schemas/BIMOne.BIMTrack.WebAPI.Models.Model.v2.IssueHistory'
+            application/json;odata.metadata=minimal:
+              schema:
+                $ref: '#/components/schemas/BIMOne.BIMTrack.WebAPI.Models.Model.v2.IssueHistory'
+            application/json;odata.metadata=full;odata.streaming=true:
+              schema:
+                $ref: '#/components/schemas/BIMOne.BIMTrack.WebAPI.Models.Model.v2.IssueHistory'
+            application/json;odata.metadata=full;odata.streaming=false:
+              schema:
+                $ref: '#/components/schemas/BIMOne.BIMTrack.WebAPI.Models.Model.v2.IssueHistory'
+            application/json;odata.metadata=full:
+              schema:
+                $ref: '#/components/schemas/BIMOne.BIMTrack.WebAPI.Models.Model.v2.IssueHistory'
+            application/json;odata.metadata=none;odata.streaming=true:
+              schema:
+                $ref: '#/components/schemas/BIMOne.BIMTrack.WebAPI.Models.Model.v2.IssueHistory'
+            application/json;odata.metadata=none;odata.streaming=false:
+              schema:
+                $ref: '#/components/schemas/BIMOne.BIMTrack.WebAPI.Models.Model.v2.IssueHistory'
+            application/json;odata.metadata=none:
+              schema:
+                $ref: '#/components/schemas/BIMOne.BIMTrack.WebAPI.Models.Model.v2.IssueHistory'
+            application/json;odata.streaming=true:
+              schema:
+                $ref: '#/components/schemas/BIMOne.BIMTrack.WebAPI.Models.Model.v2.IssueHistory'
+            application/json;odata.streaming=false:
+              schema:
+                $ref: '#/components/schemas/BIMOne.BIMTrack.WebAPI.Models.Model.v2.IssueHistory'
+            application/json:
+              schema:
+                $ref: '#/components/schemas/BIMOne.BIMTrack.WebAPI.Models.Model.v2.IssueHistory'
+            application/xml:
+              schema:
+                $ref: '#/components/schemas/BIMOne.BIMTrack.WebAPI.Models.Model.v2.IssueHistory'
+            text/plain:
+              schema:
+                $ref: '#/components/schemas/BIMOne.BIMTrack.WebAPI.Models.Model.v2.IssueHistory'
+            application/octet-stream:
+              schema:
+                $ref: '#/components/schemas/BIMOne.BIMTrack.WebAPI.Models.Model.v2.IssueHistory'
+            text/json:
+              schema:
+                $ref: '#/components/schemas/BIMOne.BIMTrack.WebAPI.Models.Model.v2.IssueHistory'
+  /v3/hubs/{hubId}/projects/{projectId}/issues/viewpoints/batch:
+    post:
+      tags:
+      - Issue
+      summary: Get viewpoints for multiple issues
+      parameters:
+      - name: hubId
+        in: path
+        required: true
+        schema:
+          minLength: 1
+          type: string
+      - name: projectId
+        in: path
+        required: true
+        schema:
+          minimum: 1
+          type: integer
+          format: int32
+      requestBody:
+        content:
+          application/json;odata.metadata=minimal;odata.streaming=true:
+            schema:
+              $ref: '#/components/schemas/BIMOne.BIMTrack.WebAPI.Models.Model.v3.Issue.IssueViewpointsBatchInput'
+          application/json;odata.metadata=minimal;odata.streaming=false:
+            schema:
+              $ref: '#/components/schemas/BIMOne.BIMTrack.WebAPI.Models.Model.v3.Issue.IssueViewpointsBatchInput'
+          application/json;odata.metadata=minimal:
+            schema:
+              $ref: '#/components/schemas/BIMOne.BIMTrack.WebAPI.Models.Model.v3.Issue.IssueViewpointsBatchInput'
+          application/json;odata.metadata=full;odata.streaming=true:
+            schema:
+              $ref: '#/components/schemas/BIMOne.BIMTrack.WebAPI.Models.Model.v3.Issue.IssueViewpointsBatchInput'
+          application/json;odata.metadata=full;odata.streaming=false:
+            schema:
+              $ref: '#/components/schemas/BIMOne.BIMTrack.WebAPI.Models.Model.v3.Issue.IssueViewpointsBatchInput'
+          application/json;odata.metadata=full:
+            schema:
+              $ref: '#/components/schemas/BIMOne.BIMTrack.WebAPI.Models.Model.v3.Issue.IssueViewpointsBatchInput'
+          application/json;odata.metadata=none;odata.streaming=true:
+            schema:
+              $ref: '#/components/schemas/BIMOne.BIMTrack.WebAPI.Models.Model.v3.Issue.IssueViewpointsBatchInput'
+          application/json;odata.metadata=none;odata.streaming=false:
+            schema:
+              $ref: '#/components/schemas/BIMOne.BIMTrack.WebAPI.Models.Model.v3.Issue.IssueViewpointsBatchInput'
+          application/json;odata.metadata=none:
+            schema:
+              $ref: '#/components/schemas/BIMOne.BIMTrack.WebAPI.Models.Model.v3.Issue.IssueViewpointsBatchInput'
+          application/json;odata.streaming=true:
+            schema:
+              $ref: '#/components/schemas/BIMOne.BIMTrack.WebAPI.Models.Model.v3.Issue.IssueViewpointsBatchInput'
+          application/json;odata.streaming=false:
+            schema:
+              $ref: '#/components/schemas/BIMOne.BIMTrack.WebAPI.Models.Model.v3.Issue.IssueViewpointsBatchInput'
+          application/json:
+            schema:
+              $ref: '#/components/schemas/BIMOne.BIMTrack.WebAPI.Models.Model.v3.Issue.IssueViewpointsBatchInput'
+          application/xml:
+            schema:
+              $ref: '#/components/schemas/BIMOne.BIMTrack.WebAPI.Models.Model.v3.Issue.IssueViewpointsBatchInput'
+          text/plain:
+            schema:
+              $ref: '#/components/schemas/BIMOne.BIMTrack.WebAPI.Models.Model.v3.Issue.IssueViewpointsBatchInput'
+          text/json:
+            schema:
+              $ref: '#/components/schemas/BIMOne.BIMTrack.WebAPI.Models.Model.v3.Issue.IssueViewpointsBatchInput'
+          application/*+json:
+            schema:
+              $ref: '#/components/schemas/BIMOne.BIMTrack.WebAPI.Models.Model.v3.Issue.IssueViewpointsBatchInput'
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json;odata.metadata=minimal;odata.streaming=true:
+              schema:
+                type: object
+                additionalProperties:
+                  type: array
+                  items:
+                    $ref: '#/components/schemas/BIMOne.BIMTrack.WebAPI.Models.Model.v2.ViewpointSummary'
+            application/json;odata.metadata=minimal;odata.streaming=false:
+              schema:
+                type: object
+                additionalProperties:
+                  type: array
+                  items:
+                    $ref: '#/components/schemas/BIMOne.BIMTrack.WebAPI.Models.Model.v2.ViewpointSummary'
+            application/json;odata.metadata=minimal:
+              schema:
+                type: object
+                additionalProperties:
+                  type: array
+                  items:
+                    $ref: '#/components/schemas/BIMOne.BIMTrack.WebAPI.Models.Model.v2.ViewpointSummary'
+            application/json;odata.metadata=full;odata.streaming=true:
+              schema:
+                type: object
+                additionalProperties:
+                  type: array
+                  items:
+                    $ref: '#/components/schemas/BIMOne.BIMTrack.WebAPI.Models.Model.v2.ViewpointSummary'
+            application/json;odata.metadata=full;odata.streaming=false:
+              schema:
+                type: object
+                additionalProperties:
+                  type: array
+                  items:
+                    $ref: '#/components/schemas/BIMOne.BIMTrack.WebAPI.Models.Model.v2.ViewpointSummary'
+            application/json;odata.metadata=full:
+              schema:
+                type: object
+                additionalProperties:
+                  type: array
+                  items:
+                    $ref: '#/components/schemas/BIMOne.BIMTrack.WebAPI.Models.Model.v2.ViewpointSummary'
+            application/json;odata.metadata=none;odata.streaming=true:
+              schema:
+                type: object
+                additionalProperties:
+                  type: array
+                  items:
+                    $ref: '#/components/schemas/BIMOne.BIMTrack.WebAPI.Models.Model.v2.ViewpointSummary'
+            application/json;odata.metadata=none;odata.streaming=false:
+              schema:
+                type: object
+                additionalProperties:
+                  type: array
+                  items:
+                    $ref: '#/components/schemas/BIMOne.BIMTrack.WebAPI.Models.Model.v2.ViewpointSummary'
+            application/json;odata.metadata=none:
+              schema:
+                type: object
+                additionalProperties:
+                  type: array
+                  items:
+                    $ref: '#/components/schemas/BIMOne.BIMTrack.WebAPI.Models.Model.v2.ViewpointSummary'
+            application/json;odata.streaming=true:
+              schema:
+                type: object
+                additionalProperties:
+                  type: array
+                  items:
+                    $ref: '#/components/schemas/BIMOne.BIMTrack.WebAPI.Models.Model.v2.ViewpointSummary'
+            application/json;odata.streaming=false:
+              schema:
+                type: object
+                additionalProperties:
+                  type: array
+                  items:
+                    $ref: '#/components/schemas/BIMOne.BIMTrack.WebAPI.Models.Model.v2.ViewpointSummary'
+            application/json:
+              schema:
+                type: object
+                additionalProperties:
+                  type: array
+                  items:
+                    $ref: '#/components/schemas/BIMOne.BIMTrack.WebAPI.Models.Model.v2.ViewpointSummary'
+            application/xml:
+              schema:
+                type: object
+                additionalProperties:
+                  type: array
+                  items:
+                    $ref: '#/components/schemas/BIMOne.BIMTrack.WebAPI.Models.Model.v2.ViewpointSummary'
+            text/plain:
+              schema:
+                type: object
+                additionalProperties:
+                  type: array
+                  items:
+                    $ref: '#/components/schemas/BIMOne.BIMTrack.WebAPI.Models.Model.v2.ViewpointSummary'
+            application/octet-stream:
+              schema:
+                type: object
+                additionalProperties:
+                  type: array
+                  items:
+                    $ref: '#/components/schemas/BIMOne.BIMTrack.WebAPI.Models.Model.v2.ViewpointSummary'
+            text/json:
+              schema:
+                type: object
+                additionalProperties:
+                  type: array
+                  items:
+                    $ref: '#/components/schemas/BIMOne.BIMTrack.WebAPI.Models.Model.v2.ViewpointSummary'
+        '400':
+          description: Bad Request
+          content:
+            application/json;odata.metadata=minimal;odata.streaming=true:
+              schema:
+                $ref: '#/components/schemas/Microsoft.AspNetCore.Mvc.ProblemDetails'
+            application/json;odata.metadata=minimal;odata.streaming=false:
+              schema:
+                $ref: '#/components/schemas/Microsoft.AspNetCore.Mvc.ProblemDetails'
+            application/json;odata.metadata=minimal:
+              schema:
+                $ref: '#/components/schemas/Microsoft.AspNetCore.Mvc.ProblemDetails'
+            application/json;odata.metadata=full;odata.streaming=true:
+              schema:
+                $ref: '#/components/schemas/Microsoft.AspNetCore.Mvc.ProblemDetails'
+            application/json;odata.metadata=full;odata.streaming=false:
+              schema:
+                $ref: '#/components/schemas/Microsoft.AspNetCore.Mvc.ProblemDetails'
+            application/json;odata.metadata=full:
+              schema:
+                $ref: '#/components/schemas/Microsoft.AspNetCore.Mvc.ProblemDetails'
+            application/json;odata.metadata=none;odata.streaming=true:
+              schema:
+                $ref: '#/components/schemas/Microsoft.AspNetCore.Mvc.ProblemDetails'
+            application/json;odata.metadata=none;odata.streaming=false:
+              schema:
+                $ref: '#/components/schemas/Microsoft.AspNetCore.Mvc.ProblemDetails'
+            application/json;odata.metadata=none:
+              schema:
+                $ref: '#/components/schemas/Microsoft.AspNetCore.Mvc.ProblemDetails'
+            application/json;odata.streaming=true:
+              schema:
+                $ref: '#/components/schemas/Microsoft.AspNetCore.Mvc.ProblemDetails'
+            application/json;odata.streaming=false:
+              schema:
+                $ref: '#/components/schemas/Microsoft.AspNetCore.Mvc.ProblemDetails'
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Microsoft.AspNetCore.Mvc.ProblemDetails'
+            application/xml:
+              schema:
+                $ref: '#/components/schemas/Microsoft.AspNetCore.Mvc.ProblemDetails'
+            text/plain:
+              schema:
+                $ref: '#/components/schemas/Microsoft.AspNetCore.Mvc.ProblemDetails'
+            application/octet-stream:
+              schema:
+                $ref: '#/components/schemas/Microsoft.AspNetCore.Mvc.ProblemDetails'
+            text/json:
+              schema:
+                $ref: '#/components/schemas/Microsoft.AspNetCore.Mvc.ProblemDetails'
+        '401':
+          description: Unauthorized
+          content:
+            application/json;odata.metadata=minimal;odata.streaming=true:
+              schema:
+                $ref: '#/components/schemas/Microsoft.AspNetCore.Mvc.ProblemDetails'
+            application/json;odata.metadata=minimal;odata.streaming=false:
+              schema:
+                $ref: '#/components/schemas/Microsoft.AspNetCore.Mvc.ProblemDetails'
+            application/json;odata.metadata=minimal:
+              schema:
+                $ref: '#/components/schemas/Microsoft.AspNetCore.Mvc.ProblemDetails'
+            application/json;odata.metadata=full;odata.streaming=true:
+              schema:
+                $ref: '#/components/schemas/Microsoft.AspNetCore.Mvc.ProblemDetails'
+            application/json;odata.metadata=full;odata.streaming=false:
+              schema:
+                $ref: '#/components/schemas/Microsoft.AspNetCore.Mvc.ProblemDetails'
+            application/json;odata.metadata=full:
+              schema:
+                $ref: '#/components/schemas/Microsoft.AspNetCore.Mvc.ProblemDetails'
+            application/json;odata.metadata=none;odata.streaming=true:
+              schema:
+                $ref: '#/components/schemas/Microsoft.AspNetCore.Mvc.ProblemDetails'
+            application/json;odata.metadata=none;odata.streaming=false:
+              schema:
+                $ref: '#/components/schemas/Microsoft.AspNetCore.Mvc.ProblemDetails'
+            application/json;odata.metadata=none:
+              schema:
+                $ref: '#/components/schemas/Microsoft.AspNetCore.Mvc.ProblemDetails'
+            application/json;odata.streaming=true:
+              schema:
+                $ref: '#/components/schemas/Microsoft.AspNetCore.Mvc.ProblemDetails'
+            application/json;odata.streaming=false:
+              schema:
+                $ref: '#/components/schemas/Microsoft.AspNetCore.Mvc.ProblemDetails'
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Microsoft.AspNetCore.Mvc.ProblemDetails'
+            application/xml:
+              schema:
+                $ref: '#/components/schemas/Microsoft.AspNetCore.Mvc.ProblemDetails'
+            text/plain:
+              schema:
+                $ref: '#/components/schemas/Microsoft.AspNetCore.Mvc.ProblemDetails'
+            application/octet-stream:
+              schema:
+                $ref: '#/components/schemas/Microsoft.AspNetCore.Mvc.ProblemDetails'
+            text/json:
+              schema:
+                $ref: '#/components/schemas/Microsoft.AspNetCore.Mvc.ProblemDetails'
+        '403':
+          description: Forbidden
+          content:
+            application/json;odata.metadata=minimal;odata.streaming=true:
+              schema:
+                $ref: '#/components/schemas/Microsoft.AspNetCore.Mvc.ProblemDetails'
+            application/json;odata.metadata=minimal;odata.streaming=false:
+              schema:
+                $ref: '#/components/schemas/Microsoft.AspNetCore.Mvc.ProblemDetails'
+            application/json;odata.metadata=minimal:
+              schema:
+                $ref: '#/components/schemas/Microsoft.AspNetCore.Mvc.ProblemDetails'
+            application/json;odata.metadata=full;odata.streaming=true:
+              schema:
+                $ref: '#/components/schemas/Microsoft.AspNetCore.Mvc.ProblemDetails'
+            application/json;odata.metadata=full;odata.streaming=false:
+              schema:
+                $ref: '#/components/schemas/Microsoft.AspNetCore.Mvc.ProblemDetails'
+            application/json;odata.metadata=full:
+              schema:
+                $ref: '#/components/schemas/Microsoft.AspNetCore.Mvc.ProblemDetails'
+            application/json;odata.metadata=none;odata.streaming=true:
+              schema:
+                $ref: '#/components/schemas/Microsoft.AspNetCore.Mvc.ProblemDetails'
+            application/json;odata.metadata=none;odata.streaming=false:
+              schema:
+                $ref: '#/components/schemas/Microsoft.AspNetCore.Mvc.ProblemDetails'
+            application/json;odata.metadata=none:
+              schema:
+                $ref: '#/components/schemas/Microsoft.AspNetCore.Mvc.ProblemDetails'
+            application/json;odata.streaming=true:
+              schema:
+                $ref: '#/components/schemas/Microsoft.AspNetCore.Mvc.ProblemDetails'
+            application/json;odata.streaming=false:
+              schema:
+                $ref: '#/components/schemas/Microsoft.AspNetCore.Mvc.ProblemDetails'
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Microsoft.AspNetCore.Mvc.ProblemDetails'
+            application/xml:
+              schema:
+                $ref: '#/components/schemas/Microsoft.AspNetCore.Mvc.ProblemDetails'
+            text/plain:
+              schema:
+                $ref: '#/components/schemas/Microsoft.AspNetCore.Mvc.ProblemDetails'
+            application/octet-stream:
+              schema:
+                $ref: '#/components/schemas/Microsoft.AspNetCore.Mvc.ProblemDetails'
+            text/json:
+              schema:
+                $ref: '#/components/schemas/Microsoft.AspNetCore.Mvc.ProblemDetails'
+        '404':
+          description: Not Found
+          content:
+            application/json;odata.metadata=minimal;odata.streaming=true:
+              schema:
+                $ref: '#/components/schemas/Microsoft.AspNetCore.Mvc.ProblemDetails'
+            application/json;odata.metadata=minimal;odata.streaming=false:
+              schema:
+                $ref: '#/components/schemas/Microsoft.AspNetCore.Mvc.ProblemDetails'
+            application/json;odata.metadata=minimal:
+              schema:
+                $ref: '#/components/schemas/Microsoft.AspNetCore.Mvc.ProblemDetails'
+            application/json;odata.metadata=full;odata.streaming=true:
+              schema:
+                $ref: '#/components/schemas/Microsoft.AspNetCore.Mvc.ProblemDetails'
+            application/json;odata.metadata=full;odata.streaming=false:
+              schema:
+                $ref: '#/components/schemas/Microsoft.AspNetCore.Mvc.ProblemDetails'
+            application/json;odata.metadata=full:
+              schema:
+                $ref: '#/components/schemas/Microsoft.AspNetCore.Mvc.ProblemDetails'
+            application/json;odata.metadata=none;odata.streaming=true:
+              schema:
+                $ref: '#/components/schemas/Microsoft.AspNetCore.Mvc.ProblemDetails'
+            application/json;odata.metadata=none;odata.streaming=false:
+              schema:
+                $ref: '#/components/schemas/Microsoft.AspNetCore.Mvc.ProblemDetails'
+            application/json;odata.metadata=none:
+              schema:
+                $ref: '#/components/schemas/Microsoft.AspNetCore.Mvc.ProblemDetails'
+            application/json;odata.streaming=true:
+              schema:
+                $ref: '#/components/schemas/Microsoft.AspNetCore.Mvc.ProblemDetails'
+            application/json;odata.streaming=false:
+              schema:
+                $ref: '#/components/schemas/Microsoft.AspNetCore.Mvc.ProblemDetails'
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Microsoft.AspNetCore.Mvc.ProblemDetails'
+            application/xml:
+              schema:
+                $ref: '#/components/schemas/Microsoft.AspNetCore.Mvc.ProblemDetails'
+            text/plain:
+              schema:
+                $ref: '#/components/schemas/Microsoft.AspNetCore.Mvc.ProblemDetails'
+            application/octet-stream:
+              schema:
+                $ref: '#/components/schemas/Microsoft.AspNetCore.Mvc.ProblemDetails'
+            text/json:
+              schema:
+                $ref: '#/components/schemas/Microsoft.AspNetCore.Mvc.ProblemDetails'
+  /v3/hubs/{hubId}/projects/{projectId}/issues/{issueId}/viewpoints/{viewpointId}/viewstate:
+    get:
+      tags:
+      - Issue
+      summary: Get viewpoint view state
+      parameters:
+      - name: hubId
+        in: path
+        required: true
+        schema:
+          minLength: 1
+          type: string
+      - name: projectId
+        in: path
+        required: true
+        schema:
+          minimum: 1
+          type: integer
+          format: int32
+      - name: issueId
+        in: path
+        required: true
+        schema:
+          minimum: 1
+          type: integer
+          format: int32
+      - name: viewpointId
+        in: path
+        required: true
+        schema:
+          minimum: 1
+          type: integer
+          format: int32
+      - name: includeHiddenElements
+        in: query
+        schema:
+          type: boolean
+          default: false
+      - name: includeSelectedElements
+        in: query
+        schema:
+          type: boolean
+          default: false
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json;odata.metadata=minimal;odata.streaming=true:
+              schema:
+                $ref: '#/components/schemas/BIMOne.BIMTrack.WebAPI.Models.Model.v2.ViewpointViewStateDetail'
+            application/json;odata.metadata=minimal;odata.streaming=false:
+              schema:
+                $ref: '#/components/schemas/BIMOne.BIMTrack.WebAPI.Models.Model.v2.ViewpointViewStateDetail'
+            application/json;odata.metadata=minimal:
+              schema:
+                $ref: '#/components/schemas/BIMOne.BIMTrack.WebAPI.Models.Model.v2.ViewpointViewStateDetail'
+            application/json;odata.metadata=full;odata.streaming=true:
+              schema:
+                $ref: '#/components/schemas/BIMOne.BIMTrack.WebAPI.Models.Model.v2.ViewpointViewStateDetail'
+            application/json;odata.metadata=full;odata.streaming=false:
+              schema:
+                $ref: '#/components/schemas/BIMOne.BIMTrack.WebAPI.Models.Model.v2.ViewpointViewStateDetail'
+            application/json;odata.metadata=full:
+              schema:
+                $ref: '#/components/schemas/BIMOne.BIMTrack.WebAPI.Models.Model.v2.ViewpointViewStateDetail'
+            application/json;odata.metadata=none;odata.streaming=true:
+              schema:
+                $ref: '#/components/schemas/BIMOne.BIMTrack.WebAPI.Models.Model.v2.ViewpointViewStateDetail'
+            application/json;odata.metadata=none;odata.streaming=false:
+              schema:
+                $ref: '#/components/schemas/BIMOne.BIMTrack.WebAPI.Models.Model.v2.ViewpointViewStateDetail'
+            application/json;odata.metadata=none:
+              schema:
+                $ref: '#/components/schemas/BIMOne.BIMTrack.WebAPI.Models.Model.v2.ViewpointViewStateDetail'
+            application/json;odata.streaming=true:
+              schema:
+                $ref: '#/components/schemas/BIMOne.BIMTrack.WebAPI.Models.Model.v2.ViewpointViewStateDetail'
+            application/json;odata.streaming=false:
+              schema:
+                $ref: '#/components/schemas/BIMOne.BIMTrack.WebAPI.Models.Model.v2.ViewpointViewStateDetail'
+            application/json:
+              schema:
+                $ref: '#/components/schemas/BIMOne.BIMTrack.WebAPI.Models.Model.v2.ViewpointViewStateDetail'
+            application/xml:
+              schema:
+                $ref: '#/components/schemas/BIMOne.BIMTrack.WebAPI.Models.Model.v2.ViewpointViewStateDetail'
+            text/plain:
+              schema:
+                $ref: '#/components/schemas/BIMOne.BIMTrack.WebAPI.Models.Model.v2.ViewpointViewStateDetail'
+            application/octet-stream:
+              schema:
+                $ref: '#/components/schemas/BIMOne.BIMTrack.WebAPI.Models.Model.v2.ViewpointViewStateDetail'
+            text/json:
+              schema:
+                $ref: '#/components/schemas/BIMOne.BIMTrack.WebAPI.Models.Model.v2.ViewpointViewStateDetail'
+        '400':
+          description: Bad Request
+          content:
+            application/json;odata.metadata=minimal;odata.streaming=true:
+              schema:
+                $ref: '#/components/schemas/Microsoft.AspNetCore.Mvc.ProblemDetails'
+            application/json;odata.metadata=minimal;odata.streaming=false:
+              schema:
+                $ref: '#/components/schemas/Microsoft.AspNetCore.Mvc.ProblemDetails'
+            application/json;odata.metadata=minimal:
+              schema:
+                $ref: '#/components/schemas/Microsoft.AspNetCore.Mvc.ProblemDetails'
+            application/json;odata.metadata=full;odata.streaming=true:
+              schema:
+                $ref: '#/components/schemas/Microsoft.AspNetCore.Mvc.ProblemDetails'
+            application/json;odata.metadata=full;odata.streaming=false:
+              schema:
+                $ref: '#/components/schemas/Microsoft.AspNetCore.Mvc.ProblemDetails'
+            application/json;odata.metadata=full:
+              schema:
+                $ref: '#/components/schemas/Microsoft.AspNetCore.Mvc.ProblemDetails'
+            application/json;odata.metadata=none;odata.streaming=true:
+              schema:
+                $ref: '#/components/schemas/Microsoft.AspNetCore.Mvc.ProblemDetails'
+            application/json;odata.metadata=none;odata.streaming=false:
+              schema:
+                $ref: '#/components/schemas/Microsoft.AspNetCore.Mvc.ProblemDetails'
+            application/json;odata.metadata=none:
+              schema:
+                $ref: '#/components/schemas/Microsoft.AspNetCore.Mvc.ProblemDetails'
+            application/json;odata.streaming=true:
+              schema:
+                $ref: '#/components/schemas/Microsoft.AspNetCore.Mvc.ProblemDetails'
+            application/json;odata.streaming=false:
+              schema:
+                $ref: '#/components/schemas/Microsoft.AspNetCore.Mvc.ProblemDetails'
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Microsoft.AspNetCore.Mvc.ProblemDetails'
+            application/xml:
+              schema:
+                $ref: '#/components/schemas/Microsoft.AspNetCore.Mvc.ProblemDetails'
+            text/plain:
+              schema:
+                $ref: '#/components/schemas/Microsoft.AspNetCore.Mvc.ProblemDetails'
+            application/octet-stream:
+              schema:
+                $ref: '#/components/schemas/Microsoft.AspNetCore.Mvc.ProblemDetails'
+            text/json:
+              schema:
+                $ref: '#/components/schemas/Microsoft.AspNetCore.Mvc.ProblemDetails'
+        '401':
+          description: Unauthorized
+          content:
+            application/json;odata.metadata=minimal;odata.streaming=true:
+              schema:
+                $ref: '#/components/schemas/Microsoft.AspNetCore.Mvc.ProblemDetails'
+            application/json;odata.metadata=minimal;odata.streaming=false:
+              schema:
+                $ref: '#/components/schemas/Microsoft.AspNetCore.Mvc.ProblemDetails'
+            application/json;odata.metadata=minimal:
+              schema:
+                $ref: '#/components/schemas/Microsoft.AspNetCore.Mvc.ProblemDetails'
+            application/json;odata.metadata=full;odata.streaming=true:
+              schema:
+                $ref: '#/components/schemas/Microsoft.AspNetCore.Mvc.ProblemDetails'
+            application/json;odata.metadata=full;odata.streaming=false:
+              schema:
+                $ref: '#/components/schemas/Microsoft.AspNetCore.Mvc.ProblemDetails'
+            application/json;odata.metadata=full:
+              schema:
+                $ref: '#/components/schemas/Microsoft.AspNetCore.Mvc.ProblemDetails'
+            application/json;odata.metadata=none;odata.streaming=true:
+              schema:
+                $ref: '#/components/schemas/Microsoft.AspNetCore.Mvc.ProblemDetails'
+            application/json;odata.metadata=none;odata.streaming=false:
+              schema:
+                $ref: '#/components/schemas/Microsoft.AspNetCore.Mvc.ProblemDetails'
+            application/json;odata.metadata=none:
+              schema:
+                $ref: '#/components/schemas/Microsoft.AspNetCore.Mvc.ProblemDetails'
+            application/json;odata.streaming=true:
+              schema:
+                $ref: '#/components/schemas/Microsoft.AspNetCore.Mvc.ProblemDetails'
+            application/json;odata.streaming=false:
+              schema:
+                $ref: '#/components/schemas/Microsoft.AspNetCore.Mvc.ProblemDetails'
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Microsoft.AspNetCore.Mvc.ProblemDetails'
+            application/xml:
+              schema:
+                $ref: '#/components/schemas/Microsoft.AspNetCore.Mvc.ProblemDetails'
+            text/plain:
+              schema:
+                $ref: '#/components/schemas/Microsoft.AspNetCore.Mvc.ProblemDetails'
+            application/octet-stream:
+              schema:
+                $ref: '#/components/schemas/Microsoft.AspNetCore.Mvc.ProblemDetails'
+            text/json:
+              schema:
+                $ref: '#/components/schemas/Microsoft.AspNetCore.Mvc.ProblemDetails'
+        '403':
+          description: Forbidden
+          content:
+            application/json;odata.metadata=minimal;odata.streaming=true:
+              schema:
+                $ref: '#/components/schemas/Microsoft.AspNetCore.Mvc.ProblemDetails'
+            application/json;odata.metadata=minimal;odata.streaming=false:
+              schema:
+                $ref: '#/components/schemas/Microsoft.AspNetCore.Mvc.ProblemDetails'
+            application/json;odata.metadata=minimal:
+              schema:
+                $ref: '#/components/schemas/Microsoft.AspNetCore.Mvc.ProblemDetails'
+            application/json;odata.metadata=full;odata.streaming=true:
+              schema:
+                $ref: '#/components/schemas/Microsoft.AspNetCore.Mvc.ProblemDetails'
+            application/json;odata.metadata=full;odata.streaming=false:
+              schema:
+                $ref: '#/components/schemas/Microsoft.AspNetCore.Mvc.ProblemDetails'
+            application/json;odata.metadata=full:
+              schema:
+                $ref: '#/components/schemas/Microsoft.AspNetCore.Mvc.ProblemDetails'
+            application/json;odata.metadata=none;odata.streaming=true:
+              schema:
+                $ref: '#/components/schemas/Microsoft.AspNetCore.Mvc.ProblemDetails'
+            application/json;odata.metadata=none;odata.streaming=false:
+              schema:
+                $ref: '#/components/schemas/Microsoft.AspNetCore.Mvc.ProblemDetails'
+            application/json;odata.metadata=none:
+              schema:
+                $ref: '#/components/schemas/Microsoft.AspNetCore.Mvc.ProblemDetails'
+            application/json;odata.streaming=true:
+              schema:
+                $ref: '#/components/schemas/Microsoft.AspNetCore.Mvc.ProblemDetails'
+            application/json;odata.streaming=false:
+              schema:
+                $ref: '#/components/schemas/Microsoft.AspNetCore.Mvc.ProblemDetails'
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Microsoft.AspNetCore.Mvc.ProblemDetails'
+            application/xml:
+              schema:
+                $ref: '#/components/schemas/Microsoft.AspNetCore.Mvc.ProblemDetails'
+            text/plain:
+              schema:
+                $ref: '#/components/schemas/Microsoft.AspNetCore.Mvc.ProblemDetails'
+            application/octet-stream:
+              schema:
+                $ref: '#/components/schemas/Microsoft.AspNetCore.Mvc.ProblemDetails'
+            text/json:
+              schema:
+                $ref: '#/components/schemas/Microsoft.AspNetCore.Mvc.ProblemDetails'
+        '404':
+          description: Not Found
+          content:
+            application/json;odata.metadata=minimal;odata.streaming=true:
+              schema:
+                $ref: '#/components/schemas/Microsoft.AspNetCore.Mvc.ProblemDetails'
+            application/json;odata.metadata=minimal;odata.streaming=false:
+              schema:
+                $ref: '#/components/schemas/Microsoft.AspNetCore.Mvc.ProblemDetails'
+            application/json;odata.metadata=minimal:
+              schema:
+                $ref: '#/components/schemas/Microsoft.AspNetCore.Mvc.ProblemDetails'
+            application/json;odata.metadata=full;odata.streaming=true:
+              schema:
+                $ref: '#/components/schemas/Microsoft.AspNetCore.Mvc.ProblemDetails'
+            application/json;odata.metadata=full;odata.streaming=false:
+              schema:
+                $ref: '#/components/schemas/Microsoft.AspNetCore.Mvc.ProblemDetails'
+            application/json;odata.metadata=full:
+              schema:
+                $ref: '#/components/schemas/Microsoft.AspNetCore.Mvc.ProblemDetails'
+            application/json;odata.metadata=none;odata.streaming=true:
+              schema:
+                $ref: '#/components/schemas/Microsoft.AspNetCore.Mvc.ProblemDetails'
+            application/json;odata.metadata=none;odata.streaming=false:
+              schema:
+                $ref: '#/components/schemas/Microsoft.AspNetCore.Mvc.ProblemDetails'
+            application/json;odata.metadata=none:
+              schema:
+                $ref: '#/components/schemas/Microsoft.AspNetCore.Mvc.ProblemDetails'
+            application/json;odata.streaming=true:
+              schema:
+                $ref: '#/components/schemas/Microsoft.AspNetCore.Mvc.ProblemDetails'
+            application/json;odata.streaming=false:
+              schema:
+                $ref: '#/components/schemas/Microsoft.AspNetCore.Mvc.ProblemDetails'
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Microsoft.AspNetCore.Mvc.ProblemDetails'
+            application/xml:
+              schema:
+                $ref: '#/components/schemas/Microsoft.AspNetCore.Mvc.ProblemDetails'
+            text/plain:
+              schema:
+                $ref: '#/components/schemas/Microsoft.AspNetCore.Mvc.ProblemDetails'
+            application/octet-stream:
+              schema:
+                $ref: '#/components/schemas/Microsoft.AspNetCore.Mvc.ProblemDetails'
+            text/json:
+              schema:
+                $ref: '#/components/schemas/Microsoft.AspNetCore.Mvc.ProblemDetails'
+components:
+  schemas:
+    BIMOne.BIMTrack.WebAPI.Models.Model.v2.IssueHistory:
+      type: object
+      properties:
+        ChangeSets:
+          type: array
+          items:
+            $ref: '#/components/schemas/BIMOne.BIMTrack.WebAPI.Models.Model.v2.IssueChangeSet'
+          nullable: true
+      additionalProperties: false
+    BIMOne.BIMTrack.WebAPI.Models.Model.v2.IssueModificationSummary:
+      type: object
+      properties:
+        Id:
+          type: integer
+          format: int32
+        ProjectId:
+          type: integer
+          format: int32
+        Title:
+          type: string
+          nullable: true
+        Number:
+          type: integer
+          format: int32
+        Description:
+          type: string
+          nullable: true
+        Group:
+          type: string
+          nullable: true
+        AssignedToUserId:
+          type: integer
+          format: int32
+          nullable: true
+        LastModificationDate:
+          type: string
+          format: date-time
+          nullable: true
+        DueDate:
+          type: string
+          format: date-time
+          nullable: true
+        CreationDate:
+          type: string
+          format: date-time
+        ClosingDate:
+          type: string
+          format: date-time
+          nullable: true
+        Disciplines:
+          type: array
+          items:
+            $ref: '#/components/schemas/BIMOne.BIMTrack.WebAPI.Models.Model.v2.ProjectIssueDiscipline'
+          nullable: true
+        ProjectPhase:
+          $ref: '#/components/schemas/BIMOne.BIMTrack.WebAPI.Models.Model.v2.ProjectPhase'
+        ProjectZone:
+          $ref: '#/components/schemas/BIMOne.BIMTrack.WebAPI.Models.Model.v2.ProjectZone'
+        Priority:
+          $ref: '#/components/schemas/BIMOne.BIMTrack.WebAPI.Models.Model.v2.ProjectIssuePriority'
+        Status:
+          $ref: '#/components/schemas/BIMOne.BIMTrack.WebAPI.Models.Model.v2.ProjectIssueStatus'
+        Type:
+          $ref: '#/components/schemas/BIMOne.BIMTrack.WebAPI.Models.Model.v2.ProjectIssueType'
+        Confidentiality:
+          $ref: '#/components/schemas/BIMOne.BIMTrack.WebAPI.Models.Model.v2.IssueConfidentiality'
+        NotifyList:
+          $ref: '#/components/schemas/BIMOne.BIMTrack.WebAPI.Models.Model.v2.IssueNotifyList'
+        CustomAttributes:
+          type: array
+          items:
+            $ref: '#/components/schemas/BIMOne.BIMTrack.WebAPI.Models.Model.v2.IssueProjectAttribute'
+          nullable: true
+        CreationSource:
+          $ref: '#/components/schemas/BIMOne.BIMTrack.Common.SharedTypes.SourceType'
+        OperationResult:
+          $ref: '#/components/schemas/BIMOne.BIMTrack.WebAPI.Models.Model.v2.Enums.IssueCreationOperationResult'
+        IsRestricted:
+          type: boolean
+        ViewerUrl:
+          type: string
+          nullable: true
+      additionalProperties: false
+    BIMOne.BIMTrack.WebAPI.Models.Model.v2.IssueConfidentiality:
+      type: object
+      properties:
+        Teams:
+          type: array
+          items:
+            $ref: '#/components/schemas/BIMOne.BIMTrack.WebAPI.Models.Model.v2.IssueProjectTeam'
+          nullable: true
+      additionalProperties: false
+    BIMOne.BIMTrack.WebAPI.Models.Model.v2.Enums.IssueCreationOperationResult:
+      enum:
+      - None
+      - Created
+      - Updated
+      - CreatedWithMergedClashes
+      - NothingBecauseIsArchived
+      - NothingBecauseNotAuthorized
+      - NothingBecauseSkippingClosedIssueCreation
+      - CreatedWithGroupViewpointAndFirstClash
+      type: string
+    BIMOne.BIMTrack.WebAPI.Models.Model.v2.ModelElement:
+      type: object
+      properties:
+        ModelName:
+          type: string
+          nullable: true
+        ModelGuid:
+          type: string
+          nullable: true
+      additionalProperties: false
+    BIMOne.BIMTrack.WebAPI.Models.Model.v2.IssuePatchRestore:
+      required:
+      - ArchiveIssue
+      - StatusId
+      type: object
+      properties:
+        ArchiveIssue:
+          type: boolean
+        StatusId:
+          type: integer
+          format: int32
+      additionalProperties: false
+    Json.Patch.PatchOperation:
+      type: object
+      properties:
+        Op:
+          $ref: '#/components/schemas/Json.Patch.OperationType'
+        From:
+          type: array
+          items:
+            type: string
+          nullable: true
+          readOnly: true
+        Path:
+          type: array
+          items:
+            type: string
+          nullable: true
+          readOnly: true
+        Value:
+          $ref: '#/components/schemas/System.Text.Json.Nodes.JsonNode'
+      additionalProperties: false
+    BIMOne.BIMTrack.Common.SharedTypes.SourceType:
+      enum:
+      - Unspecified
+      - Web
+      - ThreeDViewer
+      - BcfImport
+      - WebApi
+      - BcfWebApi
+      - Navisworks
+      - Revit
+      - Tekla
+      - AutoCad
+      - Npc
+      type: string
+    BIMOne.BIMTrack.WebAPI.Models.Model.v2.OrthogonalCamera:
+      required:
+      - CameraDirection
+      - CameraPosition
+      - CameraUpVector
+      - ViewToWorldScale
+      type: object
+      properties:
+        CameraPosition:
+          $ref: '#/components/schemas/BIMOne.BIMTrack.WebAPI.Models.Model.v2.Point3D'
+        CameraDirection:
+          $ref: '#/components/schemas/BIMOne.BIMTrack.WebAPI.Models.Model.v2.Point3D'
+        CameraUpVector:
+          $ref: '#/components/schemas/BIMOne.BIMTrack.WebAPI.Models.Model.v2.Point3D'
+        ViewToWorldScale:
+          type: number
+          format: double
+        Height:
+          type: number
+          format: double
+          nullable: true
+        Width:
+          type: number
+          format: double
+          nullable: true
+      additionalProperties: false
+    BIMOne.BIMTrack.WebAPI.Models.Model.v2.IssueChangeSet:
+      type: object
+      properties:
+        Author:
+          $ref: '#/components/schemas/BIMOne.BIMTrack.WebAPI.Models.Model.v2.UserSummary'
+        CreationDate:
+          type: string
+          format: date-time
+        ChangeType:
+          $ref: '#/components/schemas/BIMOne.BIMTrack.WebAPI.Models.Model.v2.Enums.ChangeType'
+        Changes:
+          type: array
+          items:
+            $ref: '#/components/schemas/BIMOne.BIMTrack.WebAPI.Models.Model.v2.IssueChange'
+          nullable: true
+      additionalProperties: false
+    BIMOne.BIMTrack.WebAPI.Models.Model.v2.IssueProjectAttribute:
+      type: object
+      properties:
+        Id:
+          type: integer
+          format: int32
+        Name:
+          type: string
+          nullable: true
+        IsMandatory:
+          type: boolean
+        PredefinedValues:
+          type: array
+          items:
+            $ref: '#/components/schemas/BIMOne.BIMTrack.WebAPI.Models.Model.v2.IssueProjectAttributeValue'
+          nullable: true
+        TextValue:
+          type: string
+          nullable: true
+      additionalProperties: false
+    BIMOne.BIMTrack.WebAPI.Models.Model.v2.ViewpointViewStateSummary:
+      required:
+      - ClipMode
+      type: object
+      properties:
+        ClipMode:
+          $ref: '#/components/schemas/BIMOne.BIMTrack.WebAPI.Models.Model.v2.Enums.ViewpointClipMode'
+        ClippingPlanes:
+          type: array
+          items:
+            $ref: '#/components/schemas/BIMOne.BIMTrack.WebAPI.Models.Model.v2.ClippingPlane'
+          nullable: true
+        SectionBox:
+          $ref: '#/components/schemas/BIMOne.BIMTrack.WebAPI.Models.Model.v2.SectionBox'
+        HasHiddenElements:
+          type: boolean
+        HasSelectedElements:
+          type: boolean
+      additionalProperties: false
+    BIMOne.BIMTrack.WebAPI.Models.Model.v2.ProjectIssuePriority:
+      required:
+      - Color
+      - Id
+      - Name
+      - Order
+      type: object
+      properties:
+        Name:
+          minLength: 1
+          type: string
+        Id:
+          type: integer
+          format: int32
+        Color:
+          minLength: 1
+          pattern: ^#([A-Fa-f0-9]{6}|[A-Fa-f0-9]{3})$
+          type: string
+        Order:
+          type: integer
+          format: int32
+      additionalProperties: false
+    BIMOne.BIMTrack.WebAPI.Models.Model.v2.IssueSummaryInput:
+      required:
+      - Title
+      type: object
+      properties:
+        Title:
+          minLength: 1
+          type: string
+        Description:
+          type: string
+          nullable: true
+        Group:
+          type: string
+          nullable: true
+        AssignedToUserId:
+          type: integer
+          format: int32
+          nullable: true
+        DueDate:
+          type: string
+          format: date-time
+          nullable: true
+        ProjectPhaseId:
+          type: integer
+          format: int32
+          nullable: true
+        ProjectZoneId:
+          type: integer
+          format: int32
+          nullable: true
+        PriorityId:
+          type: integer
+          format: int32
+          nullable: true
+        StatusId:
+          type: integer
+          format: int32
+          nullable: true
+        TypeId:
+          type: integer
+          format: int32
+          nullable: true
+        Disciplines:
+          type: array
+          items:
+            type: integer
+            format: int32
+          nullable: true
+        Confidentiality:
+          $ref: '#/components/schemas/BIMOne.BIMTrack.WebAPI.Models.Model.v2.IssueConfidentialityInput'
+        NotifyList:
+          $ref: '#/components/schemas/BIMOne.BIMTrack.WebAPI.Models.Model.v2.IssueNotifyListInput'
+        CustomAttributes:
+          type: array
+          items:
+            $ref: '#/components/schemas/BIMOne.BIMTrack.WebAPI.Models.Model.v2.IssueProjectAttributeInput'
+          nullable: true
+        IsRestricted:
+          type: boolean
+          nullable: true
+      additionalProperties: false
+    BIMOne.BIMTrack.WebAPI.Models.Model.v2.IssueNotifyListInput:
+      type: object
+      properties:
+        TeamsToNotify:
+          type: array
+          items:
+            type: integer
+            format: int32
+          nullable: true
+        UsersToNotify:
+          type: array
+          items:
+            type: integer
+            format: int32
+          nullable: true
+      additionalProperties: false
+    System.Text.Json.Nodes.JsonNodeOptions:
+      type: object
+      properties:
+        PropertyNameCaseInsensitive:
+          type: boolean
+      additionalProperties: false
+    BIMOne.BIMTrack.WebAPI.Models.Model.v2.IssueSummary:
+      type: object
+      properties:
+        Id:
+          type: integer
+          format: int32
+        ProjectId:
+          type: integer
+          format: int32
+        Title:
+          type: string
+          nullable: true
+        Number:
+          type: integer
+          format: int32
+        Description:
+          type: string
+          nullable: true
+        Group:
+          type: string
+          nullable: true
+        Author:
+          $ref: '#/components/schemas/BIMOne.BIMTrack.WebAPI.Models.Model.v2.UserSummary'
+        AssignedTo:
+          $ref: '#/components/schemas/BIMOne.BIMTrack.WebAPI.Models.Model.v2.UserSummary'
+        LastModificationAuthor:
+          $ref: '#/components/schemas/BIMOne.BIMTrack.WebAPI.Models.Model.v2.UserSummary'
+        LastModificationDate:
+          type: string
+          format: date-time
+          nullable: true
+        DueDate:
+          type: string
+          format: date-time
+          nullable: true
+        CreationDate:
+          type: string
+          format: date-time
+        ClosingDate:
+          type: string
+          format: date-time
+          nullable: true
+        DefaultViewpointId:
+          type: integer
+          format: int32
+          nullable: true
+        Disciplines:
+          type: array
+          items:
+            $ref: '#/components/schemas/BIMOne.BIMTrack.WebAPI.Models.Model.v2.ProjectIssueDiscipline'
+          nullable: true
+        ProjectPhase:
+          $ref: '#/components/schemas/BIMOne.BIMTrack.WebAPI.Models.Model.v2.ProjectPhase'
+        ProjectZone:
+          $ref: '#/components/schemas/BIMOne.BIMTrack.WebAPI.Models.Model.v2.ProjectZone'
+        Priority:
+          $ref: '#/components/schemas/BIMOne.BIMTrack.WebAPI.Models.Model.v2.ProjectIssuePriority'
+        Status:
+          $ref: '#/components/schemas/BIMOne.BIMTrack.WebAPI.Models.Model.v2.ProjectIssueStatus'
+        Type:
+          $ref: '#/components/schemas/BIMOne.BIMTrack.WebAPI.Models.Model.v2.ProjectIssueType'
+        Confidentiality:
+          $ref: '#/components/schemas/BIMOne.BIMTrack.WebAPI.Models.Model.v2.IssueConfidentiality'
+        NotifyList:
+          $ref: '#/components/schemas/BIMOne.BIMTrack.WebAPI.Models.Model.v2.IssueNotifyList'
+        CustomAttributes:
+          type: array
+          items:
+            $ref: '#/components/schemas/BIMOne.BIMTrack.WebAPI.Models.Model.v2.IssueProjectAttribute'
+          nullable: true
+        CreationSource:
+          $ref: '#/components/schemas/BIMOne.BIMTrack.Common.SharedTypes.SourceType'
+        Viewpoints:
+          type: array
+          items:
+            $ref: '#/components/schemas/BIMOne.BIMTrack.WebAPI.Models.Model.v2.ViewpointSummary'
+          nullable: true
+        IsRestricted:
+          type: boolean
+        ViewerUrl:
+          type: string
+          nullable: true
+        AttributesToHighlight:
+          type: array
+          items:
+            type: string
+          nullable: true
+        CommentsCount:
+          type: integer
+          format: int32
+          nullable: true
+        AttachmentsCount:
+          type: integer
+          format: int32
+          nullable: true
+      additionalProperties: false
+    BIMOne.BIMTrack.WebAPI.Models.Model.v2.Attachment:
+      type: object
+      properties:
+        Id:
+          type: integer
+          format: int32
+        Name:
+          type: string
+          nullable: true
+        Size:
+          type: integer
+          format: int64
+          nullable: true
+        Date:
+          type: string
+          format: date-time
+          nullable: true
+        Url:
+          type: string
+          nullable: true
+        UrlExpiration:
+          type: string
+          format: date-time
+          nullable: true
+      additionalProperties: false
+    BIMOne.BIMTrack.WebAPI.Models.Model.v2.IssueDetail:
+      type: object
+      properties:
+        Id:
+          type: integer
+          format: int32
+        ProjectId:
+          type: integer
+          format: int32
+        Title:
+          type: string
+          nullable: true
+        Number:
+          type: integer
+          format: int32
+        Description:
+          type: string
+          nullable: true
+        Group:
+          type: string
+          nullable: true
+        Author:
+          $ref: '#/components/schemas/BIMOne.BIMTrack.WebAPI.Models.Model.v2.UserSummary'
+        AssignedTo:
+          $ref: '#/components/schemas/BIMOne.BIMTrack.WebAPI.Models.Model.v2.UserSummary'
+        LastModificationAuthor:
+          $ref: '#/components/schemas/BIMOne.BIMTrack.WebAPI.Models.Model.v2.UserSummary'
+        LastModificationDate:
+          type: string
+          format: date-time
+          nullable: true
+        DueDate:
+          type: string
+          format: date-time
+          nullable: true
+        CreationDate:
+          type: string
+          format: date-time
+        ClosingDate:
+          type: string
+          format: date-time
+          nullable: true
+        DefaultViewpointId:
+          type: integer
+          format: int32
+          nullable: true
+        Disciplines:
+          type: array
+          items:
+            $ref: '#/components/schemas/BIMOne.BIMTrack.WebAPI.Models.Model.v2.ProjectIssueDiscipline'
+          nullable: true
+        ProjectPhase:
+          $ref: '#/components/schemas/BIMOne.BIMTrack.WebAPI.Models.Model.v2.ProjectPhase'
+        ProjectZone:
+          $ref: '#/components/schemas/BIMOne.BIMTrack.WebAPI.Models.Model.v2.ProjectZone'
+        Priority:
+          $ref: '#/components/schemas/BIMOne.BIMTrack.WebAPI.Models.Model.v2.ProjectIssuePriority'
+        Status:
+          $ref: '#/components/schemas/BIMOne.BIMTrack.WebAPI.Models.Model.v2.ProjectIssueStatus'
+        Type:
+          $ref: '#/components/schemas/BIMOne.BIMTrack.WebAPI.Models.Model.v2.ProjectIssueType'
+        Confidentiality:
+          $ref: '#/components/schemas/BIMOne.BIMTrack.WebAPI.Models.Model.v2.IssueConfidentiality'
+        NotifyList:
+          $ref: '#/components/schemas/BIMOne.BIMTrack.WebAPI.Models.Model.v2.IssueNotifyList'
+        CustomAttributes:
+          type: array
+          items:
+            $ref: '#/components/schemas/BIMOne.BIMTrack.WebAPI.Models.Model.v2.IssueProjectAttribute'
+          nullable: true
+        CreationSource:
+          $ref: '#/components/schemas/BIMOne.BIMTrack.Common.SharedTypes.SourceType'
+        IsRestricted:
+          type: boolean
+        ViewerUrl:
+          type: string
+          nullable: true
+        AttributesToHighlight:
+          type: array
+          items:
+            type: string
+          nullable: true
+        CommentsCount:
+          type: integer
+          format: int32
+          nullable: true
+        AttachmentsCount:
+          type: integer
+          format: int32
+          nullable: true
+        Attachments:
+          type: array
+          items:
+            $ref: '#/components/schemas/BIMOne.BIMTrack.WebAPI.Models.Model.v2.Attachment'
+          nullable: true
+        IssueComments:
+          type: array
+          items:
+            $ref: '#/components/schemas/BIMOne.BIMTrack.WebAPI.Models.Model.v2.CommentSummary'
+          nullable: true
+        Viewpoints:
+          type: array
+          items:
+            $ref: '#/components/schemas/BIMOne.BIMTrack.WebAPI.Models.Model.v2.ViewpointSummary'
+          nullable: true
+      additionalProperties: false
+    System.Text.Json.Nodes.JsonNode:
+      type: object
+      properties:
+        Options:
+          $ref: '#/components/schemas/System.Text.Json.Nodes.JsonNodeOptions'
+        Parent:
+          $ref: '#/components/schemas/System.Text.Json.Nodes.JsonNode'
+        Root:
+          $ref: '#/components/schemas/System.Text.Json.Nodes.JsonNode'
+      additionalProperties: false
+    BIMOne.BIMTrack.WebAPI.Models.Model.v2.Enums.ViewType:
+      enum:
+      - None
+      - TwoD
+      - ThreeD
+      type: string
+    BIMOne.BIMTrack.WebAPI.Models.Model.v2.Enums.ChangeType:
+      enum:
+      - ArchiveIssue
+      - ArchiveComment
+      - CreateIssue
+      - AddComment
+      - AddAttachment
+      - ExportIssue
+      - MergeIssueFrom
+      - MergeIssueTo
+      - UpdateIssue
+      - ImportIssue
+      - RestoreIssue
+      - DeleteAttachment
+      - DeleteIssue
+      - UpdateIssueViewpoint
+      - CreateIssueViewpoint
+      - DeleteIssueViewpoint
+      - MoveIssueViewpoint
+      - MoveComment
+      - UpdateAttachment
+      - CreateProcoreRfi
+      - RemoveProcoreRfi
+      - ArchiveAttachment
+      - ProjectCompletion
+      type: string
+    BIMOne.BIMTrack.WebAPI.Models.Model.v2.ViewpointPinpoint:
+      type: object
+      properties:
+        Name:
+          type: string
+          nullable: true
+        Position:
+          $ref: '#/components/schemas/BIMOne.BIMTrack.WebAPI.Models.Model.v2.Point3D'
+        Element1:
+          $ref: '#/components/schemas/BIMOne.BIMTrack.WebAPI.Models.Model.v2.Element'
+        Element2:
+          $ref: '#/components/schemas/BIMOne.BIMTrack.WebAPI.Models.Model.v2.Element'
+      additionalProperties: false
+    BIMOne.BIMTrack.WebAPI.Models.Model.v2.ProjectZone:
+      required:
+      - Color
+      - Id
+      - Name
+      type: object
+      properties:
+        Name:
+          minLength: 1
+          type: string
+        Id:
+          type: integer
+          format: int32
+        Color:
+          minLength: 1
+          pattern: ^#([A-Fa-f0-9]{6}|[A-Fa-f0-9]{3})$
+          type: string
+      additionalProperties: false
+    BIMOne.BIMTrack.WebAPI.Models.Model.v2.ViewpointSheetInformation:
+      type: object
+      properties:
+        SheetUniqueId:
+          type: string
+          nullable: true
+        SheetViewUniqueId:
+          type: string
+          nullable: true
+      additionalProperties: false
+    BIMOne.BIMTrack.WebAPI.Models.Model.v2.IssueNotifyList:
+      type: object
+      properties:
+        TeamsToNotify:
+          type: array
+          items:
+            $ref: '#/components/schemas/BIMOne.BIMTrack.WebAPI.Models.Model.v2.IssueProjectTeam'
+          nullable: true
+        UsersToNotify:
+          type: array
+          items:
+            $ref: '#/components/schemas/BIMOne.BIMTrack.WebAPI.Models.Model.v2.UserSummary'
+          nullable: true
+      additionalProperties: false
+    BIMOne.BIMTrack.WebAPI.Models.Model.v2.ProjectPhase:
+      required:
+      - Color
+      - Id
+      - Name
+      type: object
+      properties:
+        Name:
+          minLength: 1
+          type: string
+        Id:
+          type: integer
+          format: int32
+        Color:
+          minLength: 1
+          pattern: ^#([A-Fa-f0-9]{6}|[A-Fa-f0-9]{3})$
+          type: string
+      additionalProperties: false
+    BIMOne.BIMTrack.WebAPI.Models.Model.v2.Enums.ViewpointClipMode:
+      enum:
+      - None
+      - SectionBox
+      - ClippingPlanes
+      type: string
+    BIMOne.BIMTrack.WebAPI.Models.Model.v2.PerspectiveCamera:
+      required:
+      - CameraDirection
+      - CameraPosition
+      - CameraUpVector
+      - FieldOfView
+      type: object
+      properties:
+        CameraPosition:
+          $ref: '#/components/schemas/BIMOne.BIMTrack.WebAPI.Models.Model.v2.Point3D'
+        CameraDirection:
+          $ref: '#/components/schemas/BIMOne.BIMTrack.WebAPI.Models.Model.v2.Point3D'
+        CameraUpVector:
+          $ref: '#/components/schemas/BIMOne.BIMTrack.WebAPI.Models.Model.v2.Point3D'
+        FieldOfView:
+          type: number
+          format: double
+      additionalProperties: false
+    Microsoft.AspNetCore.Mvc.ProblemDetails:
+      type: object
+      properties:
+        type:
+          type: string
+          nullable: true
+        title:
+          type: string
+          nullable: true
+        status:
+          type: integer
+          format: int32
+          nullable: true
+        detail:
+          type: string
+          nullable: true
+        instance:
+          type: string
+          nullable: true
+      additionalProperties: {}
+    BIMOne.BIMTrack.WebAPI.Models.Model.v2.ProjectTeam:
+      required:
+      - Id
+      - Name
+      type: object
+      properties:
+        Name:
+          minLength: 1
+          type: string
+        Id:
+          type: integer
+          format: int32
+      additionalProperties: false
+    BIMOne.BIMTrack.WebAPI.Models.Model.v2.ViewpointSummary:
+      type: object
+      properties:
+        Id:
+          type: integer
+          format: int32
+        IssueId:
+          type: integer
+          format: int32
+        ViewType:
+          $ref: '#/components/schemas/BIMOne.BIMTrack.WebAPI.Models.Model.v2.Enums.ViewType'
+        Image:
+          $ref: '#/components/schemas/BIMOne.BIMTrack.WebAPI.Models.Model.v2.AttachmentWithThumbnail'
+        PerspectiveCamera:
+          $ref: '#/components/schemas/BIMOne.BIMTrack.WebAPI.Models.Model.v2.PerspectiveCamera'
+        OrthogonalCamera:
+          $ref: '#/components/schemas/BIMOne.BIMTrack.WebAPI.Models.Model.v2.OrthogonalCamera'
+        Pinpoint:
+          $ref: '#/components/schemas/BIMOne.BIMTrack.WebAPI.Models.Model.v2.ViewpointPinpoint'
+        Source:
+          $ref: '#/components/schemas/BIMOne.BIMTrack.Common.SharedTypes.SourceType'
+        ViewName:
+          type: string
+          nullable: true
+        ModelName:
+          type: string
+          nullable: true
+        Comments:
+          type: array
+          items:
+            $ref: '#/components/schemas/BIMOne.BIMTrack.WebAPI.Models.Model.v2.CommentSummary'
+          nullable: true
+        ViewUniqueId:
+          type: string
+          nullable: true
+        ViewerUrl:
+          type: string
+          nullable: true
+        WasCreatedFromSheetInstance:
+          type: boolean
+        SheetInformation:
+          $ref: '#/components/schemas/BIMOne.BIMTrack.WebAPI.Models.Model.v2.ViewpointSheetInformation'
+        ViewStateSummary:
+          $ref: '#/components/schemas/BIMOne.BIMTrack.WebAPI.Models.Model.v2.ViewpointViewStateSummary'
+      additionalProperties: false
+    BIMOne.BIMTrack.WebAPI.Models.Model.v2.Element:
+      type: object
+      properties:
+        IfcGuid:
+          type: string
+          nullable: true
+        OriginatingSystem:
+          type: string
+          nullable: true
+        AuthoringToolId:
+          type: string
+          nullable: true
+        Filename:
+          type: string
+          nullable: true
+        DocumentGuid:
+          type: string
+          nullable: true
+      additionalProperties: false
+    BIMOne.BIMTrack.WebAPI.Models.Model.v2.ProjectIssueDiscipline:
+      required:
+      - Id
+      - Name
+      type: object
+      properties:
+        Name:
+          minLength: 1
+          type: string
+        Id:
+          type: integer
+          format: int32
+      additionalProperties: false
+    BIMOne.BIMTrack.WebAPI.Models.Model.v2.SectionBox:
+      required:
+      - Center
+      - Rotation
+      - Size
+      type: object
+      properties:
+        Center:
+          $ref: '#/components/schemas/BIMOne.BIMTrack.WebAPI.Models.Model.v2.Point3D'
+        Rotation:
+          $ref: '#/components/schemas/BIMOne.BIMTrack.WebAPI.Models.Model.v2.Point3D'
+        Size:
+          $ref: '#/components/schemas/BIMOne.BIMTrack.WebAPI.Models.Model.v2.Point3D'
+      additionalProperties: false
+    BIMOne.BIMTrack.WebAPI.Models.Model.v2.IssueSummaryUpdateInput:
+      required:
+      - PriorityId
+      - StatusId
+      - Title
+      - TypeId
+      type: object
+      properties:
+        Title:
+          minLength: 1
+          type: string
+        Description:
+          type: string
+          nullable: true
+        Group:
+          type: string
+          nullable: true
+        AssignedToUserId:
+          type: integer
+          format: int32
+          nullable: true
+        DueDate:
+          type: string
+          format: date-time
+          nullable: true
+        ProjectPhaseId:
+          type: integer
+          format: int32
+          nullable: true
+        ProjectZoneId:
+          type: integer
+          format: int32
+          nullable: true
+        PriorityId:
+          type: integer
+          format: int32
+        StatusId:
+          type: integer
+          format: int32
+        TypeId:
+          type: integer
+          format: int32
+        DefaultViewpointId:
+          type: integer
+          format: int32
+          nullable: true
+        Disciplines:
+          type: array
+          items:
+            type: integer
+            format: int32
+          nullable: true
+        Confidentiality:
+          $ref: '#/components/schemas/BIMOne.BIMTrack.WebAPI.Models.Model.v2.IssueConfidentialityInput'
+        NotifyList:
+          $ref: '#/components/schemas/BIMOne.BIMTrack.WebAPI.Models.Model.v2.IssueNotifyListInput'
+        CustomAttributes:
+          type: array
+          items:
+            $ref: '#/components/schemas/BIMOne.BIMTrack.WebAPI.Models.Model.v2.IssueProjectAttributeInput'
+          nullable: true
+        ViewpointToDeleteId:
+          type: array
+          items:
+            type: integer
+            format: int32
+          nullable: true
+        IsRestricted:
+          type: boolean
+          nullable: true
+      additionalProperties: false
+    BIMOne.BIMTrack.WebAPI.Models.Model.v2.CommentSummary:
+      type: object
+      properties:
+        Id:
+          type: integer
+          format: int32
+        Author:
+          $ref: '#/components/schemas/BIMOne.BIMTrack.WebAPI.Models.Model.v2.UserSummary'
+        CreationDate:
+          type: string
+          format: date-time
+        Comment:
+          type: string
+          nullable: true
+        UniqueId:
+          type: string
+          nullable: true
+      additionalProperties: false
+    BIMOne.BIMTrack.WebAPI.Models.Model.v2.IssuePatchArchive:
+      required:
+      - ArchiveIssue
+      type: object
+      properties:
+        ArchiveIssue:
+          type: boolean
+      additionalProperties: false
+    BIMOne.BIMTrack.WebAPI.Models.Model.v2.AttachmentWithThumbnail:
+      type: object
+      properties:
+        Id:
+          type: integer
+          format: int32
+        Name:
+          type: string
+          nullable: true
+        Size:
+          type: integer
+          format: int64
+          nullable: true
+        Date:
+          type: string
+          format: date-time
+          nullable: true
+        Url:
+          type: string
+          nullable: true
+        UrlExpiration:
+          type: string
+          format: date-time
+          nullable: true
+        ThumbnailUrl:
+          type: string
+          nullable: true
+        ThumbnailUrlExpiration:
+          type: string
+          format: date-time
+          nullable: true
+      additionalProperties: false
+    BIMOne.BIMTrack.WebAPI.Models.Model.v2.ProjectIssueType:
+      required:
+      - Color
+      - Id
+      - Name
+      type: object
+      properties:
+        Name:
+          minLength: 1
+          type: string
+        Id:
+          type: integer
+          format: int32
+        Color:
+          minLength: 1
+          pattern: ^#([A-Fa-f0-9]{6}|[A-Fa-f0-9]{3})$
+          type: string
+      additionalProperties: false
+    BIMOne.BIMTrack.WebAPI.Models.Model.v2.IssueConfidentialityInput:
+      type: object
+      properties:
+        TeamIds:
+          type: array
+          items:
+            type: integer
+            format: int32
+          nullable: true
+      additionalProperties: false
+    Json.Patch.OperationType:
+      enum:
+      - Unknown
+      - Add
+      - Remove
+      - Replace
+      - Move
+      - Copy
+      - Test
+      type: string
+    BIMOne.BIMTrack.WebAPI.Models.Model.v2.IssueCommentInput:
+      required:
+      - Comment
+      type: object
+      properties:
+        MentionedUsers:
+          type: array
+          items:
+            type: integer
+            format: int32
+          nullable: true
+        MentionedTeams:
+          type: array
+          items:
+            type: integer
+            format: int32
+          nullable: true
+        Comment:
+          minLength: 1
+          type: string
+      additionalProperties: false
+    BIMOne.BIMTrack.WebAPI.Models.Model.v2.ViewpointViewStateDetail:
+      required:
+      - ClipMode
+      type: object
+      properties:
+        ClipMode:
+          $ref: '#/components/schemas/BIMOne.BIMTrack.WebAPI.Models.Model.v2.Enums.ViewpointClipMode'
+        ClippingPlanes:
+          type: array
+          items:
+            $ref: '#/components/schemas/BIMOne.BIMTrack.WebAPI.Models.Model.v2.ClippingPlane'
+          nullable: true
+        SectionBox:
+          $ref: '#/components/schemas/BIMOne.BIMTrack.WebAPI.Models.Model.v2.SectionBox'
+        HasHiddenElements:
+          type: boolean
+        HasSelectedElements:
+          type: boolean
+        HiddenElements:
+          type: array
+          items:
+            $ref: '#/components/schemas/BIMOne.BIMTrack.WebAPI.Models.Model.v2.Element'
+          nullable: true
+        HiddenModels:
+          type: array
+          items:
+            $ref: '#/components/schemas/BIMOne.BIMTrack.WebAPI.Models.Model.v2.ModelElement'
+          nullable: true
+        SelectedElements:
+          type: array
+          items:
+            $ref: '#/components/schemas/BIMOne.BIMTrack.WebAPI.Models.Model.v2.Element'
+          nullable: true
+      additionalProperties: false
+    BIMOne.BIMTrack.WebAPI.Models.Model.v2.Point3D:
+      required:
+      - X
+      - Y
+      - Z
+      type: object
+      properties:
+        X:
+          type: number
+          format: double
+        Y:
+          type: number
+          format: double
+        Z:
+          type: number
+          format: double
+      additionalProperties: false
+    BIMOne.BIMTrack.WebAPI.Models.Model.v3.Issue.ProjectIssuesDetails:
+      type: object
+      properties:
+        Issues:
+          type: array
+          items:
+            $ref: '#/components/schemas/BIMOne.BIMTrack.WebAPI.Models.Model.v2.IssueSummary'
+          nullable: true
+        TotalUserIssues:
+          type: integer
+          format: int32
+        TotalProjectIssues:
+          type: integer
+          format: int32
+      additionalProperties: false
+    BIMOne.BIMTrack.WebAPI.Models.Model.v2.IssueChange:
+      type: object
+      properties:
+        NewValue:
+          type: string
+          nullable: true
+        OldValue:
+          type: string
+          nullable: true
+        Property:
+          type: string
+          nullable: true
+      additionalProperties: false
+    BIMOne.BIMTrack.WebAPI.Models.Model.v2.IssueProjectTeam:
+      type: object
+      properties:
+        Team:
+          $ref: '#/components/schemas/BIMOne.BIMTrack.WebAPI.Models.Model.v2.ProjectTeam'
+      additionalProperties: false
+    BIMOne.BIMTrack.WebAPI.Models.Model.v3.Issue.IssueViewpointsBatchInput:
+      required:
+      - IssueIds
+      type: object
+      properties:
+        IssueIds:
+          type: array
+          items:
+            type: integer
+            format: int32
+      additionalProperties: false
+    BIMOne.BIMTrack.WebAPI.Models.Model.v2.IssueProjectAttributeInput:
+      required:
+      - ProjectAttributeId
+      type: object
+      properties:
+        ProjectAttributeId:
+          type: integer
+          format: int32
+        ProjectAttributeValueIds:
+          type: array
+          items:
+            type: integer
+            format: int32
+          nullable: true
+        Value:
+          maxLength: 1000
+          type: string
+          nullable: true
+      additionalProperties: false
+    BIMOne.BIMTrack.WebAPI.Models.Model.v2.ClippingPlane:
+      required:
+      - Direction
+      - Location
+      type: object
+      properties:
+        Location:
+          $ref: '#/components/schemas/BIMOne.BIMTrack.WebAPI.Models.Model.v2.Point3D'
+        Direction:
+          $ref: '#/components/schemas/BIMOne.BIMTrack.WebAPI.Models.Model.v2.Point3D'
+      additionalProperties: false
+    BIMOne.BIMTrack.WebAPI.Models.Model.v2.IssueProjectAttributeValue:
+      required:
+      - Color
+      - Id
+      - Name
+      type: object
+      properties:
+        Name:
+          minLength: 1
+          type: string
+        Color:
+          minLength: 1
+          pattern: ^#([A-Fa-f0-9]{6}|[A-Fa-f0-9]{3})$
+          type: string
+        Id:
+          type: integer
+          format: int32
+      additionalProperties: false
+    BIMOne.BIMTrack.WebAPI.Models.Model.v2.AspNetCore.IssuesPatchInput:
+      required:
+      - IssueIds
+      - Operations
+      type: object
+      properties:
+        IssueIds:
+          maxItems: 250
+          type: array
+          items:
+            type: integer
+            format: int32
+        Operations:
+          type: array
+          items:
+            $ref: '#/components/schemas/Json.Patch.PatchOperation'
+      additionalProperties: false
+    BIMOne.BIMTrack.WebAPI.Models.Model.v3.Issue.IssuePatchArchiveIssues:
+      type: object
+      properties:
+        IssuesIds:
+          maxItems: 250
+          type: array
+          items:
+            type: integer
+            format: int32
+          nullable: true
+      additionalProperties: false
+    BIMOne.BIMTrack.WebAPI.Models.Model.v2.UserSummary:
+      type: object
+      properties:
+        Id:
+          type: integer
+          format: int32
+        UserName:
+          type: string
+          nullable: true
+        Email:
+          type: string
+          nullable: true
+        FirstName:
+          type: string
+          nullable: true
+        LastName:
+          type: string
+          nullable: true
+        AvatarUrl:
+          type: string
+          nullable: true
+      additionalProperties: false
+    BIMOne.BIMTrack.WebAPI.Models.Model.v2.ProjectIssueStatus:
+      required:
+      - Color
+      - Id
+      - Name
+      type: object
+      properties:
+        Name:
+          minLength: 1
+          type: string
+        Id:
+          type: integer
+          format: int32
+        Color:
+          minLength: 1
+          pattern: ^#([A-Fa-f0-9]{6}|[A-Fa-f0-9]{3})$
+          type: string
+        TeamsAllowedForStatus:
+          type: array
+          items:
+            $ref: '#/components/schemas/BIMOne.BIMTrack.WebAPI.Models.Model.v2.ProjectTeam'
+          nullable: true
+      additionalProperties: false
+  securitySchemes:
+    Bearer:
+      type: apiKey
+      description: Enter your API key
+      name: Authorization
+      in: header
