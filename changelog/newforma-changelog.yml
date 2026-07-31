@@ -1,0 +1,12 @@
+generated: '2026-07-20'
+method: searched
+source: https://bimtrackapis.readme.io/changelog
+scheme: uri-path-version
+current_version: v3
+note: >-
+  Newforma Konekt (BIM Track) publishes a dated API changelog on its ReadMe developer hub. The current
+  REST API version is v3 (versioning is optional and defaults to v3); v1 and v2 are superseded and
+  integrators are urged to migrate. Individual dated entries are maintained at the source URL; this
+  artifact records the changelog location and versioning posture rather than mirroring entries.
+docs: https://bimtrackapis.readme.io/changelog
+entries: []

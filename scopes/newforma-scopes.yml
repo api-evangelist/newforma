@@ -1,0 +1,56 @@
+generated: '2026-07-20'
+method: searched
+source: https://auth.bimtrackapp.co/.well-known/openid-configuration
+docs: https://konekt.help.newforma.com/4408494681869-integrations-api/360008491831-api/360060182352-using-oauth-2-0/
+schemes:
+- name: OAuth2
+  source: https://auth.bimtrackapp.co/.well-known/openid-configuration
+  flows:
+  - flow: authorizationCode
+    authorizationUrl: https://auth.bimtrackapp.co/connect/authorize
+    tokenUrl: https://auth.bimtrackapp.co/connect/token
+  - flow: clientCredentials
+    tokenUrl: https://auth.bimtrackapp.co/connect/token
+scopes:
+- scope: openid
+  description: OpenID Connect authentication (required for OIDC verification).
+  sources: [oidc-discovery, docs]
+- scope: profile
+  description: Access to the user's basic profile claims.
+  sources: [oidc-discovery]
+- scope: email
+  description: Access to the user's email claim.
+  sources: [oidc-discovery]
+- scope: offline_access
+  description: Issue refresh tokens for long-lived access.
+  sources: [oidc-discovery, docs]
+- scope: BIMTrack_Api
+  description: Access to the Newforma Konekt (BIM Track) REST API.
+  sources: [oidc-discovery, docs]
+- scope: BIMTrackEvent_Api
+  description: Access to the Konekt events API surface.
+  sources: [oidc-discovery]
+- scope: BcfWebApi
+  description: Access to the BCF (BIM Collaboration Format) REST API.
+  sources: [oidc-discovery, docs]
+- scope: BIMTrackOrganizations_Api
+  description: Access to organization-level Konekt resources.
+  sources: [oidc-discovery]
+- scope: IdentityServerApi
+  description: Access to the IdentityServer administrative API.
+  sources: [oidc-discovery]
+- scope: IdentityServer.HealthCheck
+  description: IdentityServer health-check scope.
+  sources: [oidc-discovery]
+- scope: BIMTrack_Website
+  description: Access to the Konekt web application surface.
+  sources: [oidc-discovery]
+- scope: FileManagement_Api
+  description: Access to the file-management API surface (documented in the OAuth 2.0 guide).
+  sources: [docs]
+- scope: DocumentControl_Api
+  description: Access to the document-control API surface (documented in the OAuth 2.0 guide).
+  sources: [docs]
+- scope: PIMTrack_Api
+  description: Access to the PIM Track / project information management API surface (documented in the OAuth 2.0 guide).
+  sources: [docs]

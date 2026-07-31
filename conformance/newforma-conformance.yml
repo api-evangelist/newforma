@@ -1,0 +1,35 @@
+generated: '2026-07-20'
+method: derived
+source: openapi/newforma-konekt-openapi-original.json
+standards:
+- id: oauth2
+  conforms: true
+  evidence: >-
+    OAuth 2.0 authorization and token endpoints published at auth.bimtrackapp.co; authorizationCode
+    (PKCE S256) and clientCredentials grants.
+- id: oidc
+  conforms: true
+  evidence: OpenID Connect discovery document at auth.bimtrackapp.co/.well-known/openid-configuration (openid scope, id_token response types).
+- id: pkce-rfc7636
+  conforms: true
+  evidence: Docs require PKCE with the S256 code-challenge method for the authorization-code flow.
+- id: rfc7807-problem-details
+  conforms: true
+  evidence: Responses use the ASP.NET Core ProblemDetails schema for error bodies.
+- id: bcf-rest
+  conforms: true
+  evidence: >-
+    A dedicated BCF (BIM Collaboration Format, buildingSMART) REST API and BCF Server are published for
+    exchanging BIM issues/topics with third-party BIM tools.
+- id: odata
+  conforms: partial
+  evidence: >-
+    Responses support OData content negotiation (application/json;odata.metadata=minimal|full|none),
+    but the endpoints are RESTful resource routes rather than a full OData query service.
+- id: openapi-3
+  conforms: true
+  evidence: Provider publishes an OpenAPI 3.0.4 description at api.bimtrackapp.co/swagger/v3/swagger.json.
+- id: fhir-r4
+  conforms: false
+- id: scim
+  conforms: false

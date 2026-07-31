@@ -1,0 +1,61 @@
+generated: '2026-07-20'
+method: derived
+source: openapi/newforma-konekt-openapi-original.json
+note: >-
+  Entity-relationship graph derived from the Newforma Konekt REST API v3 path hierarchy and component
+  schemas. The Hub is the account root; Projects belong to a Hub; the Issue (BCF-style coordination
+  issue) is the central working entity.
+entities:
+- name: Hub
+  path: /v3/hubs/{hubId}
+  relationships:
+  - has_many: Project
+    via: projectId
+  - has_many: HubUser
+    via: userId
+  - has_many: ProjectTemplate
+    via: projectTemplateId
+- name: Project
+  path: /v3/hubs/{hubId}/projects/{projectId}
+  relationships:
+  - belongs_to: Hub
+    via: hubId
+  - has_many: Issue
+    via: issueId
+  - has_many: Project2DSheetSummary
+    via: sheets
+  - has_many: IssueFilterTemplate
+    via: userTemplateId
+  - has_one: Project3DModelRevisionDisciplines
+    via: modelId
+- name: Issue
+  path: /v3/hubs/{hubId}/projects/{projectId}/issues/{issueId}
+  relationships:
+  - belongs_to: Project
+    via: projectId
+  - has_many: Attachment
+    via: attachmentId
+  - has_many: CommentSummary
+    via: issueCommentId
+  - has_many: ViewpointSummary
+    via: viewpointId
+  - has_many: IssueHistory
+    via: history
+  - has_many: IssueProjectAttribute
+    via: projectAttribute
+- name: ArchivedIssue
+  path: /v3/hubs/{hubId}/projects/{projectId}/archivedissues/{archivedIssueId}
+  relationships:
+  - belongs_to: Project
+    via: projectId
+  note: An Issue in archived state; restore/patch/delete operations apply.
+- name: HubUser
+  path: /v3/hubs/{hubId}/users/{userId}
+  relationships:
+  - belongs_to: Hub
+    via: hubId
+- name: ProjectTemplate
+  path: /v3/hubs/{hubId}/projecttemplates/{projectTemplateId}
+  relationships:
+  - belongs_to: Hub
+    via: hubId

@@ -1,0 +1,20 @@
+generated: '2026-07-20'
+method: searched
+source: https://konekt.help.newforma.com/4408494681869-integrations-api/360008491831-api/360041452712-newforma-konekt-rest-api/
+note: >-
+  Newforma Konekt exposes a separate beta/sandbox environment for testing integrations before pointing
+  at production. The sandbox has its own base host and interactive Swagger UI.
+environments:
+- name: production
+  base_url: https://api.bimtrackapp.co
+  auth_host: https://auth.bimtrackapp.co
+  openapi: https://api.bimtrackapp.co/swagger/v3/swagger.json
+- name: beta-sandbox
+  base_url: https://api.bimtrackbeta.co
+  swagger_ui: https://api.bimtrackbeta.co/swagger/ui/index
+  openapi: https://api.bimtrackbeta.co/swagger/v3/swagger.json
+credentials:
+  note: >-
+    No public shared test credentials are published. Sandbox access uses your own OAuth 2.0 client
+    (client id/secret issued by Newforma) or a Hub-owner API access token against the beta host. There
+    are no magic/test card or fixture values (this is not a payments API).

@@ -1,0 +1,8 @@
+generated: '2026-07-20'
+method: generated
+source: openapi/newforma-konekt-openapi-original.json
+skills:
+- file: newforma-triage-issues.md
+  name: Triage Newforma Konekt project issues
+  api: openapi/newforma-konekt-openapi-original.json
+  operations: [GetIssues_V3, SearchIssues_V3, GetIssue_V3, GetIssuesDetails_V3, GetArchivedIssues_V3, GetMultiple]

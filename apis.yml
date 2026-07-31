@@ -1,7 +1,25 @@
 aid: newforma
 name: Newforma
-description: Newforma is a company surfaced as a portfolio company of battery-ventures and added to the
-  API Evangelist network as a stub for enrichment. This profile is a lead awaiting the enrichment pipeline.
+description: >-
+  Newforma builds project information management software for the architecture, engineering, and
+  construction (AEC) industry. Its cloud platform Newforma Konekt (formerly BIM Track by BIM One)
+  exposes a REST API and a buildingSMART BCF REST API for BIM coordination — managing hubs, projects,
+  and issues along with their viewpoints, attachments, comments, history, sheets, models, and users.
+  Integrations authenticate with OAuth 2.0 / OpenID Connect (PKCE) or a Hub-owner API access token.
+  Newforma also ships the on-premises Project Center and the cloud ConstructEx products.
+accessModel:
+  pricing: unknown
+  onboarding: self-serve
+  trial: false
+  try_now: false
+  public: false
+  label: Self-serve signup
+  confidence: medium
+  source:
+  - authentication
+  generated: '2026-07-22'
+  method: derived
+image: https://www.newforma.com/favicon.ico
 url: https://raw.githubusercontent.com/api-evangelist/newforma/refs/heads/main/apis.yml
 x-type: company
 x-source: vc-portfolio
@@ -9,14 +27,145 @@ x-backed-by:
 - battery-ventures
 x-tier: stub
 x-tier-reason: portfolio-lead
+x-enrichment:
+  date: '2026-07-20'
+  status: enriched
+  artifacts_added: 19
+  pass: local-v1
 specificationVersion: '0.20'
 created: '2026-07-17'
-modified: '2026-07-17'
+modified: '2026-07-20'
 tags:
 - Company
-apis: []
+- AEC
+- Construction
+- Architecture
+- Engineering
+- BIM
+- Building Information Modeling
+- Project Management
+- Issue Tracking
+- Collaboration
+apis:
+- name: Newforma Konekt BCF REST API
+  description: >-
+    buildingSMART BIM Collaboration Format (BCF) REST API for exchanging coordination issues and topics
+    between Newforma Konekt and third-party BIM authoring/coordination tools, plus a BCF Server.
+  humanURL: >-
+    https://konekt.help.newforma.com/4408494681869-integrations-api/360008491831-api/360041452752-bcf-rest-api/
+  baseURL: https://api.bimtrackapp.co
+  tags:
+  - BCF
+  - BIM
+- aid: newforma:newforma-hub-api
+  name: Newforma Hub API
+  description: The Hub API from Newforma — 7 operation(s) for hub.
+  humanURL: https://bimtrackapis.readme.io/docs
+  baseURL: https://api.bimtrackapp.co
+  tags:
+  - Hub
+  properties:
+  - type: OpenAPI
+    url: openapi/newforma-hub-api-openapi.yml
+  - type: Documentation
+    url: https://konekt.help.newforma.com/4408494681869-integrations-api/
+  - type: APIReference
+    url: https://bimtrackapis.readme.io/docs
+  - type: GettingStarted
+    url: https://konekt.help.newforma.com/4408494681869-integrations-api/360008491831-api/
+  - type: Sandbox
+    url: https://api.bimtrackbeta.co/swagger/ui/index
+- aid: newforma:newforma-issue-api
+  name: Newforma Issue API
+  description: The Issue API from Newforma — 17 operation(s) for issue.
+  humanURL: https://bimtrackapis.readme.io/docs
+  baseURL: https://api.bimtrackapp.co
+  tags:
+  - Issue
+  properties:
+  - type: OpenAPI
+    url: openapi/newforma-issue-api-openapi.yml
+  - type: Documentation
+    url: https://konekt.help.newforma.com/4408494681869-integrations-api/
+  - type: APIReference
+    url: https://bimtrackapis.readme.io/docs
+  - type: GettingStarted
+    url: https://konekt.help.newforma.com/4408494681869-integrations-api/360008491831-api/
+  - type: Sandbox
+    url: https://api.bimtrackbeta.co/swagger/ui/index
+- aid: newforma:newforma-project-api
+  name: Newforma Project API
+  description: The Project API from Newforma — 4 operation(s) for project.
+  humanURL: https://bimtrackapis.readme.io/docs
+  baseURL: https://api.bimtrackapp.co
+  tags:
+  - Project
+  properties:
+  - type: OpenAPI
+    url: openapi/newforma-project-api-openapi.yml
+  - type: Documentation
+    url: https://konekt.help.newforma.com/4408494681869-integrations-api/
+  - type: APIReference
+    url: https://bimtrackapis.readme.io/docs
+  - type: GettingStarted
+    url: https://konekt.help.newforma.com/4408494681869-integrations-api/360008491831-api/
+  - type: Sandbox
+    url: https://api.bimtrackbeta.co/swagger/ui/index
 maintainers:
 - FN: Kin Lane
   email: kin@apievangelist.com
 - FN: APIs.json
   email: info@apis.io
+common:
+- type: DeveloperPortal
+  url: https://bimtrackapis.readme.io/docs
+- type: Documentation
+  url: https://konekt.help.newforma.com/4408494681869-integrations-api/
+- type: APIReference
+  url: https://bimtrackapis.readme.io/docs
+- type: GettingStarted
+  url: https://konekt.help.newforma.com/4408494681869-integrations-api/360008491831-api/
+- type: Support
+  url: https://help.newforma.com/
+- type: TermsOfService
+  url: https://www.newforma.com/newforma-api/
+- type: Website
+  url: https://www.newforma.com/
+- type: StatusPage
+  url: https://status.bimtrack.co/
+- type: ChangeLog
+  url: https://bimtrackapis.readme.io/changelog
+- type: Deprecation
+  url: https://konekt.help.newforma.com/4408494681869-integrations-api/360008491831-api/360041452712-newforma-konekt-rest-api/
+- type: OpenAPI
+  url: openapi/newforma-konekt-openapi-original.json
+- type: DomainSecurity
+  url: security/newforma-domain-security.yml
+- type: AgenticAccess
+  url: agentic-access/newforma-agentic-access.yml
+- type: Authentication
+  url: authentication/newforma-authentication.yml
+- type: OAuthScopes
+  url: scopes/newforma-scopes.yml
+- type: WellKnown
+  url: well-known/newforma-well-known.yml
+- type: MCPServer
+  url: mcp/newforma-mcp.yml
+- type: LLMsTxt
+  url: llms/newforma-llms.txt
+- type: Overlay
+  url: overlays/newforma-konekt-overlay.yaml
+- type: Conformance
+  url: conformance/newforma-conformance.yml
+- type: ErrorCatalog
+  url: errors/newforma-problem-types.yml
+- type: Lifecycle
+  url: lifecycle/newforma-lifecycle.yml
+- type: Conventions
+  url: conventions/newforma-conventions.yml
+- type: DataModel
+  url: data-model/newforma-data-model.yml
+- type: Sandbox
+  url: sandbox/newforma-sandbox.yml
+- type: AgentSkill
+  url: skills/_index.yml

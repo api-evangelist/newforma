@@ -1,0 +1,18 @@
+{
+  "provider": "newforma",
+  "sources": [
+    "newforma-hub-api-openapi.yml",
+    "newforma-issue-api-openapi.yml",
+    "newforma-project-api-openapi.yml"
+  ],
+  "outputs": [
+    "newforma-hub-api-openapi.yml",
+    "newforma-issue-api-openapi.yml",
+    "newforma-project-api-openapi.yml"
+  ],
+  "archived": [],
+  "errors": [],
+  "warnings": [],
+  "notes": [],
+  "skipped": []
+}

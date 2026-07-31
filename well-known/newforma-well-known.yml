@@ -1,0 +1,26 @@
+generated: '2026-07-20'
+method: searched
+hosts:
+- host: https://auth.bimtrackapp.co
+  documents:
+  - path: /.well-known/openid-configuration
+    status: 200
+    file: newforma-openid-configuration.json
+  - path: /.well-known/oauth-authorization-server
+    status: 404
+- host: https://api.bimtrackapp.co
+  documents:
+  - path: /.well-known/security.txt
+    status: 302
+  - path: /.well-known/api-catalog
+    status: 302
+  - path: /.well-known/ai-plugin.json
+    status: 302
+- host: https://www.newforma.com
+  documents:
+  - path: /.well-known/security.txt
+    status: 404
+notes: >-
+  Only the IdentityServer OIDC discovery document at auth.bimtrackapp.co returns a real 200 payload
+  (saved). The api.bimtrackapp.co /.well-known/* probes return 302 redirects (no standalone documents),
+  and newforma.com publishes no security.txt.

@@ -1,0 +1,56 @@
+generated: '2026-07-20'
+method: derived
+status: candidate
+source: openapi/newforma-konekt-openapi-original.json
+note: >-
+  No official hosted/remote MCP server was found for Newforma Konekt. This is a candidate tool list
+  derived from the Konekt REST API v3 operations, suitable for a generated MCP server front-end.
+server:
+  name: newforma-konekt
+  transport: http
+tools:
+- name: list_hubs
+  description: List hubs the caller can access.
+  source_operation: openapi/newforma-konekt-openapi-original.json#GET /v3/hubs
+- name: get_hub
+  description: Get a hub by id.
+  source_operation: openapi/newforma-konekt-openapi-original.json#GET /v3/hubs/{hubId}
+- name: get_hub_by_name
+  description: Get a hub by name.
+  source_operation: openapi/newforma-konekt-openapi-original.json#GET /v3/hubs/name/{hubName}
+- name: list_issues
+  description: List issues in a project.
+  source_operation: openapi/newforma-konekt-openapi-original.json#GetIssues_V3
+- name: get_issue
+  description: Get a single issue by id.
+  source_operation: openapi/newforma-konekt-openapi-original.json#GetIssue_V3
+- name: get_issue_by_number
+  description: Get an issue by its project issue number.
+  source_operation: openapi/newforma-konekt-openapi-original.json#GET /v3/hubs/{hubId}/projects/{projectId}/issues/number/{issueNumber}
+- name: search_issues
+  description: Search issues in a project.
+  source_operation: openapi/newforma-konekt-openapi-original.json#SearchIssues_V3
+- name: get_issues_details
+  description: Get detailed issue records in bulk.
+  source_operation: openapi/newforma-konekt-openapi-original.json#GetIssuesDetails_V3
+- name: list_archived_issues
+  description: List archived issues in a project.
+  source_operation: openapi/newforma-konekt-openapi-original.json#GetArchivedIssues_V3
+- name: create_issue
+  description: Create an issue in a project.
+  source_operation: openapi/newforma-konekt-openapi-original.json#POST /v3/hubs/{hubId}/projects/{projectId}/issues
+- name: update_issue
+  description: Update or patch an issue.
+  source_operation: openapi/newforma-konekt-openapi-original.json#PUT /v3/hubs/{hubId}/projects/{projectId}/issues/{issueId}
+- name: add_issue_comment
+  description: Add a comment to an issue.
+  source_operation: openapi/newforma-konekt-openapi-original.json#POST /v3/hubs/{hubId}/projects/{projectId}/issues/{issueId}/comments
+- name: add_issue_attachment
+  description: Attach a file to an issue.
+  source_operation: openapi/newforma-konekt-openapi-original.json#POST /v3/hubs/{hubId}/projects/{projectId}/issues/{issueId}/attachments
+- name: list_hub_users
+  description: List users in a hub.
+  source_operation: openapi/newforma-konekt-openapi-original.json#GET /v3/hubs/{hubId}/users
+- name: list_project_sheets
+  description: List 2D sheets in a project.
+  source_operation: openapi/newforma-konekt-openapi-original.json#GET /v3/hubs/{hubId}/projects/{projectId}/sheets

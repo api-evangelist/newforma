@@ -1,0 +1,16 @@
+generated: '2026-07-20'
+method: probed
+source: live DNS/TLS/HTTP probes of apis.yml + OpenAPI hosts
+hosts:
+- host: api.bimtrackapp.co
+  https: true
+  tls_version: TLSv1.3
+  cert_expires: Dec 28 17:49:02 2026 GMT
+  hsts: null
+domains:
+- domain: bimtrackapp.co
+  dnssec: false
+  caa: []
+  spf: true
+  dmarc: true
+  dmarc_policy: none

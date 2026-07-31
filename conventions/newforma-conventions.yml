@@ -1,0 +1,52 @@
+generated: '2026-07-20'
+method: searched
+source: openapi/newforma-konekt-openapi-original.json
+docs: https://bimtrackapis.readme.io/docs
+authentication:
+  style: OAuth 2.0 bearer / API access token
+  header: Authorization
+  detail: See authentication/newforma-authentication.yml and scopes/newforma-scopes.yml
+base_url: https://api.bimtrackapp.co
+resource_model:
+  note: >-
+    Resources are nested under a hub and project: /v3/hubs/{hubId}/projects/{projectId}/issues/... The
+    issue is the central entity, with sub-resources for attachments, comments, viewpoints and history.
+versioning:
+  style: uri-path
+  current: v3
+  optional_default: v3
+content_negotiation:
+  style: OData media-type parameters
+  media_types:
+  - application/json
+  - application/json;odata.metadata=minimal
+  - application/json;odata.metadata=full
+  - application/json;odata.metadata=none
+  - application/xml
+  note: Accept header selects OData metadata verbosity; default application/json is sufficient for most clients.
+patching:
+  style: JSON Patch
+  note: >-
+    Update endpoints accept PATCH with a PatchOperation/JSON-Patch document (op/path/value) in addition
+    to full PUT replacement on some resources.
+idempotency:
+  supported: false
+  note: >-
+    No idempotency-key header or endpoint is documented. Writes are not advertised as idempotent beyond
+    HTTP method semantics (PUT/PATCH/DELETE).
+pagination:
+  documented: false
+  note: >-
+    Collection endpoints (issues, users, sheets, project templates) return JSON arrays; no cursor/offset
+    pagination parameters are declared in the OpenAPI. Bulk retrieval helpers exist (issues/multiple,
+    issues/details).
+error_envelope:
+  format: rfc7807
+  schema: ProblemDetails
+  detail: See errors/newforma-problem-types.yml
+rate_limiting:
+  documented: false
+cross_reference:
+  errors: errors/newforma-problem-types.yml
+  lifecycle: lifecycle/newforma-lifecycle.yml
+  authentication: authentication/newforma-authentication.yml

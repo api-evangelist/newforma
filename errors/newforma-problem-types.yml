@@ -1,0 +1,36 @@
+generated: '2026-07-20'
+method: derived
+source: openapi/newforma-konekt-openapi-original.json
+format: rfc7807
+envelope:
+  schema: ProblemDetails
+  media_type: application/json
+  note: >-
+    Error bodies are ASP.NET Core ProblemDetails (RFC 7807: type, title, status, detail, instance).
+    The spec does not advertise application/problem+json, so problem documents are returned as
+    application/json. A 409 on issue-writing endpoints returns the UserProfileNotCreatedErrorModel /
+    ErrorStatus shape.
+problems:
+- status: 400
+  title: Bad Request
+  meaning: The request was malformed or failed validation.
+  remediation: Correct the request body/parameters against the schema and retry.
+- status: 401
+  title: Unauthorized
+  meaning: Missing, expired, or invalid access token.
+  remediation: Obtain a valid OAuth 2.0 access token or API access token and send it in the Authorization header.
+- status: 403
+  title: Forbidden
+  meaning: The authenticated caller lacks permission for the hub/project/resource.
+  remediation: Verify the caller's hub/project role and requested scope.
+- status: 404
+  title: Not Found
+  meaning: The referenced hub, project, issue, or other resource does not exist.
+  remediation: Check the hub/project/resource identifiers.
+- status: 409
+  title: Conflict
+  type: UserProfileNotCreatedErrorModel
+  meaning: >-
+    The calling user must complete their profile before calling this endpoint (returned on some
+    issue-writing operations), or the request conflicts with current resource state.
+  remediation: Complete the user profile in Newforma Konekt, then retry.

@@ -1,0 +1,22 @@
+generated: '2026-07-20'
+method: searched
+source: https://konekt.help.newforma.com/4408494681869-integrations-api/360008491831-api/360041452712-newforma-konekt-rest-api/
+versioning:
+  scheme: uri-path
+  current: v3
+  optional: true
+  note: >-
+    API versioning is optional; when no version is specified the system defaults to v3 (/v3). Earlier
+    v1/v2 REST API versions exist and the documentation urges integrators to migrate to v3 as soon as
+    possible.
+  docs: https://bimtrackapis.readme.io/docs
+deprecation:
+  policy_note: >-
+    Older REST API versions (v1, v2) are documented as superseded; migration to v3 is recommended. No
+    RFC 8594 Sunset/Deprecation response headers are documented.
+  deprecated_versions: [v1, v2]
+  docs: https://konekt.help.newforma.com/4408494681869-integrations-api/360008491831-api/360041452712-newforma-konekt-rest-api/
+status_page: https://status.bimtrack.co/
+status_page_alt: https://newforma.statuspage.io/
+changelog: https://bimtrackapis.readme.io/changelog
+deprecated_operations: []

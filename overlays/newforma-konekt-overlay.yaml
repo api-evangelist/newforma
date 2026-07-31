@@ -1,0 +1,21 @@
+overlay: 1.0.0
+info:
+  title: API Evangelist enhancements for Newforma Konekt API
+  version: 1.0.0
+extends: openapi/newforma-konekt-openapi-original.json
+actions:
+- target: $.info
+  update:
+    x-apievangelist-provider: newforma
+    x-apievangelist-product: Newforma Konekt (formerly BIM Track)
+    x-apievangelist-auth: OAuth 2.0 (PKCE) / OIDC at https://auth.bimtrackapp.co + Hub API access token
+    x-apievangelist-notes: >-
+      Production base URL is https://api.bimtrackapp.co; a beta sandbox is available at
+      https://api.bimtrackbeta.co. Error bodies follow RFC 7807 ProblemDetails. A companion BCF REST API
+      implements the buildingSMART BIM Collaboration Format for cross-tool issue exchange.
+- target: $.servers
+  update:
+  - url: https://api.bimtrackapp.co
+    description: Production
+  - url: https://api.bimtrackbeta.co
+    description: Beta sandbox

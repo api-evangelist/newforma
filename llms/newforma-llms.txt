@@ -1,0 +1,28 @@
+# Newforma
+
+> Newforma builds project information management software for the architecture, engineering, and construction (AEC) industry. Its cloud product Newforma Konekt (formerly BIM Track) exposes a REST API and a buildingSMART BCF REST API for BIM coordination — managing hubs, projects, issues, viewpoints, attachments, comments, sheets, and users.
+
+## APIs
+- [Newforma Konekt REST API v3](https://bimtrackapis.readme.io/docs): REST API for hubs, projects and BIM-coordination issues. Base URL https://api.bimtrackapp.co (version optional, defaults to /v3).
+- [BCF REST API](https://konekt.help.newforma.com/4408494681869-integrations-api/360008491831-api/360041452752-bcf-rest-api/): buildingSMART BIM Collaboration Format REST API for exchanging issues/topics with third-party BIM tools.
+
+## Specs
+- [OpenAPI 3.0.4 (production)](https://api.bimtrackapp.co/swagger/v3/swagger.json)
+- [OpenAPI 3.0.4 (beta sandbox)](https://api.bimtrackbeta.co/swagger/v3/swagger.json)
+- [OpenID Connect discovery](https://auth.bimtrackapp.co/.well-known/openid-configuration)
+
+## Authentication
+- [Using OAuth 2.0](https://konekt.help.newforma.com/4408494681869-integrations-api/360008491831-api/360060182352-using-oauth-2-0/): OAuth 2.0 / OIDC with PKCE (S256) authorization-code and client-credentials grants at https://auth.bimtrackapp.co.
+- [Generate an API access token](https://konekt.help.newforma.com/4408494681869-integrations-api/360008491831-api/360046872411-generate-an-api-access-token/): Hub-owner API access token (Bearer in Authorization header).
+
+## Docs
+- [Integrations & API](https://konekt.help.newforma.com/4408494681869-integrations-api/): Konekt integrations and API help center.
+- [API Reference](https://bimtrackapis.readme.io/docs): developer reference hub.
+- [API Changelog](https://bimtrackapis.readme.io/changelog): dated API changelog.
+- [Newforma Konekt API Terms](https://www.newforma.com/newforma-api/): API terms of use.
+
+## Company
+- [Newforma](https://www.newforma.com/): AEC project information management (Konekt, Project Center, ConstructEx).
+- [Help Center](https://help.newforma.com/)
+- [Partner Portal](https://partners.newforma.com/)
+- [Status](https://status.bimtrack.co/)
