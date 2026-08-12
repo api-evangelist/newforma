@@ -138,7 +138,7 @@ common:
 - type: Deprecation
   url: https://konekt.help.newforma.com/4408494681869-integrations-api/360008491831-api/360041452712-newforma-konekt-rest-api/
 - type: OpenAPI
-  url: openapi/newforma-konekt-openapi-original.json
+  url: openapi/_original/newforma-konekt-openapi-original.json
 - type: DomainSecurity
   url: security/newforma-domain-security.yml
 - type: AgenticAccess
