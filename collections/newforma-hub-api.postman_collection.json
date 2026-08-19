@@ -1,0 +1,1141 @@
+{
+  "item": [
+    {
+      "id": "01ee2534-5900-4c6d-94fb-8eeed045ad9e",
+      "name": "Hub",
+      "description": {
+        "content": "",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "f8d60f73-83c2-45e1-8ecc-42056a77a903",
+          "name": "Get hub",
+          "request": {
+            "name": "Get hub",
+            "description": {},
+            "url": {
+              "path": [
+                "v3",
+                "hubs",
+                ":hubId"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "hubId",
+                  "description": "(Required) "
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json;odata.metadata=minimal;odata.streaming=true"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "63ce8206-32e7-49db-a0ea-a3e904f34ddd",
+              "name": "OK",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "v3",
+                    "hubs",
+                    ":hubId"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "hubId",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json;odata.metadata=minimal;odata.streaming=true"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json;odata.metadata=minimal;odata.streaming=true"
+                }
+              ],
+              "body": "{\n  \"Id\": \"string\",\n  \"Name\": \"string\",\n  \"Author\": {\n    \"Id\": 8131,\n    \"UserName\": \"string\",\n    \"Email\": \"string\",\n    \"FirstName\": \"string\",\n    \"LastName\": \"string\",\n    \"AvatarUrl\": \"string\"\n  },\n  \"Image\": {\n    \"Id\": 1455,\n    \"Name\": \"string\",\n    \"Size\": 4570,\n    \"Date\": \"1977-01-12T21:53:38.447Z\",\n    \"Url\": \"string\",\n    \"UrlExpiration\": \"1968-03-10T07:00:41.935Z\",\n    \"ThumbnailUrl\": \"string\",\n    \"ThumbnailUrlExpiration\": \"1976-07-12T07:44:48.469Z\"\n  },\n  \"CreationDate\": \"2008-09-14T19:41:20.539Z\",\n  \"RegionSummary\": {\n    \"Location\": \"string\",\n    \"ApiRegionalUrl\": \"string\"\n  },\n  \"NumberOfUsers\": 5084,\n  \"NumberOfProjects\": 3774,\n  \"RequestingUserPermissions\": {\n    \"Role\": \"Admin\"\n  }\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "f16d5569-fdff-4c99-ac23-84a534b814b4",
+              "name": "The calling user must complete his profile before he can call this endpoint, by signing in once in the web platform.\n\nCode: USER_PROFILE_NOT_CREATED\n\nWebsiteLoginUrl: the URL to be used for signing in",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "v3",
+                    "hubs",
+                    ":hubId"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "hubId",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json;odata.metadata=minimal;odata.streaming=true"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Conflict",
+              "code": 409,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json;odata.metadata=minimal;odata.streaming=true"
+                }
+              ],
+              "body": "{\n  \"Code\": \"EXPIRED_SUBSCRIPTION\",\n  \"Message\": \"string\",\n  \"WebsiteLoginUrl\": \"string\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "3434fc3f-8360-4481-9c72-d7e5419c931e",
+          "name": "Get a hub by name",
+          "request": {
+            "name": "Get a hub by name",
+            "description": {},
+            "url": {
+              "path": [
+                "v3",
+                "hubs",
+                "name",
+                ":hubName"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "hubName",
+                  "description": "(Required) "
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json;odata.metadata=minimal;odata.streaming=true"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "36ee370f-0484-400f-8cad-2073d53ffff9",
+              "name": "OK",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "v3",
+                    "hubs",
+                    "name",
+                    ":hubName"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "hubName",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json;odata.metadata=minimal;odata.streaming=true"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json;odata.metadata=minimal;odata.streaming=true"
+                }
+              ],
+              "body": "{\n  \"Id\": \"string\",\n  \"Name\": \"string\",\n  \"Author\": {\n    \"Id\": 6485,\n    \"UserName\": \"string\",\n    \"Email\": \"string\",\n    \"FirstName\": \"string\",\n    \"LastName\": \"string\",\n    \"AvatarUrl\": \"string\"\n  },\n  \"Image\": {\n    \"Id\": 7661,\n    \"Name\": \"string\",\n    \"Size\": 366,\n    \"Date\": \"1979-04-22T02:52:57.110Z\",\n    \"Url\": \"string\",\n    \"UrlExpiration\": \"1970-03-22T23:08:05.473Z\",\n    \"ThumbnailUrl\": \"string\",\n    \"ThumbnailUrlExpiration\": \"1986-12-10T21:42:12.188Z\"\n  },\n  \"CreationDate\": \"1965-08-09T05:10:38.315Z\",\n  \"RegionSummary\": {\n    \"Location\": \"string\",\n    \"ApiRegionalUrl\": \"string\"\n  },\n  \"NumberOfUsers\": 2039,\n  \"NumberOfProjects\": 7445\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "45286792-ab04-4401-8244-78d31850872b",
+          "name": "Get hubs",
+          "request": {
+            "name": "Get hubs",
+            "description": {},
+            "url": {
+              "path": [
+                "v3",
+                "hubs"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json;odata.metadata=minimal;odata.streaming=true"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "0de84caf-4bfe-48d7-9f65-28a6ffb7df98",
+              "name": "OK",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "v3",
+                    "hubs"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json;odata.metadata=minimal;odata.streaming=true"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json;odata.metadata=minimal;odata.streaming=true"
+                }
+              ],
+              "body": "[\n  {\n    \"Id\": \"string\",\n    \"Name\": \"string\",\n    \"Author\": {\n      \"Id\": 8676,\n      \"UserName\": \"string\",\n      \"Email\": \"string\",\n      \"FirstName\": \"string\",\n      \"LastName\": \"string\",\n      \"AvatarUrl\": \"string\"\n    },\n    \"Image\": {\n      \"Id\": 5603,\n      \"Name\": \"string\",\n      \"Size\": 4533,\n      \"Date\": \"2003-08-31T08:41:00.770Z\",\n      \"Url\": \"string\",\n      \"UrlExpiration\": \"1985-05-20T23:06:08.077Z\",\n      \"ThumbnailUrl\": \"string\",\n      \"ThumbnailUrlExpiration\": \"1973-03-01T02:06:02.120Z\"\n    },\n    \"CreationDate\": \"1964-01-18T04:58:51.852Z\",\n    \"RegionSummary\": {\n      \"Location\": \"string\",\n      \"ApiRegionalUrl\": \"string\"\n    },\n    \"NumberOfUsers\": 6081,\n    \"NumberOfProjects\": 3973\n  },\n  {\n    \"Id\": \"string\",\n    \"Name\": \"string\",\n    \"Author\": {\n      \"Id\": 8066,\n      \"UserName\": \"string\",\n      \"Email\": \"string\",\n      \"FirstName\": \"string\",\n      \"LastName\": \"string\",\n      \"AvatarUrl\": \"string\"\n    },\n    \"Image\": {\n      \"Id\": 6270,\n      \"Name\": \"string\",\n      \"Size\": 1345,\n      \"Date\": \"1996-11-21T12:05:40.857Z\",\n      \"Url\": \"string\",\n      \"UrlExpiration\": \"2024-08-02T19:03:44.741Z\",\n      \"ThumbnailUrl\": \"string\",\n      \"ThumbnailUrlExpiration\": \"1973-12-02T06:59:45.393Z\"\n    },\n    \"CreationDate\": \"1975-08-16T02:30:49.498Z\",\n    \"RegionSummary\": {\n      \"Location\": \"string\",\n      \"ApiRegionalUrl\": \"string\"\n    },\n    \"NumberOfUsers\": 9064,\n    \"NumberOfProjects\": 8981\n  }\n]",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "521aaae5-be4c-4333-911d-4aba3ca0a3e7",
+          "name": "Get project templates",
+          "request": {
+            "name": "Get project templates",
+            "description": {},
+            "url": {
+              "path": [
+                "v3",
+                "hubs",
+                ":hubId",
+                "projecttemplates"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "hubId",
+                  "description": "(Required) "
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json;odata.metadata=minimal;odata.streaming=true"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "5f151464-98cc-4a9e-8766-46b7496854a5",
+              "name": "OK",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "v3",
+                    "hubs",
+                    ":hubId",
+                    "projecttemplates"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "hubId",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json;odata.metadata=minimal;odata.streaming=true"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json;odata.metadata=minimal;odata.streaming=true"
+                }
+              ],
+              "body": "[\n  {\n    \"HubId\": \"string\",\n    \"Id\": 8763,\n    \"Author\": {\n      \"Id\": 3104,\n      \"UserName\": \"string\",\n      \"Email\": \"string\",\n      \"FirstName\": \"string\",\n      \"LastName\": \"string\",\n      \"AvatarUrl\": \"string\"\n    },\n    \"Name\": \"string\",\n    \"CreationDate\": \"2012-12-24T00:09:13.161Z\"\n  },\n  {\n    \"HubId\": \"string\",\n    \"Id\": 5841,\n    \"Author\": {\n      \"Id\": 5591,\n      \"UserName\": \"string\",\n      \"Email\": \"string\",\n      \"FirstName\": \"string\",\n      \"LastName\": \"string\",\n      \"AvatarUrl\": \"string\"\n    },\n    \"Name\": \"string\",\n    \"CreationDate\": \"2001-07-12T21:42:58.971Z\"\n  }\n]",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "c70d4341-202e-4e45-bddf-1a995c9855cd",
+          "name": "Create project template",
+          "request": {
+            "name": "Create project template",
+            "description": {},
+            "url": {
+              "path": [
+                "v3",
+                "hubs",
+                ":hubId",
+                "projecttemplates"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "hubId",
+                  "description": "(Required) "
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json;odata.metadata=minimal;odata.streaming=true"
+              }
+            ],
+            "method": "POST",
+            "auth": null,
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"Name\": \"<string>\",\n  \"SourceProjectId\": \"<integer>\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "7650b938-8ad1-4d83-a2a4-7df6d5a63443",
+              "name": "Created",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "v3",
+                    "hubs",
+                    ":hubId",
+                    "projecttemplates"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "hubId",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json;odata.metadata=minimal;odata.streaming=true"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"Name\": \"<string>\",\n  \"SourceProjectId\": \"<integer>\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Created",
+              "code": 201,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json;odata.metadata=minimal;odata.streaming=true"
+                }
+              ],
+              "body": "{\n  \"HubId\": \"string\",\n  \"Id\": 8432,\n  \"Author\": {\n    \"Id\": 1642,\n    \"UserName\": \"string\",\n    \"Email\": \"string\",\n    \"FirstName\": \"string\",\n    \"LastName\": \"string\",\n    \"AvatarUrl\": \"string\"\n  },\n  \"Name\": \"string\",\n  \"CreationDate\": \"1999-10-24T07:55:13.328Z\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "f74f1e8b-9c12-48d9-ad55-f805cdc326b3",
+          "name": "Delete project template",
+          "request": {
+            "name": "Delete project template",
+            "description": {},
+            "url": {
+              "path": [
+                "v3",
+                "hubs",
+                ":hubId",
+                "projecttemplates",
+                ":projectTemplateId"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "hubId",
+                  "description": "(Required) "
+                },
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<integer>",
+                  "key": "projectTemplateId",
+                  "description": "(Required) "
+                }
+              ]
+            },
+            "method": "DELETE",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "bcee45d5-0b9a-498f-9c98-466d8a6e3196",
+              "name": "OK",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "v3",
+                    "hubs",
+                    ":hubId",
+                    "projecttemplates",
+                    ":projectTemplateId"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "hubId",
+                      "description": "(Required) "
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<integer>",
+                      "key": "projectTemplateId",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<API Key>"
+                  }
+                ],
+                "method": "DELETE",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "bd59805a-415d-4744-b8a2-a4877fe4061f",
+          "name": "Get hub users",
+          "request": {
+            "name": "Get hub users",
+            "description": {},
+            "url": {
+              "path": [
+                "v3",
+                "hubs",
+                ":hubId",
+                "users"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "hubId",
+                  "description": "(Required) "
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json;odata.metadata=minimal;odata.streaming=true"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "90811f8c-98e2-4da1-905c-ddfb97e2d49f",
+              "name": "OK",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "v3",
+                    "hubs",
+                    ":hubId",
+                    "users"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "hubId",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json;odata.metadata=minimal;odata.streaming=true"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json;odata.metadata=minimal;odata.streaming=true"
+                }
+              ],
+              "body": "[\n  {\n    \"User\": {\n      \"Id\": 5769,\n      \"UserName\": \"string\",\n      \"Email\": \"string\",\n      \"FirstName\": \"string\",\n      \"LastName\": \"string\",\n      \"AvatarUrl\": \"string\"\n    },\n    \"Role\": \"Guest\",\n    \"LastWebLogin\": \"2019-11-06T02:18:06.678Z\",\n    \"LastAddinLogin\": \"2020-03-06T01:54:33.564Z\",\n    \"LastHubProjectActivity\": \"1986-01-25T06:04:31.396Z\",\n    \"IsActivated\": false\n  },\n  {\n    \"User\": {\n      \"Id\": 496,\n      \"UserName\": \"string\",\n      \"Email\": \"string\",\n      \"FirstName\": \"string\",\n      \"LastName\": \"string\",\n      \"AvatarUrl\": \"string\"\n    },\n    \"Role\": \"Admin\",\n    \"LastWebLogin\": \"1988-06-16T16:54:24.095Z\",\n    \"LastAddinLogin\": \"1966-12-01T13:45:59.612Z\",\n    \"LastHubProjectActivity\": \"1981-05-15T19:37:20.876Z\",\n    \"IsActivated\": true\n  }\n]",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "3cd5d302-ce48-4eb7-be6f-2711dcccbe47",
+          "name": "Create hub user",
+          "request": {
+            "name": "Create hub user",
+            "description": {},
+            "url": {
+              "path": [
+                "v3",
+                "hubs",
+                ":hubId",
+                "users"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "hubId",
+                  "description": "(Required) "
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json;odata.metadata=minimal;odata.streaming=true"
+              }
+            ],
+            "method": "POST",
+            "auth": null,
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"Email\": \"<string>\",\n  \"Role\": \"<string>\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "04741101-16e6-4043-9f66-73cacf96c2c6",
+              "name": "Created",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "v3",
+                    "hubs",
+                    ":hubId",
+                    "users"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "hubId",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json;odata.metadata=minimal;odata.streaming=true"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"Email\": \"<string>\",\n  \"Role\": \"<string>\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Created",
+              "code": 201,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json;odata.metadata=minimal;odata.streaming=true"
+                }
+              ],
+              "body": "{\n  \"User\": {\n    \"Id\": 2762,\n    \"UserName\": \"string\",\n    \"Email\": \"string\",\n    \"FirstName\": \"string\",\n    \"LastName\": \"string\",\n    \"AvatarUrl\": \"string\"\n  },\n  \"Role\": \"<string>\",\n  \"LastWebLogin\": \"1998-03-06T13:12:48.658Z\",\n  \"LastAddinLogin\": \"1969-12-24T23:13:51.293Z\",\n  \"LastHubProjectActivity\": \"2021-04-15T13:11:23.758Z\",\n  \"IsActivated\": false\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "322d5ee0-fc03-468e-83b1-b99f67d75b22",
+          "name": "Updates a user in the specified hub",
+          "request": {
+            "name": "Updates a user in the specified hub",
+            "description": {},
+            "url": {
+              "path": [
+                "v3",
+                "hubs",
+                ":hubId",
+                "users",
+                ":userId"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "hubId",
+                  "description": "(Required) "
+                },
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<integer>",
+                  "key": "userId",
+                  "description": "(Required) "
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json;odata.metadata=minimal;odata.streaming=true"
+              }
+            ],
+            "method": "PUT",
+            "auth": null,
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"Role\": \"<string>\",\n  \"ResendHubInvite\": \"<boolean>\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "422bc483-1b0b-4cc0-be37-12ee571c3274",
+              "name": "OK",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "v3",
+                    "hubs",
+                    ":hubId",
+                    "users",
+                    ":userId"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "hubId",
+                      "description": "(Required) "
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<integer>",
+                      "key": "userId",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json;odata.metadata=minimal;odata.streaming=true"
+                  }
+                ],
+                "method": "PUT",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"Role\": \"<string>\",\n  \"ResendHubInvite\": \"<boolean>\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json;odata.metadata=minimal;odata.streaming=true"
+                }
+              ],
+              "body": "{\n  \"User\": {\n    \"Id\": 2762,\n    \"UserName\": \"string\",\n    \"Email\": \"string\",\n    \"FirstName\": \"string\",\n    \"LastName\": \"string\",\n    \"AvatarUrl\": \"string\"\n  },\n  \"Role\": \"<string>\",\n  \"LastWebLogin\": \"1998-03-06T13:12:48.658Z\",\n  \"LastAddinLogin\": \"1969-12-24T23:13:51.293Z\",\n  \"LastHubProjectActivity\": \"2021-04-15T13:11:23.758Z\",\n  \"IsActivated\": false\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "e16a04b2-15ec-4ead-9b27-b78589b87461",
+          "name": "Delete hub user",
+          "request": {
+            "name": "Delete hub user",
+            "description": {},
+            "url": {
+              "path": [
+                "v3",
+                "hubs",
+                ":hubId",
+                "users",
+                ":userId"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "hubId",
+                  "description": "(Required) "
+                },
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<integer>",
+                  "key": "userId",
+                  "description": "(Required) "
+                }
+              ]
+            },
+            "method": "DELETE",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "fe514f15-e225-473a-995b-b254af660455",
+              "name": "OK",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "v3",
+                    "hubs",
+                    ":hubId",
+                    "users",
+                    ":userId"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "hubId",
+                      "description": "(Required) "
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<integer>",
+                      "key": "userId",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<API Key>"
+                  }
+                ],
+                "method": "DELETE",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    }
+  ],
+  "event": [],
+  "variable": [
+    {
+      "type": "string",
+      "value": "https://api.bimtrackapp.co",
+      "key": "baseUrl"
+    }
+  ],
+  "auth": {
+    "type": "apikey",
+    "apikey": [
+      {
+        "key": "key",
+        "value": "Authorization"
+      },
+      {
+        "key": "value",
+        "value": "{{apiKey}}"
+      },
+      {
+        "key": "in",
+        "value": "header"
+      }
+    ]
+  },
+  "info": {
+    "_postman_id": "fc2263eb-f3d4-474c-8105-ff276bf2fd5e",
+    "name": "Newforma Konekt Hub API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "description": {
+      "content": "<br><div>\r\n**Important:** API versioning is now optional. If no version is specified, the system defaults to using version 3 (`/v3`).\r\n</div><br>",
+      "type": "text/plain"
+    }
+  }
+}

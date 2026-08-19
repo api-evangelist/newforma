@@ -2,8 +2,7 @@ generated: '2026-07-20'
 method: derived
 status: candidate
 source: openapi/newforma-konekt-openapi-original.json
-note: >-
-  No official hosted/remote MCP server was found for Newforma Konekt. This is a candidate tool list
+note: No official hosted/remote MCP server was found for Newforma Konekt. This is a candidate tool list
   derived from the Konekt REST API v3 operations, suitable for a generated MCP server front-end.
 server:
   name: newforma-konekt
@@ -54,3 +53,9 @@ tools:
 - name: list_project_sheets
   description: List 2D sheets in a project.
   source_operation: openapi/newforma-konekt-openapi-original.json#GET /v3/hubs/{hubId}/projects/{projectId}/sheets
+deployment:
+  mode: none
+  verified: derived
+  tools: 15
+  checked: '2026-08-12'
+  source: catalog MCP census

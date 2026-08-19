@@ -1,0 +1,1395 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "Newforma Konekt Hub Issue API",
+    "version": "3"
+  },
+  "request": {
+    "auth": {
+      "type": "apikey",
+      "key": "Authorization",
+      "value": "{{Authorization}}",
+      "placement": "header"
+    }
+  },
+  "items": [
+    {
+      "info": {
+        "name": "Issue",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Get archived issues",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.bimtrackapp.co/v3/hubs/:hubId/projects/:projectId/archivedissues",
+            "params": [
+              {
+                "name": "hubId",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "projectId",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "Query",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "QueryExtendedSearch",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "IncludeIssueAdditionalInfo",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "Term",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "Description",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "AssignedToUserIds",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "AuthorUserIds",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "LastModificationAuthorUserIds",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "IssueGroups",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "PriorityIds",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "ProjectPhaseIds",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "ConfidentialityIds",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "ProjectZoneIds",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "StatusIds",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "DisciplineIds",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "TypeIds",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "CreationDateStart",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "CreationDateEnd",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "LastModificationDateStart",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "LastModificationDateEnd",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "DueDateStart",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "DueDateEnd",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "Visibility",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "CustomAttributes",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "IsUnlinked",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "IssueIds",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "ActivityOperationId",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "sort",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "startRecord",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "returnCount",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "assignedToUserId",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "priorityId",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "statusId",
+                "value": "",
+                "type": "query"
+              }
+            ]
+          },
+          "docs": "Get archived issues"
+        },
+        {
+          "info": {
+            "name": "Get archived issue",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.bimtrackapp.co/v3/hubs/:hubId/projects/:projectId/archivedissues/:issueId",
+            "params": [
+              {
+                "name": "hubId",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "projectId",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "issueId",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          },
+          "docs": "Get archived issue"
+        },
+        {
+          "info": {
+            "name": "Restore issue",
+            "type": "http"
+          },
+          "http": {
+            "method": "PATCH",
+            "url": "https://api.bimtrackapp.co/v3/hubs/:hubId/projects/:projectId/archivedissues/:archivedIssueId",
+            "params": [
+              {
+                "name": "hubId",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "projectId",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "archivedIssueId",
+                "value": "",
+                "type": "path"
+              }
+            ],
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Restore issue"
+        },
+        {
+          "info": {
+            "name": "Delete archived issue",
+            "type": "http"
+          },
+          "http": {
+            "method": "DELETE",
+            "url": "https://api.bimtrackapp.co/v3/hubs/:hubId/projects/:projectId/archivedissues/:archivedIssueId",
+            "params": [
+              {
+                "name": "hubId",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "projectId",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "archivedIssueId",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          },
+          "docs": "Delete archived issue"
+        },
+        {
+          "info": {
+            "name": "Get issue attachments list",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.bimtrackapp.co/v3/hubs/:hubId/projects/:projectId/issues/:issueId/attachments",
+            "params": [
+              {
+                "name": "hubId",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "projectId",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "issueId",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          },
+          "docs": "Get issue attachments list"
+        },
+        {
+          "info": {
+            "name": "Create issue attachment",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://api.bimtrackapp.co/v3/hubs/:hubId/projects/:projectId/issues/:issueId/attachments",
+            "params": [
+              {
+                "name": "hubId",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "projectId",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "issueId",
+                "value": "",
+                "type": "path"
+              }
+            ],
+            "body": {
+              "type": "multipart-form",
+              "data": [
+                {
+                  "name": "file",
+                  "type": "text",
+                  "value": ""
+                }
+              ]
+            }
+          },
+          "docs": "Create issue attachment"
+        },
+        {
+          "info": {
+            "name": "Delete issue attachment",
+            "type": "http"
+          },
+          "http": {
+            "method": "DELETE",
+            "url": "https://api.bimtrackapp.co/v3/hubs/:hubId/projects/:projectId/issues/:issueId/attachments/:attachmentId",
+            "params": [
+              {
+                "name": "hubId",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "projectId",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "issueId",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "attachmentId",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          },
+          "docs": "Delete issue attachment"
+        },
+        {
+          "info": {
+            "name": "Get issue comments",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.bimtrackapp.co/v3/hubs/:hubId/projects/:projectId/issues/:issueId/comments",
+            "params": [
+              {
+                "name": "hubId",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "projectId",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "issueId",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          },
+          "docs": "Get issue comments"
+        },
+        {
+          "info": {
+            "name": "Create issue comment",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://api.bimtrackapp.co/v3/hubs/:hubId/projects/:projectId/issues/:issueId/comments",
+            "params": [
+              {
+                "name": "hubId",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "projectId",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "issueId",
+                "value": "",
+                "type": "path"
+              }
+            ],
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Create issue comment"
+        },
+        {
+          "info": {
+            "name": "Delete issue comment",
+            "type": "http"
+          },
+          "http": {
+            "method": "DELETE",
+            "url": "https://api.bimtrackapp.co/v3/hubs/:hubId/projects/:projectId/issues/:issueId/comments/:issueCommentId",
+            "params": [
+              {
+                "name": "hubId",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "projectId",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "issueId",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "issueCommentId",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          },
+          "docs": "Delete issue comment"
+        },
+        {
+          "info": {
+            "name": "Get issues",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.bimtrackapp.co/v3/hubs/:hubId/projects/:projectId/issues",
+            "params": [
+              {
+                "name": "hubId",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "projectId",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "Query",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "QueryExtendedSearch",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "IncludeIssueAdditionalInfo",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "Term",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "Description",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "AssignedToUserIds",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "AuthorUserIds",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "LastModificationAuthorUserIds",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "IssueGroups",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "PriorityIds",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "ProjectPhaseIds",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "ConfidentialityIds",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "ProjectZoneIds",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "StatusIds",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "DisciplineIds",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "TypeIds",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "CreationDateStart",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "CreationDateEnd",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "LastModificationDateStart",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "LastModificationDateEnd",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "DueDateStart",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "DueDateEnd",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "Visibility",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "CustomAttributes",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "IsUnlinked",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "IssueIds",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "ActivityOperationId",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "additionalIncludes",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "sort",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "startRecord",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "returnCount",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "assignedToUserId",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "priorityId",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "statusId",
+                "value": "",
+                "type": "query"
+              }
+            ]
+          },
+          "docs": "Get issues"
+        },
+        {
+          "info": {
+            "name": "Create issue",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://api.bimtrackapp.co/v3/hubs/:hubId/projects/:projectId/issues",
+            "params": [
+              {
+                "name": "hubId",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "projectId",
+                "value": "",
+                "type": "path"
+              }
+            ],
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Create issue"
+        },
+        {
+          "info": {
+            "name": "Multi edit issues",
+            "type": "http"
+          },
+          "http": {
+            "method": "PATCH",
+            "url": "https://api.bimtrackapp.co/v3/hubs/:hubId/projects/:projectId/issues",
+            "params": [
+              {
+                "name": "hubId",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "projectId",
+                "value": "",
+                "type": "path"
+              }
+            ],
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Multi edit issues"
+        },
+        {
+          "info": {
+            "name": "Search issues with filters",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.bimtrackapp.co/v3/hubs/:hubId/projects/:projectId/issues/search",
+            "params": [
+              {
+                "name": "hubId",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "projectId",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "Query",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "QueryExtendedSearch",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "IncludeIssueAdditionalInfo",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "Term",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "Description",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "AssignedToUserIds",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "AuthorUserIds",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "LastModificationAuthorUserIds",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "IssueGroups",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "PriorityIds",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "ProjectPhaseIds",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "ConfidentialityIds",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "ProjectZoneIds",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "StatusIds",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "DisciplineIds",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "TypeIds",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "CreationDateStart",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "CreationDateEnd",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "LastModificationDateStart",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "LastModificationDateEnd",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "DueDateStart",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "DueDateEnd",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "Visibility",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "CustomAttributes",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "IsUnlinked",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "IssueIds",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "ActivityOperationId",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "additionalIncludes",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "sort",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "startRecord",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "returnCount",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "assignedToUserId",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "priorityId",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "statusId",
+                "value": "",
+                "type": "query"
+              }
+            ]
+          },
+          "docs": "Search issues with filters"
+        },
+        {
+          "info": {
+            "name": "Get issues details",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.bimtrackapp.co/v3/hubs/:hubId/projects/:projectId/issues/details",
+            "params": [
+              {
+                "name": "hubId",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "projectId",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "Query",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "QueryExtendedSearch",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "IncludeIssueAdditionalInfo",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "Term",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "Description",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "AssignedToUserIds",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "AuthorUserIds",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "LastModificationAuthorUserIds",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "IssueGroups",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "PriorityIds",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "ProjectPhaseIds",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "ConfidentialityIds",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "ProjectZoneIds",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "StatusIds",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "DisciplineIds",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "TypeIds",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "CreationDateStart",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "CreationDateEnd",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "LastModificationDateStart",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "LastModificationDateEnd",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "DueDateStart",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "DueDateEnd",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "Visibility",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "CustomAttributes",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "IsUnlinked",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "IssueIds",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "ActivityOperationId",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "additionalIncludes",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "sort",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "startRecord",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "returnCount",
+                "value": "",
+                "type": "query"
+              }
+            ]
+          },
+          "docs": "Get issues details"
+        },
+        {
+          "info": {
+            "name": "Get Issue",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.bimtrackapp.co/v3/hubs/:hubId/projects/:projectId/issues/:issueId",
+            "params": [
+              {
+                "name": "hubId",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "projectId",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "issueId",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          },
+          "docs": "Get Issue"
+        },
+        {
+          "info": {
+            "name": "Update issue",
+            "type": "http"
+          },
+          "http": {
+            "method": "PUT",
+            "url": "https://api.bimtrackapp.co/v3/hubs/:hubId/projects/:projectId/issues/:issueId",
+            "params": [
+              {
+                "name": "hubId",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "projectId",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "issueId",
+                "value": "",
+                "type": "path"
+              }
+            ],
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Update issue"
+        },
+        {
+          "info": {
+            "name": "Archive an issue",
+            "type": "http"
+          },
+          "http": {
+            "method": "PATCH",
+            "url": "https://api.bimtrackapp.co/v3/hubs/:hubId/projects/:projectId/issues/:issueId",
+            "params": [
+              {
+                "name": "hubId",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "projectId",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "issueId",
+                "value": "",
+                "type": "path"
+              }
+            ],
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Archive an issue"
+        },
+        {
+          "info": {
+            "name": "Get multiple issues",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.bimtrackapp.co/v3/hubs/:hubId/projects/:projectId/issues/multiple",
+            "params": [
+              {
+                "name": "hubId",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "projectId",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "id",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "limitViewpointsToDefault",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "includeArchived",
+                "value": "",
+                "type": "query"
+              }
+            ]
+          },
+          "docs": "Fetch multiple issues by their unique identifiers with options for archived and viewpoint inclusion."
+        },
+        {
+          "info": {
+            "name": "Get issue by issue number",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.bimtrackapp.co/v3/hubs/:hubId/projects/:projectId/issues/number/:issueNumber",
+            "params": [
+              {
+                "name": "hubId",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "projectId",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "issueNumber",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          },
+          "docs": "Get issue by issue number"
+        },
+        {
+          "info": {
+            "name": "Archive multiple issues",
+            "type": "http"
+          },
+          "http": {
+            "method": "PATCH",
+            "url": "https://api.bimtrackapp.co/v3/hubs/:hubId/projects/:projectId/issues/archiveissues",
+            "params": [
+              {
+                "name": "hubId",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "projectId",
+                "value": "",
+                "type": "path"
+              }
+            ],
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Archive multiple issues"
+        },
+        {
+          "info": {
+            "name": "Get issue history",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.bimtrackapp.co/v3/hubs/:hubId/projects/:projectId/issues/:issueId/history",
+            "params": [
+              {
+                "name": "hubId",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "projectId",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "issueId",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          },
+          "docs": "Get issue history"
+        },
+        {
+          "info": {
+            "name": "Get viewpoints for multiple issues",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://api.bimtrackapp.co/v3/hubs/:hubId/projects/:projectId/issues/viewpoints/batch",
+            "params": [
+              {
+                "name": "hubId",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "projectId",
+                "value": "",
+                "type": "path"
+              }
+            ],
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Get viewpoints for multiple issues"
+        },
+        {
+          "info": {
+            "name": "Get viewpoint view state",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.bimtrackapp.co/v3/hubs/:hubId/projects/:projectId/issues/:issueId/viewpoints/:viewpointId/viewstate",
+            "params": [
+              {
+                "name": "hubId",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "projectId",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "issueId",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "viewpointId",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "includeHiddenElements",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "includeSelectedElements",
+                "value": "",
+                "type": "query"
+              }
+            ]
+          },
+          "docs": "Get viewpoint view state"
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

@@ -1,0 +1,226 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "Newforma Konekt Hub API",
+    "version": "3"
+  },
+  "request": {
+    "auth": {
+      "type": "apikey",
+      "key": "Authorization",
+      "value": "{{Authorization}}",
+      "placement": "header"
+    }
+  },
+  "items": [
+    {
+      "info": {
+        "name": "Hub",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Get hub",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.bimtrackapp.co/v3/hubs/:hubId",
+            "params": [
+              {
+                "name": "hubId",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          },
+          "docs": "Get hub"
+        },
+        {
+          "info": {
+            "name": "Get a hub by name",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.bimtrackapp.co/v3/hubs/name/:hubName",
+            "params": [
+              {
+                "name": "hubName",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          },
+          "docs": "Get a hub by name"
+        },
+        {
+          "info": {
+            "name": "Get hubs",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.bimtrackapp.co/v3/hubs"
+          },
+          "docs": "Get hubs"
+        },
+        {
+          "info": {
+            "name": "Get project templates",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.bimtrackapp.co/v3/hubs/:hubId/projecttemplates",
+            "params": [
+              {
+                "name": "hubId",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          },
+          "docs": "Get project templates"
+        },
+        {
+          "info": {
+            "name": "Create project template",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://api.bimtrackapp.co/v3/hubs/:hubId/projecttemplates",
+            "params": [
+              {
+                "name": "hubId",
+                "value": "",
+                "type": "path"
+              }
+            ],
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Create project template"
+        },
+        {
+          "info": {
+            "name": "Delete project template",
+            "type": "http"
+          },
+          "http": {
+            "method": "DELETE",
+            "url": "https://api.bimtrackapp.co/v3/hubs/:hubId/projecttemplates/:projectTemplateId",
+            "params": [
+              {
+                "name": "hubId",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "projectTemplateId",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          },
+          "docs": "Delete project template"
+        },
+        {
+          "info": {
+            "name": "Get hub users",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.bimtrackapp.co/v3/hubs/:hubId/users",
+            "params": [
+              {
+                "name": "hubId",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          },
+          "docs": "Get hub users"
+        },
+        {
+          "info": {
+            "name": "Create hub user",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://api.bimtrackapp.co/v3/hubs/:hubId/users",
+            "params": [
+              {
+                "name": "hubId",
+                "value": "",
+                "type": "path"
+              }
+            ],
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Create hub user"
+        },
+        {
+          "info": {
+            "name": "Updates a user in the specified hub",
+            "type": "http"
+          },
+          "http": {
+            "method": "PUT",
+            "url": "https://api.bimtrackapp.co/v3/hubs/:hubId/users/:userId",
+            "params": [
+              {
+                "name": "hubId",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "userId",
+                "value": "",
+                "type": "path"
+              }
+            ],
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Updates a user in the specified hub"
+        },
+        {
+          "info": {
+            "name": "Delete hub user",
+            "type": "http"
+          },
+          "http": {
+            "method": "DELETE",
+            "url": "https://api.bimtrackapp.co/v3/hubs/:hubId/users/:userId",
+            "params": [
+              {
+                "name": "hubId",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "userId",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          },
+          "docs": "Delete hub user"
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

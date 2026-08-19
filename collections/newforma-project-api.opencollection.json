@@ -1,0 +1,170 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "Newforma Konekt Hub Project API",
+    "version": "3"
+  },
+  "request": {
+    "auth": {
+      "type": "apikey",
+      "key": "Authorization",
+      "value": "{{Authorization}}",
+      "placement": "header"
+    }
+  },
+  "items": [
+    {
+      "info": {
+        "name": "Project",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Get issue filter templates",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.bimtrackapp.co/v3/hubs/:hubId/projects/:projectId/issuefiltertemplate",
+            "params": [
+              {
+                "name": "hubId",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "projectId",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          },
+          "docs": "Get issue filter templates"
+        },
+        {
+          "info": {
+            "name": "Get details issue filter template",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.bimtrackapp.co/v3/hubs/:hubId/projects/:projectId/issuefiltertemplate/:userTemplateId",
+            "params": [
+              {
+                "name": "hubId",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "projectId",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "userTemplateId",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          },
+          "docs": "Get details issue filter template"
+        },
+        {
+          "info": {
+            "name": "Get sheets",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.bimtrackapp.co/v3/hubs/:hubId/projects/:projectId/sheets",
+            "params": [
+              {
+                "name": "hubId",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "projectId",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "fileSetId",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "additionalIncludes",
+                "value": "",
+                "type": "query"
+              }
+            ]
+          },
+          "docs": "Get sheets"
+        },
+        {
+          "info": {
+            "name": "Create sheets",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://api.bimtrackapp.co/v3/hubs/:hubId/projects/:projectId/sheets",
+            "params": [
+              {
+                "name": "hubId",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "projectId",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          },
+          "docs": "Create sheets"
+        },
+        {
+          "info": {
+            "name": "Update 3D model revision disciplines",
+            "type": "http"
+          },
+          "http": {
+            "method": "PUT",
+            "url": "https://api.bimtrackapp.co/v3/hubs/:hubId/projects/:projectId/models/:modelId/revisions/:revisionId/disciplines",
+            "params": [
+              {
+                "name": "hubId",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "projectId",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "modelId",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "revisionId",
+                "value": "",
+                "type": "path"
+              }
+            ],
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Update 3D model revision disciplines"
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

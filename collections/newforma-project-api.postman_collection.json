@@ -1,0 +1,709 @@
+{
+  "item": [
+    {
+      "id": "61c7a4f2-17c1-43f8-a61f-866d45b3c676",
+      "name": "Project",
+      "description": {
+        "content": "",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "caa10ebd-f73f-4483-bdb6-b557f2a8f8eb",
+          "name": "Get issue filter templates",
+          "request": {
+            "name": "Get issue filter templates",
+            "description": {},
+            "url": {
+              "path": [
+                "v3",
+                "hubs",
+                ":hubId",
+                "projects",
+                ":projectId",
+                "issuefiltertemplate"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "hubId",
+                  "description": "(Required) "
+                },
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<integer>",
+                  "key": "projectId",
+                  "description": "(Required) "
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json;odata.metadata=minimal;odata.streaming=true"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "3e0117e1-f362-42ba-a54d-b36b4697ea09",
+              "name": "OK",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "v3",
+                    "hubs",
+                    ":hubId",
+                    "projects",
+                    ":projectId",
+                    "issuefiltertemplate"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "hubId",
+                      "description": "(Required) "
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<integer>",
+                      "key": "projectId",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json;odata.metadata=minimal;odata.streaming=true"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json;odata.metadata=minimal;odata.streaming=true"
+                }
+              ],
+              "body": "[\n  {\n    \"Id\": 925,\n    \"User\": {\n      \"Id\": 9950,\n      \"UserName\": \"string\",\n      \"Email\": \"string\",\n      \"FirstName\": \"string\",\n      \"LastName\": \"string\",\n      \"AvatarUrl\": \"string\"\n    },\n    \"Project\": {\n      \"Name\": \"string\",\n      \"Id\": 923,\n      \"Author\": {\n        \"Id\": 6729,\n        \"UserName\": \"string\",\n        \"Email\": \"string\",\n        \"FirstName\": \"string\",\n        \"LastName\": \"string\",\n        \"AvatarUrl\": \"string\"\n      },\n      \"Image\": {\n        \"Id\": 875,\n        \"Name\": \"string\",\n        \"Size\": 8922,\n        \"Date\": \"1958-01-15T12:49:09.311Z\",\n        \"Url\": \"string\",\n        \"UrlExpiration\": \"1982-04-07T21:49:01.142Z\",\n        \"ThumbnailUrl\": \"string\",\n        \"ThumbnailUrlExpiration\": \"1989-07-26T13:32:04.159Z\"\n      },\n      \"CreationDate\": \"2000-02-11T03:43:28.276Z\",\n      \"Number\": \"string\",\n      \"StartDate\": \"2017-11-17T17:57:22.470Z\",\n      \"EndDate\": \"2016-03-30T05:46:56.685Z\",\n      \"ProjectStatus\": \"string\",\n      \"ProjectAccess\": \"string\",\n      \"ProjectControlSource\": \"string\"\n    },\n    \"Name\": \"string\",\n    \"IsShared\": true,\n    \"IsDefault\": true,\n    \"IssueFilterTemplate\": {\n      \"Term\": \"string\",\n      \"Description\": \"string\",\n      \"AssignedToUserIds\": [\n        3296,\n        7769\n      ],\n      \"AuthorUserIds\": [\n        7180,\n        1753\n      ],\n      \"LastModificationAuthorUserIds\": [\n        5953,\n        7075\n      ],\n      \"IssueGroups\": [\n        \"string\",\n        \"string\"\n      ],\n      \"PriorityIds\": [\n        4597,\n        6118\n      ],\n      \"ProjectPhaseIds\": [\n        9552,\n        1698\n      ],\n      \"ConfidentialityIds\": [\n        4307,\n        9380\n      ],\n      \"ProjectZoneIds\": [\n        3564,\n        7978\n      ],\n      \"StatusIds\": [\n        2549,\n        1251\n      ],\n      \"DisciplineIds\": [\n        4176,\n        6206\n      ],\n      \"TypeIds\": [\n        8328,\n        1611\n      ],\n      \"CreationDateStart\": \"1981-12-04T10:30:34.828Z\",\n      \"CreationDateEnd\": \"1985-06-22T23:32:16.608Z\",\n      \"LastModificationDateStart\": \"2019-05-22T08:16:16.838Z\",\n      \"LastModificationDateEnd\": \"2002-03-15T04:14:55.520Z\",\n      \"DueDateStart\": \"1969-08-18T16:58:14.594Z\",\n      \"DueDateEnd\": \"1970-08-15T11:46:10.192Z\",\n      \"Visibility\": 8883,\n      \"CustomAttributes\": [\n        \"string\",\n        \"string\"\n      ],\n      \"IsUnlinked\": false,\n      \"IssueIds\": [\n        4714,\n        5425\n      ],\n      \"ActivityOperationId\": \"string\",\n      \"Query\": \"string\",\n      \"QueryExtendedSearch\": true,\n      \"IncludeIssueAdditionalInfo\": false,\n      \"Id\": 4951,\n      \"DisplayNumber\": 1446,\n      \"Direction\": 3062,\n      \"Field\": 9485,\n      \"SortProjectAttribute\": {\n        \"Id\": 8627,\n        \"Name\": \"string\",\n        \"Type\": \"Predefined\"\n      },\n      \"IssueFilterTemplateProjectAttributeValues\": [\n        {\n          \"ProjectAttribute\": {\n            \"Id\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"Name\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"Type\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            }\n          },\n          \"IssueFilterTemplateProjectAttributePredefinedValues\": [\n            {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            }\n          ],\n          \"IssueFilterTemplateProjectAttributeFreeFormValue\": {\n            \"Value\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            }\n          }\n        },\n        {\n          \"ProjectAttribute\": {\n            \"Id\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"Name\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"Type\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            }\n          },\n          \"IssueFilterTemplateProjectAttributePredefinedValues\": [\n            {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            }\n          ],\n          \"IssueFilterTemplateProjectAttributeFreeFormValue\": {\n            \"Value\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            }\n          }\n        }\n      ]\n    },\n    \"IssuesSorting\": {\n      \"Field\": \"ArchiveDate\",\n      \"Direction\": \"Ascending\",\n      \"AttributeId\": 5577\n    },\n    \"DefaultReportTemplateForUsers\": [\n      {\n        \"Role\": \"Admin\",\n        \"Teams\": [\n          {\n            \"Id\": 2077,\n            \"Name\": \"string\"\n          },\n          {\n            \"Id\": 2119,\n            \"Name\": \"string\"\n          }\n        ],\n        \"IsReviewer\": false,\n        \"IsLimited\": true,\n        \"User\": {\n          \"Id\": 2994,\n          \"UserName\": \"string\",\n          \"Email\": \"string\",\n          \"FirstName\": \"string\",\n          \"LastName\": \"string\",\n          \"AvatarUrl\": \"string\"\n        },\n        \"DefaultFilterTemplateId\": 5687\n      },\n      {\n        \"Role\": \"Reader\",\n        \"Teams\": [\n          {\n            \"Id\": 2495,\n            \"Name\": \"string\"\n          },\n          {\n            \"Id\": 5663,\n            \"Name\": \"string\"\n          }\n        ],\n        \"IsReviewer\": true,\n        \"IsLimited\": true,\n        \"User\": {\n          \"Id\": 1516,\n          \"UserName\": \"string\",\n          \"Email\": \"string\",\n          \"FirstName\": \"string\",\n          \"LastName\": \"string\",\n          \"AvatarUrl\": \"string\"\n        },\n        \"DefaultFilterTemplateId\": 5829\n      }\n    ],\n    \"DefaultIssueFilterTemplateForUsers\": [\n      {\n        \"Role\": \"Admin\",\n        \"Teams\": [\n          {\n            \"Id\": 7591,\n            \"Name\": \"string\"\n          },\n          {\n            \"Id\": 5614,\n            \"Name\": \"string\"\n          }\n        ],\n        \"IsReviewer\": false,\n        \"IsLimited\": false,\n        \"User\": {\n          \"Id\": 3199,\n          \"UserName\": \"string\",\n          \"Email\": \"string\",\n          \"FirstName\": \"string\",\n          \"LastName\": \"string\",\n          \"AvatarUrl\": \"string\"\n        },\n        \"DefaultFilterTemplateId\": 5479\n      },\n      {\n        \"Role\": \"Editor\",\n        \"Teams\": [\n          {\n            \"Id\": 5842,\n            \"Name\": \"string\"\n          },\n          {\n            \"Id\": 9849,\n            \"Name\": \"string\"\n          }\n        ],\n        \"IsReviewer\": false,\n        \"IsLimited\": true,\n        \"User\": {\n          \"Id\": 9234,\n          \"UserName\": \"string\",\n          \"Email\": \"string\",\n          \"FirstName\": \"string\",\n          \"LastName\": \"string\",\n          \"AvatarUrl\": \"string\"\n        },\n        \"DefaultFilterTemplateId\": 6002\n      }\n    ]\n  },\n  {\n    \"Id\": 4586,\n    \"User\": {\n      \"Id\": 8481,\n      \"UserName\": \"string\",\n      \"Email\": \"string\",\n      \"FirstName\": \"string\",\n      \"LastName\": \"string\",\n      \"AvatarUrl\": \"string\"\n    },\n    \"Project\": {\n      \"Name\": \"string\",\n      \"Id\": 5133,\n      \"Author\": {\n        \"Id\": 833,\n        \"UserName\": \"string\",\n        \"Email\": \"string\",\n        \"FirstName\": \"string\",\n        \"LastName\": \"string\",\n        \"AvatarUrl\": \"string\"\n      },\n      \"Image\": {\n        \"Id\": 3292,\n        \"Name\": \"string\",\n        \"Size\": 2883,\n        \"Date\": \"1959-09-03T15:50:13.412Z\",\n        \"Url\": \"string\",\n        \"UrlExpiration\": \"2000-01-13T06:23:35.425Z\",\n        \"ThumbnailUrl\": \"string\",\n        \"ThumbnailUrlExpiration\": \"1994-05-25T23:59:34.425Z\"\n      },\n      \"CreationDate\": \"1972-01-29T00:59:46.144Z\",\n      \"Number\": \"string\",\n      \"StartDate\": \"1989-07-10T12:50:25.941Z\",\n      \"EndDate\": \"2026-02-23T00:29:22.250Z\",\n      \"ProjectStatus\": \"string\",\n      \"ProjectAccess\": \"string\",\n      \"ProjectControlSource\": \"string\"\n    },\n    \"Name\": \"string\",\n    \"IsShared\": false,\n    \"IsDefault\": false,\n    \"IssueFilterTemplate\": {\n      \"Term\": \"string\",\n      \"Description\": \"string\",\n      \"AssignedToUserIds\": [\n        4588,\n        778\n      ],\n      \"AuthorUserIds\": [\n        1159,\n        2435\n      ],\n      \"LastModificationAuthorUserIds\": [\n        1727,\n        993\n      ],\n      \"IssueGroups\": [\n        \"string\",\n        \"string\"\n      ],\n      \"PriorityIds\": [\n        3500,\n        5991\n      ],\n      \"ProjectPhaseIds\": [\n        7136,\n        2246\n      ],\n      \"ConfidentialityIds\": [\n        9523,\n        2968\n      ],\n      \"ProjectZoneIds\": [\n        4784,\n        1313\n      ],\n      \"StatusIds\": [\n        5415,\n        515\n      ],\n      \"DisciplineIds\": [\n        5187,\n        8400\n      ],\n      \"TypeIds\": [\n        2182,\n        6161\n      ],\n      \"CreationDateStart\": \"1979-07-11T03:29:20.123Z\",\n      \"CreationDateEnd\": \"1972-09-14T22:58:49.583Z\",\n      \"LastModificationDateStart\": \"2015-11-13T13:26:57.781Z\",\n      \"LastModificationDateEnd\": \"1950-02-17T11:59:20.300Z\",\n      \"DueDateStart\": \"2014-08-19T22:04:56.635Z\",\n      \"DueDateEnd\": \"2025-09-17T21:29:43.192Z\",\n      \"Visibility\": 999,\n      \"CustomAttributes\": [\n        \"string\",\n        \"string\"\n      ],\n      \"IsUnlinked\": true,\n      \"IssueIds\": [\n        6566,\n        4102\n      ],\n      \"ActivityOperationId\": \"string\",\n      \"Query\": \"string\",\n      \"QueryExtendedSearch\": false,\n      \"IncludeIssueAdditionalInfo\": false,\n      \"Id\": 8311,\n      \"DisplayNumber\": 7349,\n      \"Direction\": 3434,\n      \"Field\": 2884,\n      \"SortProjectAttribute\": {\n        \"Id\": 194,\n        \"Name\": \"string\",\n        \"Type\": \"Text\"\n      },\n      \"IssueFilterTemplateProjectAttributeValues\": [\n        {\n          \"ProjectAttribute\": {\n            \"Id\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"Name\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"Type\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            }\n          },\n          \"IssueFilterTemplateProjectAttributePredefinedValues\": [\n            {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            }\n          ],\n          \"IssueFilterTemplateProjectAttributeFreeFormValue\": {\n            \"Value\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            }\n          }\n        },\n        {\n          \"ProjectAttribute\": {\n            \"Id\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"Name\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"Type\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            }\n          },\n          \"IssueFilterTemplateProjectAttributePredefinedValues\": [\n            {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            }\n          ],\n          \"IssueFilterTemplateProjectAttributeFreeFormValue\": {\n            \"Value\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            }\n          }\n        }\n      ]\n    },\n    \"IssuesSorting\": {\n      \"Field\": \"Zone\",\n      \"Direction\": \"Descending\",\n      \"AttributeId\": 4844\n    },\n    \"DefaultReportTemplateForUsers\": [\n      {\n        \"Role\": \"Reader\",\n        \"Teams\": [\n          {\n            \"Id\": 6264,\n            \"Name\": \"string\"\n          },\n          {\n            \"Id\": 4802,\n            \"Name\": \"string\"\n          }\n        ],\n        \"IsReviewer\": true,\n        \"IsLimited\": true,\n        \"User\": {\n          \"Id\": 1072,\n          \"UserName\": \"string\",\n          \"Email\": \"string\",\n          \"FirstName\": \"string\",\n          \"LastName\": \"string\",\n          \"AvatarUrl\": \"string\"\n        },\n        \"DefaultFilterTemplateId\": 9706\n      },\n      {\n        \"Role\": \"Editor\",\n        \"Teams\": [\n          {\n            \"Id\": 988,\n            \"Name\": \"string\"\n          },\n          {\n            \"Id\": 8736,\n            \"Name\": \"string\"\n          }\n        ],\n        \"IsReviewer\": true,\n        \"IsLimited\": false,\n        \"User\": {\n          \"Id\": 7034,\n          \"UserName\": \"string\",\n          \"Email\": \"string\",\n          \"FirstName\": \"string\",\n          \"LastName\": \"string\",\n          \"AvatarUrl\": \"string\"\n        },\n        \"DefaultFilterTemplateId\": 4893\n      }\n    ],\n    \"DefaultIssueFilterTemplateForUsers\": [\n      {\n        \"Role\": \"Admin\",\n        \"Teams\": [\n          {\n            \"Id\": 8868,\n            \"Name\": \"string\"\n          },\n          {\n            \"Id\": 8215,\n            \"Name\": \"string\"\n          }\n        ],\n        \"IsReviewer\": false,\n        \"IsLimited\": true,\n        \"User\": {\n          \"Id\": 320,\n          \"UserName\": \"string\",\n          \"Email\": \"string\",\n          \"FirstName\": \"string\",\n          \"LastName\": \"string\",\n          \"AvatarUrl\": \"string\"\n        },\n        \"DefaultFilterTemplateId\": 9374\n      },\n      {\n        \"Role\": \"Reader\",\n        \"Teams\": [\n          {\n            \"Id\": 5758,\n            \"Name\": \"string\"\n          },\n          {\n            \"Id\": 4800,\n            \"Name\": \"string\"\n          }\n        ],\n        \"IsReviewer\": false,\n        \"IsLimited\": false,\n        \"User\": {\n          \"Id\": 955,\n          \"UserName\": \"string\",\n          \"Email\": \"string\",\n          \"FirstName\": \"string\",\n          \"LastName\": \"string\",\n          \"AvatarUrl\": \"string\"\n        },\n        \"DefaultFilterTemplateId\": 1209\n      }\n    ]\n  }\n]",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "ec46f297-1052-44fe-91d0-2795e528a4a3",
+          "name": "Get details issue filter template",
+          "request": {
+            "name": "Get details issue filter template",
+            "description": {},
+            "url": {
+              "path": [
+                "v3",
+                "hubs",
+                ":hubId",
+                "projects",
+                ":projectId",
+                "issuefiltertemplate",
+                ":userTemplateId"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "hubId",
+                  "description": "(Required) "
+                },
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<integer>",
+                  "key": "projectId",
+                  "description": "(Required) "
+                },
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<integer>",
+                  "key": "userTemplateId",
+                  "description": "(Required) "
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json;odata.metadata=minimal;odata.streaming=true"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "ae5a05da-f8a4-4735-b48e-07a85f5345f8",
+              "name": "OK",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "v3",
+                    "hubs",
+                    ":hubId",
+                    "projects",
+                    ":projectId",
+                    "issuefiltertemplate",
+                    ":userTemplateId"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "hubId",
+                      "description": "(Required) "
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<integer>",
+                      "key": "projectId",
+                      "description": "(Required) "
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<integer>",
+                      "key": "userTemplateId",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json;odata.metadata=minimal;odata.streaming=true"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json;odata.metadata=minimal;odata.streaming=true"
+                }
+              ],
+              "body": "{\n  \"Id\": 3155,\n  \"User\": {\n    \"Id\": 8601,\n    \"UserName\": \"string\",\n    \"Email\": \"string\",\n    \"FirstName\": \"string\",\n    \"LastName\": \"string\",\n    \"AvatarUrl\": \"string\"\n  },\n  \"Project\": {\n    \"Name\": \"string\",\n    \"Id\": 6356,\n    \"Author\": {\n      \"Id\": 6403,\n      \"UserName\": \"string\",\n      \"Email\": \"string\",\n      \"FirstName\": \"string\",\n      \"LastName\": \"string\",\n      \"AvatarUrl\": \"string\"\n    },\n    \"Image\": {\n      \"Id\": 4961,\n      \"Name\": \"string\",\n      \"Size\": 2080,\n      \"Date\": \"2021-04-21T02:18:24.582Z\",\n      \"Url\": \"string\",\n      \"UrlExpiration\": \"1959-12-23T23:49:50.518Z\",\n      \"ThumbnailUrl\": \"string\",\n      \"ThumbnailUrlExpiration\": \"1997-09-28T04:47:52.005Z\"\n    },\n    \"CreationDate\": \"1955-05-12T18:37:00.703Z\",\n    \"Number\": \"string\",\n    \"StartDate\": \"1949-02-24T06:26:16.614Z\",\n    \"EndDate\": \"1966-09-22T22:49:47.276Z\",\n    \"ProjectStatus\": \"string\",\n    \"ProjectAccess\": \"string\",\n    \"ProjectControlSource\": \"string\"\n  },\n  \"Name\": \"string\",\n  \"IsShared\": false,\n  \"IsDefault\": true,\n  \"IssueFilterTemplate\": {\n    \"Term\": \"string\",\n    \"Description\": \"string\",\n    \"AssignedToUserIds\": [\n      3804,\n      1768\n    ],\n    \"AuthorUserIds\": [\n      3107,\n      1417\n    ],\n    \"LastModificationAuthorUserIds\": [\n      7545,\n      1987\n    ],\n    \"IssueGroups\": [\n      \"string\",\n      \"string\"\n    ],\n    \"PriorityIds\": [\n      5394,\n      5149\n    ],\n    \"ProjectPhaseIds\": [\n      5780,\n      1637\n    ],\n    \"ConfidentialityIds\": [\n      3557,\n      234\n    ],\n    \"ProjectZoneIds\": [\n      4821,\n      1809\n    ],\n    \"StatusIds\": [\n      4076,\n      1494\n    ],\n    \"DisciplineIds\": [\n      892,\n      5482\n    ],\n    \"TypeIds\": [\n      8119,\n      8945\n    ],\n    \"CreationDateStart\": \"1963-08-23T10:44:28.909Z\",\n    \"CreationDateEnd\": \"1955-10-22T06:40:08.665Z\",\n    \"LastModificationDateStart\": \"1992-11-12T10:16:19.327Z\",\n    \"LastModificationDateEnd\": \"2019-12-30T04:20:38.945Z\",\n    \"DueDateStart\": \"1987-08-25T00:56:31.505Z\",\n    \"DueDateEnd\": \"1984-02-22T13:19:41.292Z\",\n    \"Visibility\": 2642,\n    \"CustomAttributes\": [\n      \"string\",\n      \"string\"\n    ],\n    \"IsUnlinked\": false,\n    \"IssueIds\": [\n      7724,\n      3522\n    ],\n    \"ActivityOperationId\": \"string\",\n    \"Query\": \"string\",\n    \"QueryExtendedSearch\": true,\n    \"IncludeIssueAdditionalInfo\": true,\n    \"Id\": 830,\n    \"DisplayNumber\": 569,\n    \"Direction\": 2868,\n    \"Field\": 5640,\n    \"SortProjectAttribute\": {\n      \"Id\": 9034,\n      \"Name\": \"string\",\n      \"Type\": \"Text\"\n    },\n    \"IssueFilterTemplateProjectAttributeValues\": [\n      {\n        \"ProjectAttribute\": {\n          \"Id\": 2568,\n          \"Name\": \"string\",\n          \"Type\": \"Predefined\"\n        },\n        \"IssueFilterTemplateProjectAttributePredefinedValues\": [\n          {\n            \"ProjectAttributeValue\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            }\n          },\n          {\n            \"ProjectAttributeValue\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            }\n          }\n        ],\n        \"IssueFilterTemplateProjectAttributeFreeFormValue\": {\n          \"Value\": \"string\"\n        }\n      },\n      {\n        \"ProjectAttribute\": {\n          \"Id\": 9390,\n          \"Name\": \"string\",\n          \"Type\": \"Text\"\n        },\n        \"IssueFilterTemplateProjectAttributePredefinedValues\": [\n          {\n            \"ProjectAttributeValue\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            }\n          },\n          {\n            \"ProjectAttributeValue\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            }\n          }\n        ],\n        \"IssueFilterTemplateProjectAttributeFreeFormValue\": {\n          \"Value\": \"string\"\n        }\n      }\n    ]\n  },\n  \"IssuesSorting\": {\n    \"Field\": \"ArchiveDate\",\n    \"Direction\": \"Descending\",\n    \"AttributeId\": 1757\n  },\n  \"DefaultReportTemplateForUsers\": [\n    {\n      \"Role\": \"Admin\",\n      \"Teams\": [\n        {\n          \"Id\": 8965,\n          \"Name\": \"string\"\n        },\n        {\n          \"Id\": 246,\n          \"Name\": \"string\"\n        }\n      ],\n      \"IsReviewer\": true,\n      \"IsLimited\": false,\n      \"User\": {\n        \"Id\": 3492,\n        \"UserName\": \"string\",\n        \"Email\": \"string\",\n        \"FirstName\": \"string\",\n        \"LastName\": \"string\",\n        \"AvatarUrl\": \"string\"\n      },\n      \"DefaultFilterTemplateId\": 6352\n    },\n    {\n      \"Role\": \"Admin\",\n      \"Teams\": [\n        {\n          \"Id\": 9453,\n          \"Name\": \"string\"\n        },\n        {\n          \"Id\": 7249,\n          \"Name\": \"string\"\n        }\n      ],\n      \"IsReviewer\": true,\n      \"IsLimited\": true,\n      \"User\": {\n        \"Id\": 1056,\n        \"UserName\": \"string\",\n        \"Email\": \"string\",\n        \"FirstName\": \"string\",\n        \"LastName\": \"string\",\n        \"AvatarUrl\": \"string\"\n      },\n      \"DefaultFilterTemplateId\": 4250\n    }\n  ],\n  \"DefaultIssueFilterTemplateForUsers\": [\n    {\n      \"Role\": \"Admin\",\n      \"Teams\": [\n        {\n          \"Id\": 4193,\n          \"Name\": \"string\"\n        },\n        {\n          \"Id\": 7373,\n          \"Name\": \"string\"\n        }\n      ],\n      \"IsReviewer\": true,\n      \"IsLimited\": false,\n      \"User\": {\n        \"Id\": 8983,\n        \"UserName\": \"string\",\n        \"Email\": \"string\",\n        \"FirstName\": \"string\",\n        \"LastName\": \"string\",\n        \"AvatarUrl\": \"string\"\n      },\n      \"DefaultFilterTemplateId\": 6875\n    },\n    {\n      \"Role\": \"Admin\",\n      \"Teams\": [\n        {\n          \"Id\": 7548,\n          \"Name\": \"string\"\n        },\n        {\n          \"Id\": 9922,\n          \"Name\": \"string\"\n        }\n      ],\n      \"IsReviewer\": false,\n      \"IsLimited\": false,\n      \"User\": {\n        \"Id\": 4200,\n        \"UserName\": \"string\",\n        \"Email\": \"string\",\n        \"FirstName\": \"string\",\n        \"LastName\": \"string\",\n        \"AvatarUrl\": \"string\"\n      },\n      \"DefaultFilterTemplateId\": 6255\n    }\n  ]\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "ae7472b7-af09-4e19-97f5-adba8fb38aca",
+          "name": "Get sheets",
+          "request": {
+            "name": "Get sheets",
+            "description": {},
+            "url": {
+              "path": [
+                "v3",
+                "hubs",
+                ":hubId",
+                "projects",
+                ":projectId",
+                "sheets"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "fileSetId",
+                  "value": "<integer>"
+                },
+                {
+                  "disabled": false,
+                  "key": "additionalIncludes",
+                  "value": "<string>"
+                }
+              ],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "hubId",
+                  "description": "(Required) "
+                },
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<integer>",
+                  "key": "projectId",
+                  "description": "(Required) "
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json;odata.metadata=minimal;odata.streaming=true"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "9d167ba1-b2f6-4204-8707-d0b330f005f9",
+              "name": "OK",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "v3",
+                    "hubs",
+                    ":hubId",
+                    "projects",
+                    ":projectId",
+                    "sheets"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "fileSetId",
+                      "value": "<integer>"
+                    },
+                    {
+                      "key": "additionalIncludes",
+                      "value": "<string>"
+                    }
+                  ],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "hubId",
+                      "description": "(Required) "
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<integer>",
+                      "key": "projectId",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json;odata.metadata=minimal;odata.streaming=true"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json;odata.metadata=minimal;odata.streaming=true"
+                }
+              ],
+              "body": "[\n  {\n    \"Id\": 9799,\n    \"Name\": \"string\",\n    \"UniqueId\": \"string\",\n    \"FolderId\": 9491,\n    \"Version\": 1181,\n    \"FileSets\": [\n      7555,\n      121\n    ],\n    \"ActiveVersionDate\": \"2001-01-07T15:37:51.926Z\",\n    \"FileName\": \"string\"\n  },\n  {\n    \"Id\": 6291,\n    \"Name\": \"string\",\n    \"UniqueId\": \"string\",\n    \"FolderId\": 2793,\n    \"Version\": 5890,\n    \"FileSets\": [\n      1893,\n      669\n    ],\n    \"ActiveVersionDate\": \"1982-11-22T19:40:59.012Z\",\n    \"FileName\": \"string\"\n  }\n]",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "453b421a-396c-4755-ac2e-bb9f82851cf3",
+          "name": "Create sheets",
+          "request": {
+            "name": "Create sheets",
+            "description": {},
+            "url": {
+              "path": [
+                "v3",
+                "hubs",
+                ":hubId",
+                "projects",
+                ":projectId",
+                "sheets"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "hubId",
+                  "description": "(Required) "
+                },
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<integer>",
+                  "key": "projectId",
+                  "description": "(Required) "
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json;odata.metadata=minimal;odata.streaming=true"
+              }
+            ],
+            "method": "POST",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "ec7fd33b-3438-42a2-97d7-1e1ca107a31c",
+              "name": "OK",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "v3",
+                    "hubs",
+                    ":hubId",
+                    "projects",
+                    ":projectId",
+                    "sheets"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "hubId",
+                      "description": "(Required) "
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<integer>",
+                      "key": "projectId",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json;odata.metadata=minimal;odata.streaming=true"
+                  }
+                ],
+                "method": "POST",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json;odata.metadata=minimal;odata.streaming=true"
+                }
+              ],
+              "body": "[\n  {\n    \"Id\": 5496,\n    \"Name\": \"string\",\n    \"UniqueId\": \"string\",\n    \"FolderId\": 1203,\n    \"Version\": 4001,\n    \"FileSets\": [\n      4703,\n      2478\n    ],\n    \"ActiveVersionDate\": \"2015-03-02T19:56:03.327Z\",\n    \"FileName\": \"string\"\n  },\n  {\n    \"Id\": 1864,\n    \"Name\": \"string\",\n    \"UniqueId\": \"string\",\n    \"FolderId\": 1424,\n    \"Version\": 3261,\n    \"FileSets\": [\n      7816,\n      4094\n    ],\n    \"ActiveVersionDate\": \"2008-05-27T16:53:57.957Z\",\n    \"FileName\": \"string\"\n  }\n]",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "c7b500d0-9817-4ae2-9162-1d4f32801b17",
+          "name": "Update 3D model revision disciplines",
+          "request": {
+            "name": "Update 3D model revision disciplines",
+            "description": {},
+            "url": {
+              "path": [
+                "v3",
+                "hubs",
+                ":hubId",
+                "projects",
+                ":projectId",
+                "models",
+                ":modelId",
+                "revisions",
+                ":revisionId",
+                "disciplines"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "hubId",
+                  "description": "(Required) "
+                },
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<integer>",
+                  "key": "projectId",
+                  "description": "(Required) "
+                },
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<integer>",
+                  "key": "modelId",
+                  "description": "(Required) "
+                },
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<integer>",
+                  "key": "revisionId",
+                  "description": "(Required) "
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "method": "PUT",
+            "auth": null,
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"Disciplines\": [\n    \"<integer>\",\n    \"<integer>\"\n  ]\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "115b3f61-59ce-4a24-a2dc-05dc9fe1ff09",
+              "name": "No Content",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "v3",
+                    "hubs",
+                    ":hubId",
+                    "projects",
+                    ":projectId",
+                    "models",
+                    ":modelId",
+                    "revisions",
+                    ":revisionId",
+                    "disciplines"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "hubId",
+                      "description": "(Required) "
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<integer>",
+                      "key": "projectId",
+                      "description": "(Required) "
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<integer>",
+                      "key": "modelId",
+                      "description": "(Required) "
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<integer>",
+                      "key": "revisionId",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<API Key>"
+                  }
+                ],
+                "method": "PUT",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"Disciplines\": [\n    \"<integer>\",\n    \"<integer>\"\n  ]\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "No Content",
+              "code": 204,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    }
+  ],
+  "event": [],
+  "variable": [
+    {
+      "type": "string",
+      "value": "https://api.bimtrackapp.co",
+      "key": "baseUrl"
+    }
+  ],
+  "auth": {
+    "type": "apikey",
+    "apikey": [
+      {
+        "key": "key",
+        "value": "Authorization"
+      },
+      {
+        "key": "value",
+        "value": "{{apiKey}}"
+      },
+      {
+        "key": "in",
+        "value": "header"
+      }
+    ]
+  },
+  "info": {
+    "_postman_id": "1f44278c-d369-4f56-b8d7-dca64ffcf588",
+    "name": "Newforma Konekt Hub Project API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "description": {
+      "content": "<br><div>\r\n**Important:** API versioning is now optional. If no version is specified, the system defaults to using version 3 (`/v3`).\r\n</div><br>",
+      "type": "text/plain"
+    }
+  }
+}
