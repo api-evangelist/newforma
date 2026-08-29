@@ -7,6 +7,18 @@ description: >-
   and issues along with their viewpoints, attachments, comments, history, sheets, models, and users.
   Integrations authenticate with OAuth 2.0 / OpenID Connect (PKCE) or a Hub-owner API access token.
   Newforma also ships the on-premises Project Center and the cloud ConstructEx products.
+deliveryModel:
+  model: saas
+  open_source: false
+  commercial: true
+  callable_host: true
+  label: Hosted service · you call their endpoint
+  confidence: high
+  source:
+  - openapi
+  - pricing
+  generated: '2026-08-28'
+  method: derived
 accessModel:
   pricing: unknown
   onboarding: self-serve
