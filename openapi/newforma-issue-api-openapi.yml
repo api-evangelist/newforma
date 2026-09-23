@@ -1,7 +1,7 @@
-openapi: 3.0.4
+openapi: 3.2.0
 info:
-  title: Newforma Konekt Hub Issue API
-  description: "<br><div>\r\n**Important:** API versioning is now optional. If no version is specified, the system defaults to using version 3 (`/v3`).\r\n</div><br>"
+  title: Newforma Konekt Issue API
+  description: '**Important:** API versioning is now optional. If no version is specified, the system defaults to using version 3 (`/v3`).'
   version: '3'
 servers:
 - url: https://api.bimtrackapp.co
@@ -379,6 +379,8 @@ paths:
             text/json:
               schema:
                 $ref: '#/components/schemas/BIMOne.BIMTrack.WebAPI.Models.Model.v2.IssueDetail'
+      operationId: getV3HubsByHubIdProjectsByProjectIdArchivedissuesByIssueId
+      x-operation-id-source: derived
   /v3/hubs/{hubId}/projects/{projectId}/archivedissues/{archivedIssueId}:
     patch:
       tags:
@@ -458,6 +460,8 @@ paths:
       responses:
         '200':
           description: OK
+      operationId: patchV3HubsByHubIdProjectsByProjectIdArchivedissuesByArchivedIssueId
+      x-operation-id-source: derived
     delete:
       tags:
       - Issue
@@ -486,6 +490,8 @@ paths:
       responses:
         '200':
           description: OK
+      operationId: deleteV3HubsByHubIdProjectsByProjectIdArchivedissuesByArchivedIssueId
+      x-operation-id-source: derived
   /v3/hubs/{hubId}/projects/{projectId}/issues/{issueId}/attachments:
     get:
       tags:
@@ -596,6 +602,8 @@ paths:
                 type: array
                 items:
                   $ref: '#/components/schemas/BIMOne.BIMTrack.WebAPI.Models.Model.v2.AttachmentWithThumbnail'
+      operationId: getV3HubsByHubIdProjectsByProjectIdIssuesByIssueIdAttachments
+      x-operation-id-source: derived
     post:
       tags:
       - Issue
@@ -634,6 +642,8 @@ paths:
       responses:
         '201':
           description: Created
+      operationId: postV3HubsByHubIdProjectsByProjectIdIssuesByIssueIdAttachments
+      x-operation-id-source: derived
   /v3/hubs/{hubId}/projects/{projectId}/issues/{issueId}/attachments/{attachmentId}:
     delete:
       tags:
@@ -670,6 +680,8 @@ paths:
       responses:
         '200':
           description: OK
+      operationId: deleteV3HubsByHubIdProjectsByProjectIdIssuesByIssueIdAttachmentsByAttachmentId
+      x-operation-id-source: derived
   /v3/hubs/{hubId}/projects/{projectId}/issues/{issueId}/comments:
     get:
       tags:
@@ -780,6 +792,8 @@ paths:
                 type: array
                 items:
                   $ref: '#/components/schemas/BIMOne.BIMTrack.WebAPI.Models.Model.v2.CommentSummary'
+      operationId: getV3HubsByHubIdProjectsByProjectIdIssuesByIssueIdComments
+      x-operation-id-source: derived
     post:
       tags:
       - Issue
@@ -907,6 +921,8 @@ paths:
             text/json:
               schema:
                 $ref: '#/components/schemas/BIMOne.BIMTrack.WebAPI.Models.Model.v2.CommentSummary'
+      operationId: postV3HubsByHubIdProjectsByProjectIdIssuesByIssueIdComments
+      x-operation-id-source: derived
   /v3/hubs/{hubId}/projects/{projectId}/issues/{issueId}/comments/{issueCommentId}:
     delete:
       tags:
@@ -943,6 +959,8 @@ paths:
       responses:
         '200':
           description: OK
+      operationId: deleteV3HubsByHubIdProjectsByProjectIdIssuesByIssueIdCommentsByIssueCommentId
+      x-operation-id-source: derived
   /v3/hubs/{hubId}/projects/{projectId}/issues:
     get:
       tags:
@@ -1358,6 +1376,8 @@ paths:
             text/json:
               schema:
                 $ref: '#/components/schemas/BIMOne.BIMTrack.WebAPI.Models.Model.v2.IssueModificationSummary'
+      operationId: postV3HubsByHubIdProjectsByProjectIdIssues
+      x-operation-id-source: derived
     patch:
       tags:
       - Issue
@@ -1429,6 +1449,8 @@ paths:
       responses:
         '200':
           description: OK
+      operationId: patchV3HubsByHubIdProjectsByProjectIdIssues
+      x-operation-id-source: derived
   /v3/hubs/{hubId}/projects/{projectId}/issues/search:
     get:
       tags:
@@ -2175,6 +2197,8 @@ paths:
             text/json:
               schema:
                 $ref: '#/components/schemas/BIMOne.BIMTrack.WebAPI.Models.Model.v2.IssueModificationSummary'
+      operationId: putV3HubsByHubIdProjectsByProjectIdIssuesByIssueId
+      x-operation-id-source: derived
     patch:
       tags:
       - Issue
@@ -2253,6 +2277,8 @@ paths:
       responses:
         '200':
           description: OK
+      operationId: patchV3HubsByHubIdProjectsByProjectIdIssuesByIssueId
+      x-operation-id-source: derived
   /v3/hubs/{hubId}/projects/{projectId}/issues/multiple:
     get:
       tags:
@@ -2454,6 +2480,8 @@ paths:
             text/json:
               schema:
                 $ref: '#/components/schemas/BIMOne.BIMTrack.WebAPI.Models.Model.v2.IssueSummary'
+      operationId: getV3HubsByHubIdProjectsByProjectIdIssuesNumberByIssueNumber
+      x-operation-id-source: derived
   /v3/hubs/{hubId}/projects/{projectId}/issues/archiveissues:
     patch:
       tags:
@@ -2523,6 +2551,8 @@ paths:
       responses:
         '200':
           description: OK
+      operationId: patchV3HubsByHubIdProjectsByProjectIdIssuesArchiveissues
+      x-operation-id-source: derived
   /v3/hubs/{hubId}/projects/{projectId}/issues/{issueId}/history:
     get:
       tags:
@@ -2601,6 +2631,8 @@ paths:
             text/json:
               schema:
                 $ref: '#/components/schemas/BIMOne.BIMTrack.WebAPI.Models.Model.v2.IssueHistory'
+      operationId: getV3HubsByHubIdProjectsByProjectIdIssuesByIssueIdHistory
+      x-operation-id-source: derived
   /v3/hubs/{hubId}/projects/{projectId}/issues/viewpoints/batch:
     post:
       tags:
@@ -2990,6 +3022,8 @@ paths:
             text/json:
               schema:
                 $ref: '#/components/schemas/Microsoft.AspNetCore.Mvc.ProblemDetails'
+      operationId: postV3HubsByHubIdProjectsByProjectIdIssuesViewpointsBatch
+      x-operation-id-source: derived
   /v3/hubs/{hubId}/projects/{projectId}/issues/{issueId}/viewpoints/{viewpointId}/viewstate:
     get:
       tags:
@@ -3289,208 +3323,126 @@ paths:
             text/json:
               schema:
                 $ref: '#/components/schemas/Microsoft.AspNetCore.Mvc.ProblemDetails'
+      operationId: getV3HubsByHubIdProjectsByProjectIdIssuesByIssueIdViewpointsByViewpointIdViewstate
+      x-operation-id-source: derived
 components:
   schemas:
-    BIMOne.BIMTrack.WebAPI.Models.Model.v2.IssueHistory:
+    Microsoft.AspNetCore.Mvc.ProblemDetails:
       type: object
       properties:
-        ChangeSets:
-          type: array
-          items:
-            $ref: '#/components/schemas/BIMOne.BIMTrack.WebAPI.Models.Model.v2.IssueChangeSet'
-          nullable: true
+        type:
+          type:
+          - string
+          - 'null'
+        title:
+          type:
+          - string
+          - 'null'
+        status:
+          type:
+          - integer
+          - 'null'
+          format: int32
+        detail:
+          type:
+          - string
+          - 'null'
+        instance:
+          type:
+          - string
+          - 'null'
+      additionalProperties: {}
+    System.Text.Json.Nodes.JsonNode:
+      type: object
+      properties:
+        Options:
+          $ref: '#/components/schemas/System.Text.Json.Nodes.JsonNodeOptions'
+        Parent:
+          $ref: '#/components/schemas/System.Text.Json.Nodes.JsonNode'
+        Root:
+          $ref: '#/components/schemas/System.Text.Json.Nodes.JsonNode'
       additionalProperties: false
-    BIMOne.BIMTrack.WebAPI.Models.Model.v2.IssueModificationSummary:
+    BIMOne.BIMTrack.WebAPI.Models.Model.v3.Issue.IssuePatchArchiveIssues:
+      type: object
+      properties:
+        IssuesIds:
+          maxItems: 250
+          type:
+          - array
+          - 'null'
+          items:
+            type: integer
+            format: int32
+      additionalProperties: false
+    BIMOne.BIMTrack.WebAPI.Models.Model.v2.IssuePatchArchive:
+      required:
+      - ArchiveIssue
+      type: object
+      properties:
+        ArchiveIssue:
+          type: boolean
+      additionalProperties: false
+    BIMOne.BIMTrack.WebAPI.Models.Model.v2.AttachmentWithThumbnail:
       type: object
       properties:
         Id:
           type: integer
           format: int32
-        ProjectId:
-          type: integer
-          format: int32
-        Title:
-          type: string
-          nullable: true
-        Number:
-          type: integer
-          format: int32
-        Description:
-          type: string
-          nullable: true
-        Group:
-          type: string
-          nullable: true
-        AssignedToUserId:
-          type: integer
-          format: int32
-          nullable: true
-        LastModificationDate:
-          type: string
+        Name:
+          type:
+          - string
+          - 'null'
+        Size:
+          type:
+          - integer
+          - 'null'
+          format: int64
+        Date:
+          type:
+          - string
+          - 'null'
           format: date-time
-          nullable: true
-        DueDate:
-          type: string
+        Url:
+          type:
+          - string
+          - 'null'
+        UrlExpiration:
+          type:
+          - string
+          - 'null'
           format: date-time
-          nullable: true
-        CreationDate:
-          type: string
+        ThumbnailUrl:
+          type:
+          - string
+          - 'null'
+        ThumbnailUrlExpiration:
+          type:
+          - string
+          - 'null'
           format: date-time
-        ClosingDate:
-          type: string
-          format: date-time
-          nullable: true
-        Disciplines:
-          type: array
-          items:
-            $ref: '#/components/schemas/BIMOne.BIMTrack.WebAPI.Models.Model.v2.ProjectIssueDiscipline'
-          nullable: true
-        ProjectPhase:
-          $ref: '#/components/schemas/BIMOne.BIMTrack.WebAPI.Models.Model.v2.ProjectPhase'
-        ProjectZone:
-          $ref: '#/components/schemas/BIMOne.BIMTrack.WebAPI.Models.Model.v2.ProjectZone'
-        Priority:
-          $ref: '#/components/schemas/BIMOne.BIMTrack.WebAPI.Models.Model.v2.ProjectIssuePriority'
-        Status:
-          $ref: '#/components/schemas/BIMOne.BIMTrack.WebAPI.Models.Model.v2.ProjectIssueStatus'
-        Type:
-          $ref: '#/components/schemas/BIMOne.BIMTrack.WebAPI.Models.Model.v2.ProjectIssueType'
-        Confidentiality:
-          $ref: '#/components/schemas/BIMOne.BIMTrack.WebAPI.Models.Model.v2.IssueConfidentiality'
-        NotifyList:
-          $ref: '#/components/schemas/BIMOne.BIMTrack.WebAPI.Models.Model.v2.IssueNotifyList'
-        CustomAttributes:
-          type: array
-          items:
-            $ref: '#/components/schemas/BIMOne.BIMTrack.WebAPI.Models.Model.v2.IssueProjectAttribute'
-          nullable: true
-        CreationSource:
-          $ref: '#/components/schemas/BIMOne.BIMTrack.Common.SharedTypes.SourceType'
-        OperationResult:
-          $ref: '#/components/schemas/BIMOne.BIMTrack.WebAPI.Models.Model.v2.Enums.IssueCreationOperationResult'
-        IsRestricted:
-          type: boolean
-        ViewerUrl:
-          type: string
-          nullable: true
       additionalProperties: false
-    BIMOne.BIMTrack.WebAPI.Models.Model.v2.IssueConfidentiality:
-      type: object
-      properties:
-        Teams:
-          type: array
-          items:
-            $ref: '#/components/schemas/BIMOne.BIMTrack.WebAPI.Models.Model.v2.IssueProjectTeam'
-          nullable: true
-      additionalProperties: false
-    BIMOne.BIMTrack.WebAPI.Models.Model.v2.Enums.IssueCreationOperationResult:
-      enum:
-      - None
-      - Created
-      - Updated
-      - CreatedWithMergedClashes
-      - NothingBecauseIsArchived
-      - NothingBecauseNotAuthorized
-      - NothingBecauseSkippingClosedIssueCreation
-      - CreatedWithGroupViewpointAndFirstClash
-      type: string
-    BIMOne.BIMTrack.WebAPI.Models.Model.v2.ModelElement:
-      type: object
-      properties:
-        ModelName:
-          type: string
-          nullable: true
-        ModelGuid:
-          type: string
-          nullable: true
-      additionalProperties: false
-    BIMOne.BIMTrack.WebAPI.Models.Model.v2.IssuePatchRestore:
+    BIMOne.BIMTrack.WebAPI.Models.Model.v2.IssueCommentInput:
       required:
-      - ArchiveIssue
-      - StatusId
+      - Comment
       type: object
       properties:
-        ArchiveIssue:
-          type: boolean
-        StatusId:
-          type: integer
-          format: int32
-      additionalProperties: false
-    Json.Patch.PatchOperation:
-      type: object
-      properties:
-        Op:
-          $ref: '#/components/schemas/Json.Patch.OperationType'
-        From:
-          type: array
+        MentionedUsers:
+          type:
+          - array
+          - 'null'
           items:
-            type: string
-          nullable: true
-          readOnly: true
-        Path:
-          type: array
+            type: integer
+            format: int32
+        MentionedTeams:
+          type:
+          - array
+          - 'null'
           items:
-            type: string
-          nullable: true
-          readOnly: true
-        Value:
-          $ref: '#/components/schemas/System.Text.Json.Nodes.JsonNode'
-      additionalProperties: false
-    BIMOne.BIMTrack.Common.SharedTypes.SourceType:
-      enum:
-      - Unspecified
-      - Web
-      - ThreeDViewer
-      - BcfImport
-      - WebApi
-      - BcfWebApi
-      - Navisworks
-      - Revit
-      - Tekla
-      - AutoCad
-      - Npc
-      type: string
-    BIMOne.BIMTrack.WebAPI.Models.Model.v2.OrthogonalCamera:
-      required:
-      - CameraDirection
-      - CameraPosition
-      - CameraUpVector
-      - ViewToWorldScale
-      type: object
-      properties:
-        CameraPosition:
-          $ref: '#/components/schemas/BIMOne.BIMTrack.WebAPI.Models.Model.v2.Point3D'
-        CameraDirection:
-          $ref: '#/components/schemas/BIMOne.BIMTrack.WebAPI.Models.Model.v2.Point3D'
-        CameraUpVector:
-          $ref: '#/components/schemas/BIMOne.BIMTrack.WebAPI.Models.Model.v2.Point3D'
-        ViewToWorldScale:
-          type: number
-          format: double
-        Height:
-          type: number
-          format: double
-          nullable: true
-        Width:
-          type: number
-          format: double
-          nullable: true
-      additionalProperties: false
-    BIMOne.BIMTrack.WebAPI.Models.Model.v2.IssueChangeSet:
-      type: object
-      properties:
-        Author:
-          $ref: '#/components/schemas/BIMOne.BIMTrack.WebAPI.Models.Model.v2.UserSummary'
-        CreationDate:
+            type: integer
+            format: int32
+        Comment:
+          minLength: 1
           type: string
-          format: date-time
-        ChangeType:
-          $ref: '#/components/schemas/BIMOne.BIMTrack.WebAPI.Models.Model.v2.Enums.ChangeType'
-        Changes:
-          type: array
-          items:
-            $ref: '#/components/schemas/BIMOne.BIMTrack.WebAPI.Models.Model.v2.IssueChange'
-          nullable: true
       additionalProperties: false
     BIMOne.BIMTrack.WebAPI.Models.Model.v2.IssueProjectAttribute:
       type: object
@@ -3499,44 +3451,27 @@ components:
           type: integer
           format: int32
         Name:
-          type: string
-          nullable: true
+          type:
+          - string
+          - 'null'
         IsMandatory:
           type: boolean
         PredefinedValues:
-          type: array
+          type:
+          - array
+          - 'null'
           items:
             $ref: '#/components/schemas/BIMOne.BIMTrack.WebAPI.Models.Model.v2.IssueProjectAttributeValue'
-          nullable: true
         TextValue:
-          type: string
-          nullable: true
+          type:
+          - string
+          - 'null'
       additionalProperties: false
-    BIMOne.BIMTrack.WebAPI.Models.Model.v2.ViewpointViewStateSummary:
-      required:
-      - ClipMode
-      type: object
-      properties:
-        ClipMode:
-          $ref: '#/components/schemas/BIMOne.BIMTrack.WebAPI.Models.Model.v2.Enums.ViewpointClipMode'
-        ClippingPlanes:
-          type: array
-          items:
-            $ref: '#/components/schemas/BIMOne.BIMTrack.WebAPI.Models.Model.v2.ClippingPlane'
-          nullable: true
-        SectionBox:
-          $ref: '#/components/schemas/BIMOne.BIMTrack.WebAPI.Models.Model.v2.SectionBox'
-        HasHiddenElements:
-          type: boolean
-        HasSelectedElements:
-          type: boolean
-      additionalProperties: false
-    BIMOne.BIMTrack.WebAPI.Models.Model.v2.ProjectIssuePriority:
+    BIMOne.BIMTrack.WebAPI.Models.Model.v2.ProjectIssueStatus:
       required:
       - Color
       - Id
       - Name
-      - Order
       type: object
       properties:
         Name:
@@ -3549,92 +3484,30 @@ components:
           minLength: 1
           pattern: ^#([A-Fa-f0-9]{6}|[A-Fa-f0-9]{3})$
           type: string
-        Order:
-          type: integer
-          format: int32
+        TeamsAllowedForStatus:
+          type:
+          - array
+          - 'null'
+          items:
+            $ref: '#/components/schemas/BIMOne.BIMTrack.WebAPI.Models.Model.v2.ProjectTeam'
       additionalProperties: false
-    BIMOne.BIMTrack.WebAPI.Models.Model.v2.IssueSummaryInput:
+    BIMOne.BIMTrack.WebAPI.Models.Model.v2.ProjectZone:
       required:
-      - Title
+      - Color
+      - Id
+      - Name
       type: object
       properties:
-        Title:
+        Name:
           minLength: 1
           type: string
-        Description:
+        Id:
+          type: integer
+          format: int32
+        Color:
+          minLength: 1
+          pattern: ^#([A-Fa-f0-9]{6}|[A-Fa-f0-9]{3})$
           type: string
-          nullable: true
-        Group:
-          type: string
-          nullable: true
-        AssignedToUserId:
-          type: integer
-          format: int32
-          nullable: true
-        DueDate:
-          type: string
-          format: date-time
-          nullable: true
-        ProjectPhaseId:
-          type: integer
-          format: int32
-          nullable: true
-        ProjectZoneId:
-          type: integer
-          format: int32
-          nullable: true
-        PriorityId:
-          type: integer
-          format: int32
-          nullable: true
-        StatusId:
-          type: integer
-          format: int32
-          nullable: true
-        TypeId:
-          type: integer
-          format: int32
-          nullable: true
-        Disciplines:
-          type: array
-          items:
-            type: integer
-            format: int32
-          nullable: true
-        Confidentiality:
-          $ref: '#/components/schemas/BIMOne.BIMTrack.WebAPI.Models.Model.v2.IssueConfidentialityInput'
-        NotifyList:
-          $ref: '#/components/schemas/BIMOne.BIMTrack.WebAPI.Models.Model.v2.IssueNotifyListInput'
-        CustomAttributes:
-          type: array
-          items:
-            $ref: '#/components/schemas/BIMOne.BIMTrack.WebAPI.Models.Model.v2.IssueProjectAttributeInput'
-          nullable: true
-        IsRestricted:
-          type: boolean
-          nullable: true
-      additionalProperties: false
-    BIMOne.BIMTrack.WebAPI.Models.Model.v2.IssueNotifyListInput:
-      type: object
-      properties:
-        TeamsToNotify:
-          type: array
-          items:
-            type: integer
-            format: int32
-          nullable: true
-        UsersToNotify:
-          type: array
-          items:
-            type: integer
-            format: int32
-          nullable: true
-      additionalProperties: false
-    System.Text.Json.Nodes.JsonNodeOptions:
-      type: object
-      properties:
-        PropertyNameCaseInsensitive:
-          type: boolean
       additionalProperties: false
     BIMOne.BIMTrack.WebAPI.Models.Model.v2.IssueSummary:
       type: object
@@ -3646,17 +3519,20 @@ components:
           type: integer
           format: int32
         Title:
-          type: string
-          nullable: true
+          type:
+          - string
+          - 'null'
         Number:
           type: integer
           format: int32
         Description:
-          type: string
-          nullable: true
+          type:
+          - string
+          - 'null'
         Group:
-          type: string
-          nullable: true
+          type:
+          - string
+          - 'null'
         Author:
           $ref: '#/components/schemas/BIMOne.BIMTrack.WebAPI.Models.Model.v2.UserSummary'
         AssignedTo:
@@ -3664,29 +3540,34 @@ components:
         LastModificationAuthor:
           $ref: '#/components/schemas/BIMOne.BIMTrack.WebAPI.Models.Model.v2.UserSummary'
         LastModificationDate:
-          type: string
+          type:
+          - string
+          - 'null'
           format: date-time
-          nullable: true
         DueDate:
-          type: string
+          type:
+          - string
+          - 'null'
           format: date-time
-          nullable: true
         CreationDate:
           type: string
           format: date-time
         ClosingDate:
-          type: string
+          type:
+          - string
+          - 'null'
           format: date-time
-          nullable: true
         DefaultViewpointId:
-          type: integer
+          type:
+          - integer
+          - 'null'
           format: int32
-          nullable: true
         Disciplines:
-          type: array
+          type:
+          - array
+          - 'null'
           items:
             $ref: '#/components/schemas/BIMOne.BIMTrack.WebAPI.Models.Model.v2.ProjectIssueDiscipline'
-          nullable: true
         ProjectPhase:
           $ref: '#/components/schemas/BIMOne.BIMTrack.WebAPI.Models.Model.v2.ProjectPhase'
         ProjectZone:
@@ -3702,183 +3583,142 @@ components:
         NotifyList:
           $ref: '#/components/schemas/BIMOne.BIMTrack.WebAPI.Models.Model.v2.IssueNotifyList'
         CustomAttributes:
-          type: array
+          type:
+          - array
+          - 'null'
           items:
             $ref: '#/components/schemas/BIMOne.BIMTrack.WebAPI.Models.Model.v2.IssueProjectAttribute'
-          nullable: true
         CreationSource:
           $ref: '#/components/schemas/BIMOne.BIMTrack.Common.SharedTypes.SourceType'
         Viewpoints:
-          type: array
+          type:
+          - array
+          - 'null'
           items:
             $ref: '#/components/schemas/BIMOne.BIMTrack.WebAPI.Models.Model.v2.ViewpointSummary'
-          nullable: true
         IsRestricted:
           type: boolean
         ViewerUrl:
-          type: string
-          nullable: true
+          type:
+          - string
+          - 'null'
         AttributesToHighlight:
-          type: array
+          type:
+          - array
+          - 'null'
           items:
             type: string
-          nullable: true
         CommentsCount:
-          type: integer
+          type:
+          - integer
+          - 'null'
           format: int32
-          nullable: true
         AttachmentsCount:
-          type: integer
+          type:
+          - integer
+          - 'null'
           format: int32
-          nullable: true
       additionalProperties: false
-    BIMOne.BIMTrack.WebAPI.Models.Model.v2.Attachment:
+    BIMOne.BIMTrack.WebAPI.Models.Model.v2.IssueConfidentialityInput:
+      type: object
+      properties:
+        TeamIds:
+          type:
+          - array
+          - 'null'
+          items:
+            type: integer
+            format: int32
+      additionalProperties: false
+    BIMOne.BIMTrack.WebAPI.Models.Model.v2.ViewpointSummary:
       type: object
       properties:
         Id:
           type: integer
           format: int32
-        Name:
-          type: string
-          nullable: true
-        Size:
-          type: integer
-          format: int64
-          nullable: true
-        Date:
-          type: string
-          format: date-time
-          nullable: true
-        Url:
-          type: string
-          nullable: true
-        UrlExpiration:
-          type: string
-          format: date-time
-          nullable: true
-      additionalProperties: false
-    BIMOne.BIMTrack.WebAPI.Models.Model.v2.IssueDetail:
-      type: object
-      properties:
-        Id:
+        IssueId:
           type: integer
           format: int32
-        ProjectId:
-          type: integer
-          format: int32
-        Title:
-          type: string
-          nullable: true
-        Number:
-          type: integer
-          format: int32
-        Description:
-          type: string
-          nullable: true
-        Group:
-          type: string
-          nullable: true
-        Author:
-          $ref: '#/components/schemas/BIMOne.BIMTrack.WebAPI.Models.Model.v2.UserSummary'
-        AssignedTo:
-          $ref: '#/components/schemas/BIMOne.BIMTrack.WebAPI.Models.Model.v2.UserSummary'
-        LastModificationAuthor:
-          $ref: '#/components/schemas/BIMOne.BIMTrack.WebAPI.Models.Model.v2.UserSummary'
-        LastModificationDate:
-          type: string
-          format: date-time
-          nullable: true
-        DueDate:
-          type: string
-          format: date-time
-          nullable: true
-        CreationDate:
-          type: string
-          format: date-time
-        ClosingDate:
-          type: string
-          format: date-time
-          nullable: true
-        DefaultViewpointId:
-          type: integer
-          format: int32
-          nullable: true
-        Disciplines:
-          type: array
-          items:
-            $ref: '#/components/schemas/BIMOne.BIMTrack.WebAPI.Models.Model.v2.ProjectIssueDiscipline'
-          nullable: true
-        ProjectPhase:
-          $ref: '#/components/schemas/BIMOne.BIMTrack.WebAPI.Models.Model.v2.ProjectPhase'
-        ProjectZone:
-          $ref: '#/components/schemas/BIMOne.BIMTrack.WebAPI.Models.Model.v2.ProjectZone'
-        Priority:
-          $ref: '#/components/schemas/BIMOne.BIMTrack.WebAPI.Models.Model.v2.ProjectIssuePriority'
-        Status:
-          $ref: '#/components/schemas/BIMOne.BIMTrack.WebAPI.Models.Model.v2.ProjectIssueStatus'
-        Type:
-          $ref: '#/components/schemas/BIMOne.BIMTrack.WebAPI.Models.Model.v2.ProjectIssueType'
-        Confidentiality:
-          $ref: '#/components/schemas/BIMOne.BIMTrack.WebAPI.Models.Model.v2.IssueConfidentiality'
-        NotifyList:
-          $ref: '#/components/schemas/BIMOne.BIMTrack.WebAPI.Models.Model.v2.IssueNotifyList'
-        CustomAttributes:
-          type: array
-          items:
-            $ref: '#/components/schemas/BIMOne.BIMTrack.WebAPI.Models.Model.v2.IssueProjectAttribute'
-          nullable: true
-        CreationSource:
+        ViewType:
+          $ref: '#/components/schemas/BIMOne.BIMTrack.WebAPI.Models.Model.v2.Enums.ViewType'
+        Image:
+          $ref: '#/components/schemas/BIMOne.BIMTrack.WebAPI.Models.Model.v2.AttachmentWithThumbnail'
+        PerspectiveCamera:
+          $ref: '#/components/schemas/BIMOne.BIMTrack.WebAPI.Models.Model.v2.PerspectiveCamera'
+        OrthogonalCamera:
+          $ref: '#/components/schemas/BIMOne.BIMTrack.WebAPI.Models.Model.v2.OrthogonalCamera'
+        Pinpoint:
+          $ref: '#/components/schemas/BIMOne.BIMTrack.WebAPI.Models.Model.v2.ViewpointPinpoint'
+        Source:
           $ref: '#/components/schemas/BIMOne.BIMTrack.Common.SharedTypes.SourceType'
-        IsRestricted:
-          type: boolean
-        ViewerUrl:
-          type: string
-          nullable: true
-        AttributesToHighlight:
-          type: array
-          items:
-            type: string
-          nullable: true
-        CommentsCount:
-          type: integer
-          format: int32
-          nullable: true
-        AttachmentsCount:
-          type: integer
-          format: int32
-          nullable: true
-        Attachments:
-          type: array
-          items:
-            $ref: '#/components/schemas/BIMOne.BIMTrack.WebAPI.Models.Model.v2.Attachment'
-          nullable: true
-        IssueComments:
-          type: array
+        ViewName:
+          type:
+          - string
+          - 'null'
+        ModelName:
+          type:
+          - string
+          - 'null'
+        Comments:
+          type:
+          - array
+          - 'null'
           items:
             $ref: '#/components/schemas/BIMOne.BIMTrack.WebAPI.Models.Model.v2.CommentSummary'
-          nullable: true
-        Viewpoints:
-          type: array
-          items:
-            $ref: '#/components/schemas/BIMOne.BIMTrack.WebAPI.Models.Model.v2.ViewpointSummary'
-          nullable: true
+        ViewUniqueId:
+          type:
+          - string
+          - 'null'
+        ViewerUrl:
+          type:
+          - string
+          - 'null'
+        WasCreatedFromSheetInstance:
+          type: boolean
+        SheetInformation:
+          $ref: '#/components/schemas/BIMOne.BIMTrack.WebAPI.Models.Model.v2.ViewpointSheetInformation'
+        ViewStateSummary:
+          $ref: '#/components/schemas/BIMOne.BIMTrack.WebAPI.Models.Model.v2.ViewpointViewStateSummary'
       additionalProperties: false
-    System.Text.Json.Nodes.JsonNode:
+    BIMOne.BIMTrack.WebAPI.Models.Model.v2.IssueProjectAttributeInput:
+      required:
+      - ProjectAttributeId
       type: object
       properties:
-        Options:
-          $ref: '#/components/schemas/System.Text.Json.Nodes.JsonNodeOptions'
-        Parent:
-          $ref: '#/components/schemas/System.Text.Json.Nodes.JsonNode'
-        Root:
-          $ref: '#/components/schemas/System.Text.Json.Nodes.JsonNode'
+        ProjectAttributeId:
+          type: integer
+          format: int32
+        ProjectAttributeValueIds:
+          type:
+          - array
+          - 'null'
+          items:
+            type: integer
+            format: int32
+        Value:
+          maxLength: 1000
+          type:
+          - string
+          - 'null'
       additionalProperties: false
-    BIMOne.BIMTrack.WebAPI.Models.Model.v2.Enums.ViewType:
-      enum:
-      - None
-      - TwoD
-      - ThreeD
-      type: string
+    BIMOne.BIMTrack.WebAPI.Models.Model.v2.ProjectIssueType:
+      required:
+      - Color
+      - Id
+      - Name
+      type: object
+      properties:
+        Name:
+          minLength: 1
+          type: string
+        Id:
+          type: integer
+          format: int32
+        Color:
+          minLength: 1
+          pattern: ^#([A-Fa-f0-9]{6}|[A-Fa-f0-9]{3})$
+          type: string
+      additionalProperties: false
     BIMOne.BIMTrack.WebAPI.Models.Model.v2.Enums.ChangeType:
       enum:
       - ArchiveIssue
@@ -3905,12 +3745,104 @@ components:
       - ArchiveAttachment
       - ProjectCompletion
       type: string
+    BIMOne.BIMTrack.WebAPI.Models.Model.v2.ModelElement:
+      type: object
+      properties:
+        ModelName:
+          type:
+          - string
+          - 'null'
+        ModelGuid:
+          type:
+          - string
+          - 'null'
+      additionalProperties: false
+    BIMOne.BIMTrack.WebAPI.Models.Model.v2.IssueNotifyList:
+      type: object
+      properties:
+        TeamsToNotify:
+          type:
+          - array
+          - 'null'
+          items:
+            $ref: '#/components/schemas/BIMOne.BIMTrack.WebAPI.Models.Model.v2.IssueProjectTeam'
+        UsersToNotify:
+          type:
+          - array
+          - 'null'
+          items:
+            $ref: '#/components/schemas/BIMOne.BIMTrack.WebAPI.Models.Model.v2.UserSummary'
+      additionalProperties: false
+    BIMOne.BIMTrack.WebAPI.Models.Model.v2.Point3D:
+      required:
+      - X
+      - Y
+      - Z
+      type: object
+      properties:
+        X:
+          type: number
+          format: double
+        Y:
+          type: number
+          format: double
+        Z:
+          type: number
+          format: double
+      additionalProperties: false
+    BIMOne.BIMTrack.WebAPI.Models.Model.v2.Enums.ViewType:
+      enum:
+      - None
+      - TwoD
+      - ThreeD
+      type: string
+    BIMOne.BIMTrack.WebAPI.Models.Model.v2.SectionBox:
+      required:
+      - Center
+      - Rotation
+      - Size
+      type: object
+      properties:
+        Center:
+          $ref: '#/components/schemas/BIMOne.BIMTrack.WebAPI.Models.Model.v2.Point3D'
+        Rotation:
+          $ref: '#/components/schemas/BIMOne.BIMTrack.WebAPI.Models.Model.v2.Point3D'
+        Size:
+          $ref: '#/components/schemas/BIMOne.BIMTrack.WebAPI.Models.Model.v2.Point3D'
+      additionalProperties: false
+    BIMOne.BIMTrack.WebAPI.Models.Model.v2.IssueChange:
+      type: object
+      properties:
+        NewValue:
+          type:
+          - string
+          - 'null'
+        OldValue:
+          type:
+          - string
+          - 'null'
+        Property:
+          type:
+          - string
+          - 'null'
+      additionalProperties: false
+    BIMOne.BIMTrack.WebAPI.Models.Model.v2.IssueConfidentiality:
+      type: object
+      properties:
+        Teams:
+          type:
+          - array
+          - 'null'
+          items:
+            $ref: '#/components/schemas/BIMOne.BIMTrack.WebAPI.Models.Model.v2.IssueProjectTeam'
+      additionalProperties: false
     BIMOne.BIMTrack.WebAPI.Models.Model.v2.ViewpointPinpoint:
       type: object
       properties:
         Name:
-          type: string
-          nullable: true
+          type:
+          - string
+          - 'null'
         Position:
           $ref: '#/components/schemas/BIMOne.BIMTrack.WebAPI.Models.Model.v2.Point3D'
         Element1:
@@ -3918,9 +3850,156 @@ components:
         Element2:
           $ref: '#/components/schemas/BIMOne.BIMTrack.WebAPI.Models.Model.v2.Element'
       additionalProperties: false
-    BIMOne.BIMTrack.WebAPI.Models.Model.v2.ProjectZone:
+    BIMOne.BIMTrack.WebAPI.Models.Model.v2.Element:
+      type: object
+      properties:
+        IfcGuid:
+          type:
+          - string
+          - 'null'
+        OriginatingSystem:
+          type:
+          - string
+          - 'null'
+        AuthoringToolId:
+          type:
+          - string
+          - 'null'
+        Filename:
+          type:
+          - string
+          - 'null'
+        DocumentGuid:
+          type:
+          - string
+          - 'null'
+      additionalProperties: false
+    Json.Patch.OperationType:
+      enum:
+      - Unknown
+      - Add
+      - Remove
+      - Replace
+      - Move
+      - Copy
+      - Test
+      type: string
+    BIMOne.BIMTrack.WebAPI.Models.Model.v2.ViewpointViewStateSummary:
       required:
-      - Color
+      - ClipMode
+      type: object
+      properties:
+        ClipMode:
+          $ref: '#/components/schemas/BIMOne.BIMTrack.WebAPI.Models.Model.v2.Enums.ViewpointClipMode'
+        ClippingPlanes:
+          type:
+          - array
+          - 'null'
+          items:
+            $ref: '#/components/schemas/BIMOne.BIMTrack.WebAPI.Models.Model.v2.ClippingPlane'
+        SectionBox:
+          $ref: '#/components/schemas/BIMOne.BIMTrack.WebAPI.Models.Model.v2.SectionBox'
+        HasHiddenElements:
+          type: boolean
+        HasSelectedElements:
+          type: boolean
+      additionalProperties: false
+    BIMOne.BIMTrack.WebAPI.Models.Model.v2.AspNetCore.IssuesPatchInput:
+      required:
+      - IssueIds
+      - Operations
+      type: object
+      properties:
+        IssueIds:
+          maxItems: 250
+          type: array
+          items:
+            type: integer
+            format: int32
+        Operations:
+          type: array
+          items:
+            $ref: '#/components/schemas/Json.Patch.PatchOperation'
+      additionalProperties: false
+    BIMOne.BIMTrack.WebAPI.Models.Model.v2.ViewpointViewStateDetail:
+      required:
+      - ClipMode
+      type: object
+      properties:
+        ClipMode:
+          $ref: '#/components/schemas/BIMOne.BIMTrack.WebAPI.Models.Model.v2.Enums.ViewpointClipMode'
+        ClippingPlanes:
+          type:
+          - array
+          - 'null'
+          items:
+            $ref: '#/components/schemas/BIMOne.BIMTrack.WebAPI.Models.Model.v2.ClippingPlane'
+        SectionBox:
+          $ref: '#/components/schemas/BIMOne.BIMTrack.WebAPI.Models.Model.v2.SectionBox'
+        HasHiddenElements:
+          type: boolean
+        HasSelectedElements:
+          type: boolean
+        HiddenElements:
+          type:
+          - array
+          - 'null'
+          items:
+            $ref: '#/components/schemas/BIMOne.BIMTrack.WebAPI.Models.Model.v2.Element'
+        HiddenModels:
+          type:
+          - array
+          - 'null'
+          items:
+            $ref: '#/components/schemas/BIMOne.BIMTrack.WebAPI.Models.Model.v2.ModelElement'
+        SelectedElements:
+          type:
+          - array
+          - 'null'
+          items:
+            $ref: '#/components/schemas/BIMOne.BIMTrack.WebAPI.Models.Model.v2.Element'
+      additionalProperties: false
+    BIMOne.BIMTrack.WebAPI.Models.Model.v2.OrthogonalCamera:
+      required:
+      - CameraDirection
+      - CameraPosition
+      - CameraUpVector
+      - ViewToWorldScale
+      type: object
+      properties:
+        CameraPosition:
+          $ref: '#/components/schemas/BIMOne.BIMTrack.WebAPI.Models.Model.v2.Point3D'
+        CameraDirection:
+          $ref: '#/components/schemas/BIMOne.BIMTrack.WebAPI.Models.Model.v2.Point3D'
+        CameraUpVector:
+          $ref: '#/components/schemas/BIMOne.BIMTrack.WebAPI.Models.Model.v2.Point3D'
+        ViewToWorldScale:
+          type: number
+          format: double
+        Height:
+          type:
+          - number
+          - 'null'
+          format: double
+        Width:
+          type:
+          - number
+          - 'null'
+          format: double
+      additionalProperties: false
+    BIMOne.BIMTrack.WebAPI.Models.Model.v2.ClippingPlane:
+      required:
+      - Direction
+      - Location
+      type: object
+      properties:
+        Location:
+          $ref: '#/components/schemas/BIMOne.BIMTrack.WebAPI.Models.Model.v2.Point3D'
+        Direction:
+          $ref: '#/components/schemas/BIMOne.BIMTrack.WebAPI.Models.Model.v2.Point3D'
+      additionalProperties: false
+    BIMOne.BIMTrack.WebAPI.Models.Model.v2.ProjectIssueDiscipline:
+      required:
       - Id
       - Name
       type: object
@@ -3931,34 +4010,137 @@ components:
         Id:
           type: integer
           format: int32
-        Color:
-          minLength: 1
-          pattern: ^#([A-Fa-f0-9]{6}|[A-Fa-f0-9]{3})$
-          type: string
       additionalProperties: false
-    BIMOne.BIMTrack.WebAPI.Models.Model.v2.ViewpointSheetInformation:
+    BIMOne.BIMTrack.WebAPI.Models.Model.v2.Attachment:
       type: object
       properties:
-        SheetUniqueId:
-          type: string
-          nullable: true
-        SheetViewUniqueId:
-          type: string
-          nullable: true
+        Id:
+          type: integer
+          format: int32
+        Name:
+          type:
+          - string
+          - 'null'
+        Size:
+          type:
+          - integer
+          - 'null'
+          format: int64
+        Date:
+          type:
+          - string
+          - 'null'
+          format: date-time
+        Url:
+          type:
+          - string
+          - 'null'
+        UrlExpiration:
+          type:
+          - string
+          - 'null'
+          format: date-time
       additionalProperties: false
-    BIMOne.BIMTrack.WebAPI.Models.Model.v2.IssueNotifyList:
+    BIMOne.BIMTrack.WebAPI.Models.Model.v2.IssueChangeSet:
       type: object
       properties:
-        TeamsToNotify:
-          type: array
+        Author:
+          $ref: '#/components/schemas/BIMOne.BIMTrack.WebAPI.Models.Model.v2.UserSummary'
+        CreationDate:
+          type: string
+          format: date-time
+        ChangeType:
+          $ref: '#/components/schemas/BIMOne.BIMTrack.WebAPI.Models.Model.v2.Enums.ChangeType'
+        Changes:
+          type:
+          - array
+          - 'null'
           items:
-            $ref: '#/components/schemas/BIMOne.BIMTrack.WebAPI.Models.Model.v2.IssueProjectTeam'
-          nullable: true
-        UsersToNotify:
-          type: array
+            $ref: '#/components/schemas/BIMOne.BIMTrack.WebAPI.Models.Model.v2.IssueChange'
+      additionalProperties: false
+    BIMOne.BIMTrack.WebAPI.Models.Model.v2.IssueModificationSummary:
+      type: object
+      properties:
+        Id:
+          type: integer
+          format: int32
+        ProjectId:
+          type: integer
+          format: int32
+        Title:
+          type:
+          - string
+          - 'null'
+        Number:
+          type: integer
+          format: int32
+        Description:
+          type:
+          - string
+          - 'null'
+        Group:
+          type:
+          - string
+          - 'null'
+        AssignedToUserId:
+          type:
+          - integer
+          - 'null'
+          format: int32
+        LastModificationDate:
+          type:
+          - string
+          - 'null'
+          format: date-time
+        DueDate:
+          type:
+          - string
+          - 'null'
+          format: date-time
+        CreationDate:
+          type: string
+          format: date-time
+        ClosingDate:
+          type:
+          - string
+          - 'null'
+          format: date-time
+        Disciplines:
+          type:
+          - array
+          - 'null'
           items:
-            $ref: '#/components/schemas/BIMOne.BIMTrack.WebAPI.Models.Model.v2.UserSummary'
-          nullable: true
+            $ref: '#/components/schemas/BIMOne.BIMTrack.WebAPI.Models.Model.v2.ProjectIssueDiscipline'
+        ProjectPhase:
+          $ref: '#/components/schemas/BIMOne.BIMTrack.WebAPI.Models.Model.v2.ProjectPhase'
+        ProjectZone:
+          $ref: '#/components/schemas/BIMOne.BIMTrack.WebAPI.Models.Model.v2.ProjectZone'
+        Priority:
+          $ref: '#/components/schemas/BIMOne.BIMTrack.WebAPI.Models.Model.v2.ProjectIssuePriority'
+        Status:
+          $ref: '#/components/schemas/BIMOne.BIMTrack.WebAPI.Models.Model.v2.ProjectIssueStatus'
+        Type:
+          $ref: '#/components/schemas/BIMOne.BIMTrack.WebAPI.Models.Model.v2.ProjectIssueType'
+        Confidentiality:
+          $ref: '#/components/schemas/BIMOne.BIMTrack.WebAPI.Models.Model.v2.IssueConfidentiality'
+        NotifyList:
+          $ref: '#/components/schemas/BIMOne.BIMTrack.WebAPI.Models.Model.v2.IssueNotifyList'
+        CustomAttributes:
+          type:
+          - array
+          - 'null'
+          items:
+            $ref: '#/components/schemas/BIMOne.BIMTrack.WebAPI.Models.Model.v2.IssueProjectAttribute'
+        CreationSource:
+          $ref: '#/components/schemas/BIMOne.BIMTrack.Common.SharedTypes.SourceType'
+        OperationResult:
+          $ref: '#/components/schemas/BIMOne.BIMTrack.WebAPI.Models.Model.v2.Enums.IssueCreationOperationResult'
+        IsRestricted:
+          type: boolean
+        ViewerUrl:
+          type:
+          - string
+          - 'null'
       additionalProperties: false
     BIMOne.BIMTrack.WebAPI.Models.Model.v2.ProjectPhase:
       required:
@@ -3978,467 +4160,160 @@ components:
           pattern: ^#([A-Fa-f0-9]{6}|[A-Fa-f0-9]{3})$
           type: string
       additionalProperties: false
-    BIMOne.BIMTrack.WebAPI.Models.Model.v2.Enums.ViewpointClipMode:
-      enum:
-      - None
-      - SectionBox
-      - ClippingPlanes
-      type: string
-    BIMOne.BIMTrack.WebAPI.Models.Model.v2.PerspectiveCamera:
-      required:
-      - CameraDirection
-      - CameraPosition
-      - CameraUpVector
-      - FieldOfView
-      type: object
-      properties:
-        CameraPosition:
-          $ref: '#/components/schemas/BIMOne.BIMTrack.WebAPI.Models.Model.v2.Point3D'
-        CameraDirection:
-          $ref: '#/components/schemas/BIMOne.BIMTrack.WebAPI.Models.Model.v2.Point3D'
-        CameraUpVector:
-          $ref: '#/components/schemas/BIMOne.BIMTrack.WebAPI.Models.Model.v2.Point3D'
-        FieldOfView:
-          type: number
-          format: double
-      additionalProperties: false
-    Microsoft.AspNetCore.Mvc.ProblemDetails:
-      type: object
-      properties:
-        type:
-          type: string
-          nullable: true
-        title:
-          type: string
-          nullable: true
-        status:
-          type: integer
-          format: int32
-          nullable: true
-        detail:
-          type: string
-          nullable: true
-        instance:
-          type: string
-          nullable: true
-      additionalProperties: {}
-    BIMOne.BIMTrack.WebAPI.Models.Model.v2.ProjectTeam:
-      required:
-      - Id
-      - Name
-      type: object
-      properties:
-        Name:
-          minLength: 1
-          type: string
-        Id:
-          type: integer
-          format: int32
-      additionalProperties: false
-    BIMOne.BIMTrack.WebAPI.Models.Model.v2.ViewpointSummary:
+    BIMOne.BIMTrack.WebAPI.Models.Model.v2.UserSummary:
       type: object
       properties:
         Id:
           type: integer
           format: int32
-        IssueId:
-          type: integer
-          format: int32
-        ViewType:
-          $ref: '#/components/schemas/BIMOne.BIMTrack.WebAPI.Models.Model.v2.Enums.ViewType'
-        Image:
-          $ref: '#/components/schemas/BIMOne.BIMTrack.WebAPI.Models.Model.v2.AttachmentWithThumbnail'
-        PerspectiveCamera:
-          $ref: '#/components/schemas/BIMOne.BIMTrack.WebAPI.Models.Model.v2.PerspectiveCamera'
-        OrthogonalCamera:
-          $ref: '#/components/schemas/BIMOne.BIMTrack.WebAPI.Models.Model.v2.OrthogonalCamera'
-        Pinpoint:
-          $ref: '#/components/schemas/BIMOne.BIMTrack.WebAPI.Models.Model.v2.ViewpointPinpoint'
-        Source:
-          $ref: '#/components/schemas/BIMOne.BIMTrack.Common.SharedTypes.SourceType'
-        ViewName:
-          type: string
-          nullable: true
-        ModelName:
-          type: string
-          nullable: true
-        Comments:
-          type: array
-          items:
-            $ref: '#/components/schemas/BIMOne.BIMTrack.WebAPI.Models.Model.v2.CommentSummary'
-          nullable: true
-        ViewUniqueId:
-          type: string
-          nullable: true
-        ViewerUrl:
-          type: string
-          nullable: true
-        WasCreatedFromSheetInstance:
-          type: boolean
-        SheetInformation:
-          $ref: '#/components/schemas/BIMOne.BIMTrack.WebAPI.Models.Model.v2.ViewpointSheetInformation'
-        ViewStateSummary:
-          $ref: '#/components/schemas/BIMOne.BIMTrack.WebAPI.Models.Model.v2.ViewpointViewStateSummary'
+        UserName:
+          type:
+          - string
+          - 'null'
+        Email:
+          type:
+          - string
+          - 'null'
+        FirstName:
+          type:
+          - string
+          - 'null'
+        LastName:
+          type:
+          - string
+          - 'null'
+        AvatarUrl:
+          type:
+          - string
+          - 'null'
       additionalProperties: false
-    BIMOne.BIMTrack.WebAPI.Models.Model.v2.Element:
-      type: object
-      properties:
-        IfcGuid:
-          type: string
-          nullable: true
-        OriginatingSystem:
-          type: string
-          nullable: true
-        AuthoringToolId:
-          type: string
-          nullable: true
-        Filename:
-          type: string
-          nullable: true
-        DocumentGuid:
-          type: string
-          nullable: true
-      additionalProperties: false
-    BIMOne.BIMTrack.WebAPI.Models.Model.v2.ProjectIssueDiscipline:
+    BIMOne.BIMTrack.WebAPI.Models.Model.v2.IssueSummaryInput:
       required:
-      - Id
-      - Name
-      type: object
-      properties:
-        Name:
-          minLength: 1
-          type: string
-        Id:
-          type: integer
-          format: int32
-      additionalProperties: false
-    BIMOne.BIMTrack.WebAPI.Models.Model.v2.SectionBox:
-      required:
-      - Center
-      - Rotation
-      - Size
-      type: object
-      properties:
-        Center:
-          $ref: '#/components/schemas/BIMOne.BIMTrack.WebAPI.Models.Model.v2.Point3D'
-        Rotation:
-          $ref: '#/components/schemas/BIMOne.BIMTrack.WebAPI.Models.Model.v2.Point3D'
-        Size:
-          $ref: '#/components/schemas/BIMOne.BIMTrack.WebAPI.Models.Model.v2.Point3D'
-      additionalProperties: false
-    BIMOne.BIMTrack.WebAPI.Models.Model.v2.IssueSummaryUpdateInput:
-      required:
-      - PriorityId
-      - StatusId
       - Title
-      - TypeId
       type: object
       properties:
         Title:
           minLength: 1
           type: string
         Description:
-          type: string
-          nullable: true
+          type:
+          - string
+          - 'null'
         Group:
-          type: string
-          nullable: true
+          type:
+          - string
+          - 'null'
         AssignedToUserId:
-          type: integer
+          type:
+          - integer
+          - 'null'
           format: int32
-          nullable: true
         DueDate:
-          type: string
+          type:
+          - string
+          - 'null'
           format: date-time
-          nullable: true
         ProjectPhaseId:
-          type: integer
+          type:
+          - integer
+          - 'null'
           format: int32
-          nullable: true
         ProjectZoneId:
-          type: integer
+          type:
+          - integer
+          - 'null'
           format: int32
-          nullable: true
         PriorityId:
-          type: integer
+          type:
+          - integer
+          - 'null'
           format: int32
         StatusId:
-          type: integer
+          type:
+          - integer
+          - 'null'
           format: int32
         TypeId:
-          type: integer
+          type:
+          - integer
+          - 'null'
           format: int32
-        DefaultViewpointId:
-          type: integer
-          format: int32
-          nullable: true
         Disciplines:
-          type: array
+          type:
+          - array
+          - 'null'
           items:
             type: integer
             format: int32
-          nullable: true
         Confidentiality:
           $ref: '#/components/schemas/BIMOne.BIMTrack.WebAPI.Models.Model.v2.IssueConfidentialityInput'
         NotifyList:
           $ref: '#/components/schemas/BIMOne.BIMTrack.WebAPI.Models.Model.v2.IssueNotifyListInput'
         CustomAttributes:
-          type: array
+          type:
+          - array
+          - 'null'
           items:
             $ref: '#/components/schemas/BIMOne.BIMTrack.WebAPI.Models.Model.v2.IssueProjectAttributeInput'
-          nullable: true
-        ViewpointToDeleteId:
-          type: array
-          items:
-            type: integer
-            format: int32
-          nullable: true
         IsRestricted:
-          type: boolean
-          nullable: true
+          type:
+          - boolean
+          - 'null'
       additionalProperties: false
-    BIMOne.BIMTrack.WebAPI.Models.Model.v2.CommentSummary:
-      type: object
-      properties:
-        Id:
-          type: integer
-          format: int32
-        Author:
-          $ref: '#/components/schemas/BIMOne.BIMTrack.WebAPI.Models.Model.v2.UserSummary'
-        CreationDate:
-          type: string
-          format: date-time
-        Comment:
-          type: string
-          nullable: true
-        UniqueId:
-          type: string
-          nullable: true
-      additionalProperties: false
-    BIMOne.BIMTrack.WebAPI.Models.Model.v2.IssuePatchArchive:
-      required:
-      - ArchiveIssue
-      type: object
-      properties:
-        ArchiveIssue:
-          type: boolean
-      additionalProperties: false
-    BIMOne.BIMTrack.WebAPI.Models.Model.v2.AttachmentWithThumbnail:
-      type: object
-      properties:
-        Id:
-          type: integer
-          format: int32
-        Name:
-          type: string
-          nullable: true
-        Size:
-          type: integer
-          format: int64
-          nullable: true
-        Date:
-          type: string
-          format: date-time
-          nullable: true
-        Url:
-          type: string
-          nullable: true
-        UrlExpiration:
-          type: string
-          format: date-time
-          nullable: true
-        ThumbnailUrl:
-          type: string
-          nullable: true
-        ThumbnailUrlExpiration:
-          type: string
-          format: date-time
-          nullable: true
-      additionalProperties: false
-    BIMOne.BIMTrack.WebAPI.Models.Model.v2.ProjectIssueType:
-      required:
-      - Color
-      - Id
-      - Name
-      type: object
-      properties:
-        Name:
-          minLength: 1
-          type: string
-        Id:
-          type: integer
-          format: int32
-        Color:
-          minLength: 1
-          pattern: ^#([A-Fa-f0-9]{6}|[A-Fa-f0-9]{3})$
-          type: string
-      additionalProperties: false
-    BIMOne.BIMTrack.WebAPI.Models.Model.v2.IssueConfidentialityInput:
-      type: object
-      properties:
-        TeamIds:
-          type: array
-          items:
-            type: integer
-            format: int32
-          nullable: true
-      additionalProperties: false
-    Json.Patch.OperationType:
+    BIMOne.BIMTrack.WebAPI.Models.Model.v2.Enums.ViewpointClipMode:
       enum:
-      - Unknown
-      - Add
-      - Remove
-      - Replace
-      - Move
-      - Copy
-      - Test
+      - None
+      - SectionBox
+      - ClippingPlanes
       type: string
-    BIMOne.BIMTrack.WebAPI.Models.Model.v2.IssueCommentInput:
-      required:
-      - Comment
+    BIMOne.BIMTrack.WebAPI.Models.Model.v2.Enums.IssueCreationOperationResult:
+      enum:
+      - None
+      - Created
+      - Updated
+      - CreatedWithMergedClashes
+      - NothingBecauseIsArchived
+      - NothingBecauseNotAuthorized
+      - NothingBecauseSkippingClosedIssueCreation
+      - CreatedWithGroupViewpointAndFirstClash
+      type: string
+    Json.Patch.PatchOperation:
       type: object
       properties:
-        MentionedUsers:
-          type: array
+        Op:
+          $ref: '#/components/schemas/Json.Patch.OperationType'
+        From:
+          type:
+          - array
+          - 'null'
           items:
-            type: integer
-            format: int32
-          nullable: true
-        MentionedTeams:
-          type: array
+            type: string
+          readOnly: true
+        Path:
+          type:
+          - array
+          - 'null'
           items:
-            type: integer
-            format: int32
-          nullable: true
-        Comment:
-          minLength: 1
-          type: string
-      additionalProperties: false
-    BIMOne.BIMTrack.WebAPI.Models.Model.v2.ViewpointViewStateDetail:
-      required:
-      - ClipMode
-      type: object
-      properties:
-        ClipMode:
-          $ref: '#/components/schemas/BIMOne.BIMTrack.WebAPI.Models.Model.v2.Enums.ViewpointClipMode'
-        ClippingPlanes:
-          type: array
-          items:
-            $ref: '#/components/schemas/BIMOne.BIMTrack.WebAPI.Models.Model.v2.ClippingPlane'
-          nullable: true
-        SectionBox:
-          $ref: '#/components/schemas/BIMOne.BIMTrack.WebAPI.Models.Model.v2.SectionBox'
-        HasHiddenElements:
-          type: boolean
-        HasSelectedElements:
-          type: boolean
-        HiddenElements:
-          type: array
-          items:
-            $ref: '#/components/schemas/BIMOne.BIMTrack.WebAPI.Models.Model.v2.Element'
-          nullable: true
-        HiddenModels:
-          type: array
-          items:
-            $ref: '#/components/schemas/BIMOne.BIMTrack.WebAPI.Models.Model.v2.ModelElement'
-          nullable: true
-        SelectedElements:
-          type: array
-          items:
-            $ref: '#/components/schemas/BIMOne.BIMTrack.WebAPI.Models.Model.v2.Element'
-          nullable: true
-      additionalProperties: false
-    BIMOne.BIMTrack.WebAPI.Models.Model.v2.Point3D:
-      required:
-      - X
-      - Y
-      - Z
-      type: object
-      properties:
-        X:
-          type: number
-          format: double
-        Y:
-          type: number
-          format: double
-        Z:
-          type: number
-          format: double
+            type: string
+          readOnly: true
+        Value:
+          $ref: '#/components/schemas/System.Text.Json.Nodes.JsonNode'
       additionalProperties: false
     BIMOne.BIMTrack.WebAPI.Models.Model.v3.Issue.ProjectIssuesDetails:
       type: object
       properties:
         Issues:
-          type: array
+          type:
+          - array
+          - 'null'
           items:
             $ref: '#/components/schemas/BIMOne.BIMTrack.WebAPI.Models.Model.v2.IssueSummary'
-          nullable: true
         TotalUserIssues:
           type: integer
           format: int32
         TotalProjectIssues:
           type: integer
           format: int32
-      additionalProperties: false
-    BIMOne.BIMTrack.WebAPI.Models.Model.v2.IssueChange:
-      type: object
-      properties:
-        NewValue:
-          type: string
-          nullable: true
-        OldValue:
-          type: string
-          nullable: true
-        Property:
-          type: string
-          nullable: true
-      additionalProperties: false
-    BIMOne.BIMTrack.WebAPI.Models.Model.v2.IssueProjectTeam:
-      type: object
-      properties:
-        Team:
-          $ref: '#/components/schemas/BIMOne.BIMTrack.WebAPI.Models.Model.v2.ProjectTeam'
-      additionalProperties: false
-    BIMOne.BIMTrack.WebAPI.Models.Model.v3.Issue.IssueViewpointsBatchInput:
-      required:
-      - IssueIds
-      type: object
-      properties:
-        IssueIds:
-          type: array
-          items:
-            type: integer
-            format: int32
-      additionalProperties: false
-    BIMOne.BIMTrack.WebAPI.Models.Model.v2.IssueProjectAttributeInput:
-      required:
-      - ProjectAttributeId
-      type: object
-      properties:
-        ProjectAttributeId:
-          type: integer
-          format: int32
-        ProjectAttributeValueIds:
-          type: array
-          items:
-            type: integer
-            format: int32
-          nullable: true
-        Value:
-          maxLength: 1000
-          type: string
-          nullable: true
-      additionalProperties: false
-    BIMOne.BIMTrack.WebAPI.Models.Model.v2.ClippingPlane:
-      required:
-      - Direction
-      - Location
-      type: object
-      properties:
-        Location:
-          $ref: '#/components/schemas/BIMOne.BIMTrack.WebAPI.Models.Model.v2.Point3D'
-        Direction:
-          $ref: '#/components/schemas/BIMOne.BIMTrack.WebAPI.Models.Model.v2.Point3D'
       additionalProperties: false
     BIMOne.BIMTrack.WebAPI.Models.Model.v2.IssueProjectAttributeValue:
       required:
@@ -4458,61 +4333,193 @@ components:
           type: integer
           format: int32
       additionalProperties: false
-    BIMOne.BIMTrack.WebAPI.Models.Model.v2.AspNetCore.IssuesPatchInput:
+    BIMOne.BIMTrack.WebAPI.Models.Model.v2.PerspectiveCamera:
       required:
-      - IssueIds
-      - Operations
+      - CameraDirection
+      - CameraPosition
+      - CameraUpVector
+      - FieldOfView
       type: object
       properties:
-        IssueIds:
-          maxItems: 250
-          type: array
-          items:
-            type: integer
-            format: int32
-        Operations:
-          type: array
-          items:
-            $ref: '#/components/schemas/Json.Patch.PatchOperation'
+        CameraPosition:
+          $ref: '#/components/schemas/BIMOne.BIMTrack.WebAPI.Models.Model.v2.Point3D'
+        CameraDirection:
+          $ref: '#/components/schemas/BIMOne.BIMTrack.WebAPI.Models.Model.v2.Point3D'
+        CameraUpVector:
+          $ref: '#/components/schemas/BIMOne.BIMTrack.WebAPI.Models.Model.v2.Point3D'
+        FieldOfView:
+          type: number
+          format: double
       additionalProperties: false
-    BIMOne.BIMTrack.WebAPI.Models.Model.v3.Issue.IssuePatchArchiveIssues:
+    System.Text.Json.Nodes.JsonNodeOptions:
       type: object
       properties:
-        IssuesIds:
-          maxItems: 250
-          type: array
-          items:
-            type: integer
-            format: int32
-          nullable: true
+        PropertyNameCaseInsensitive:
+          type: boolean
       additionalProperties: false
-    BIMOne.BIMTrack.WebAPI.Models.Model.v2.UserSummary:
+    BIMOne.BIMTrack.WebAPI.Models.Model.v2.CommentSummary:
       type: object
       properties:
         Id:
           type: integer
           format: int32
-        UserName:
+        Author:
+          $ref: '#/components/schemas/BIMOne.BIMTrack.WebAPI.Models.Model.v2.UserSummary'
+        CreationDate:
           type: string
-          nullable: true
-        Email:
-          type: string
-          nullable: true
-        FirstName:
-          type: string
-          nullable: true
-        LastName:
-          type: string
-          nullable: true
-        AvatarUrl:
-          type: string
-          nullable: true
+          format: date-time
+        Comment:
+          type:
+          - string
+          - 'null'
+        UniqueId:
+          type:
+          - string
+          - 'null'
       additionalProperties: false
-    BIMOne.BIMTrack.WebAPI.Models.Model.v2.ProjectIssueStatus:
+    BIMOne.BIMTrack.WebAPI.Models.Model.v2.IssueSummaryUpdateInput:
+      required:
+      - PriorityId
+      - StatusId
+      - Title
+      - TypeId
+      type: object
+      properties:
+        Title:
+          minLength: 1
+          type: string
+        Description:
+          type:
+          - string
+          - 'null'
+        Group:
+          type:
+          - string
+          - 'null'
+        AssignedToUserId:
+          type:
+          - integer
+          - 'null'
+          format: int32
+        DueDate:
+          type:
+          - string
+          - 'null'
+          format: date-time
+        ProjectPhaseId:
+          type:
+          - integer
+          - 'null'
+          format: int32
+        ProjectZoneId:
+          type:
+          - integer
+          - 'null'
+          format: int32
+        PriorityId:
+          type: integer
+          format: int32
+        StatusId:
+          type: integer
+          format: int32
+        TypeId:
+          type: integer
+          format: int32
+        DefaultViewpointId:
+          type:
+          - integer
+          - 'null'
+          format: int32
+        Disciplines:
+          type:
+          - array
+          - 'null'
+          items:
+            type: integer
+            format: int32
+        Confidentiality:
+          $ref: '#/components/schemas/BIMOne.BIMTrack.WebAPI.Models.Model.v2.IssueConfidentialityInput'
+        NotifyList:
+          $ref: '#/components/schemas/BIMOne.BIMTrack.WebAPI.Models.Model.v2.IssueNotifyListInput'
+        CustomAttributes:
+          type:
+          - array
+          - 'null'
+          items:
+            $ref: '#/components/schemas/BIMOne.BIMTrack.WebAPI.Models.Model.v2.IssueProjectAttributeInput'
+        ViewpointToDeleteId:
+          type:
+          - array
+          - 'null'
+          items:
+            type: integer
+            format: int32
+        IsRestricted:
+          type:
+          - boolean
+          - 'null'
+      additionalProperties: false
+    BIMOne.BIMTrack.WebAPI.Models.Model.v2.IssuePatchRestore:
+      required:
+      - ArchiveIssue
+      - StatusId
+      type: object
+      properties:
+        ArchiveIssue:
+          type: boolean
+        StatusId:
+          type: integer
+          format: int32
+      additionalProperties: false
+    BIMOne.BIMTrack.Common.SharedTypes.SourceType:
+      enum:
+      - Unspecified
+      - Web
+      - ThreeDViewer
+      - BcfImport
+      - WebApi
+      - BcfWebApi
+      - Navisworks
+      - Revit
+      - Tekla
+      - AutoCad
+      - Npc
+      type: string
+    BIMOne.BIMTrack.WebAPI.Models.Model.v2.IssueNotifyListInput:
+      type: object
+      properties:
+        TeamsToNotify:
+          type:
+          - array
+          - 'null'
+          items:
+            type: integer
+            format: int32
+        UsersToNotify:
+          type:
+          - array
+          - 'null'
+          items:
+            type: integer
+            format: int32
+      additionalProperties: false
+    BIMOne.BIMTrack.WebAPI.Models.Model.v3.Issue.IssueViewpointsBatchInput:
+      required:
+      - IssueIds
+      type: object
+      properties:
+        IssueIds:
+          type: array
+          items:
+            type: integer
+            format: int32
+      additionalProperties: false
+    BIMOne.BIMTrack.WebAPI.Models.Model.v2.ProjectIssuePriority:
       required:
       - Color
       - Id
       - Name
+      - Order
       type: object
       properties:
         Name:
@@ -4525,11 +4532,172 @@ components:
           minLength: 1
           pattern: ^#([A-Fa-f0-9]{6}|[A-Fa-f0-9]{3})$
           type: string
-        TeamsAllowedForStatus:
-          type: array
+        Order:
+          type: integer
+          format: int32
+      additionalProperties: false
+    BIMOne.BIMTrack.WebAPI.Models.Model.v2.ViewpointSheetInformation:
+      type: object
+      properties:
+        SheetUniqueId:
+          type:
+          - string
+          - 'null'
+        SheetViewUniqueId:
+          type:
+          - string
+          - 'null'
+      additionalProperties: false
+    BIMOne.BIMTrack.WebAPI.Models.Model.v2.ProjectTeam:
+      required:
+      - Id
+      - Name
+      type: object
+      properties:
+        Name:
+          minLength: 1
+          type: string
+        Id:
+          type: integer
+          format: int32
+      additionalProperties: false
+    BIMOne.BIMTrack.WebAPI.Models.Model.v2.IssueProjectTeam:
+      type: object
+      properties:
+        Team:
+          $ref: '#/components/schemas/BIMOne.BIMTrack.WebAPI.Models.Model.v2.ProjectTeam'
+      additionalProperties: false
+    BIMOne.BIMTrack.WebAPI.Models.Model.v2.IssueHistory:
+      type: object
+      properties:
+        ChangeSets:
+          type:
+          - array
+          - 'null'
           items:
-            $ref: '#/components/schemas/BIMOne.BIMTrack.WebAPI.Models.Model.v2.ProjectTeam'
-          nullable: true
+            $ref: '#/components/schemas/BIMOne.BIMTrack.WebAPI.Models.Model.v2.IssueChangeSet'
+      additionalProperties: false
+    BIMOne.BIMTrack.WebAPI.Models.Model.v2.IssueDetail:
+      type: object
+      properties:
+        Id:
+          type: integer
+          format: int32
+        ProjectId:
+          type: integer
+          format: int32
+        Title:
+          type:
+          - string
+          - 'null'
+        Number:
+          type: integer
+          format: int32
+        Description:
+          type:
+          - string
+          - 'null'
+        Group:
+          type:
+          - string
+          - 'null'
+        Author:
+          $ref: '#/components/schemas/BIMOne.BIMTrack.WebAPI.Models.Model.v2.UserSummary'
+        AssignedTo:
+          $ref: '#/components/schemas/BIMOne.BIMTrack.WebAPI.Models.Model.v2.UserSummary'
+        LastModificationAuthor:
+          $ref: '#/components/schemas/BIMOne.BIMTrack.WebAPI.Models.Model.v2.UserSummary'
+        LastModificationDate:
+          type:
+          - string
+          - 'null'
+          format: date-time
+        DueDate:
+          type:
+          - string
+          - 'null'
+          format: date-time
+        CreationDate:
+          type: string
+          format: date-time
+        ClosingDate:
+          type:
+          - string
+          - 'null'
+          format: date-time
+        DefaultViewpointId:
+          type:
+          - integer
+          - 'null'
+          format: int32
+        Disciplines:
+          type:
+          - array
+          - 'null'
+          items:
+            $ref: '#/components/schemas/BIMOne.BIMTrack.WebAPI.Models.Model.v2.ProjectIssueDiscipline'
+        ProjectPhase:
+          $ref: '#/components/schemas/BIMOne.BIMTrack.WebAPI.Models.Model.v2.ProjectPhase'
+        ProjectZone:
+          $ref: '#/components/schemas/BIMOne.BIMTrack.WebAPI.Models.Model.v2.ProjectZone'
+        Priority:
+          $ref: '#/components/schemas/BIMOne.BIMTrack.WebAPI.Models.Model.v2.ProjectIssuePriority'
+        Status:
+          $ref: '#/components/schemas/BIMOne.BIMTrack.WebAPI.Models.Model.v2.ProjectIssueStatus'
+        Type:
+          $ref: '#/components/schemas/BIMOne.BIMTrack.WebAPI.Models.Model.v2.ProjectIssueType'
+        Confidentiality:
+          $ref: '#/components/schemas/BIMOne.BIMTrack.WebAPI.Models.Model.v2.IssueConfidentiality'
+        NotifyList:
+          $ref: '#/components/schemas/BIMOne.BIMTrack.WebAPI.Models.Model.v2.IssueNotifyList'
+        CustomAttributes:
+          type:
+          - array
+          - 'null'
+          items:
+            $ref: '#/components/schemas/BIMOne.BIMTrack.WebAPI.Models.Model.v2.IssueProjectAttribute'
+        CreationSource:
+          $ref: '#/components/schemas/BIMOne.BIMTrack.Common.SharedTypes.SourceType'
+        IsRestricted:
+          type: boolean
+        ViewerUrl:
+          type:
+          - string
+          - 'null'
+        AttributesToHighlight:
+          type:
+          - array
+          - 'null'
+          items:
+            type: string
+        CommentsCount:
+          type:
+          - integer
+          - 'null'
+          format: int32
+        AttachmentsCount:
+          type:
+          - integer
+          - 'null'
+          format: int32
+        Attachments:
+          type:
+          - array
+          - 'null'
+          items:
+            $ref: '#/components/schemas/BIMOne.BIMTrack.WebAPI.Models.Model.v2.Attachment'
+        IssueComments:
+          type:
+          - array
+          - 'null'
+          items:
+            $ref: '#/components/schemas/BIMOne.BIMTrack.WebAPI.Models.Model.v2.CommentSummary'
+        Viewpoints:
+          type:
+          - array
+          - 'null'
+          items:
+            $ref: '#/components/schemas/BIMOne.BIMTrack.WebAPI.Models.Model.v2.ViewpointSummary'
       additionalProperties: false
   securitySchemes:
     Bearer:
