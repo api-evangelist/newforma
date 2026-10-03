@@ -888,18 +888,64 @@ paths:
       x-operation-id-source: derived
 components:
   schemas:
-    BIMOne.BIMTrack.WebAPI.Models.Model.v2.HubUserPost:
-      required:
-      - Email
-      - Role
+    BIMOne.BIMTrack.WebAPI.Models.Model.v2.UserSummary:
       type: object
       properties:
+        Id:
+          type: integer
+          format: int32
+        UserName:
+          type:
+          - string
+          - 'null'
         Email:
-          minLength: 1
-          type: string
+          type:
+          - string
+          - 'null'
+        FirstName:
+          type:
+          - string
+          - 'null'
+        LastName:
+          type:
+          - string
+          - 'null'
+        AvatarUrl:
+          type:
+          - string
+          - 'null'
+      additionalProperties: false
+    BIMOne.BIMTrack.WebAPI.Models.Model.v3.HubUserPermissions:
+      type: object
+      properties:
         Role:
           $ref: '#/components/schemas/BIMOne.BIMTrack.Common.SharedTypes.Hubs.HubRole'
       additionalProperties: false
+    BIMOne.BIMTrack.WebAPI.Models.Model.v3.ProjectTemplateSummary:
+      type: object
+      properties:
+        HubId:
+          type:
+          - string
+          - 'null'
+        Id:
+          type: integer
+          format: int32
+        Author:
+          $ref: '#/components/schemas/BIMOne.BIMTrack.WebAPI.Models.Model.v2.UserSummary'
+        Name:
+          type:
+          - string
+          - 'null'
+        CreationDate:
+          type: string
+          format: date-time
+      additionalProperties: false
+    BIMOne.BIMTrack.Common.SharedTypes.Hubs.HubRole:
+      enum:
+      - Guest
+      - Admin
+      type: string
     BIMOne.BIMTrack.WebAPI.Models.Model.v2.UserProfileNotCreatedErrorModel:
       type: object
       properties:
@@ -914,13 +960,6 @@ components:
           - string
           - 'null'
       additionalProperties: false
-    BIMOne.BIMTrack.WebAPI.Models.Model.v2.ErrorStatus:
-      enum:
-      - Unspecified
-      - USER_PROFILE_NOT_CREATED
-      - EXPIRED_SUBSCRIPTION
-      - FUNCTIONALITY_NOT_AVAILABLE
-      type: string
     BIMOne.BIMTrack.WebAPI.Models.Model.v3.HubDetailWithUserPermissions:
       type: object
       properties:
@@ -952,6 +991,31 @@ components:
         RequestingUserPermissions:
           $ref: '#/components/schemas/BIMOne.BIMTrack.WebAPI.Models.Model.v3.HubUserPermissions'
       additionalProperties: false
+    BIMOne.BIMTrack.WebAPI.Models.Model.v2.HubUser:
+      type: object
+      properties:
+        User:
+          $ref: '#/components/schemas/BIMOne.BIMTrack.WebAPI.Models.Model.v2.UserSummary'
+        Role:
+          $ref: '#/components/schemas/BIMOne.BIMTrack.Common.SharedTypes.Hubs.HubRole'
+        LastWebLogin:
+          type:
+          - string
+          - 'null'
+          format: date-time
+        LastAddinLogin:
+          type:
+          - string
+          - 'null'
+          format: date-time
+        LastHubProjectActivity:
+          type:
+          - string
+          - 'null'
+          format: date-time
+        IsActivated:
+          type: boolean
+      additionalProperties: false
     BIMOne.BIMTrack.WebAPI.Models.Model.v2.HubUserPut:
       required:
       - Role
@@ -961,33 +1025,6 @@ components:
           $ref: '#/components/schemas/BIMOne.BIMTrack.Common.SharedTypes.Hubs.HubRole'
         ResendHubInvite:
           type: boolean
-      additionalProperties: false
-    BIMOne.BIMTrack.WebAPI.Models.Model.v2.UserSummary:
-      type: object
-      properties:
-        Id:
-          type: integer
-          format: int32
-        UserName:
-          type:
-          - string
-          - 'null'
-        Email:
-          type:
-          - string
-          - 'null'
-        FirstName:
-          type:
-          - string
-          - 'null'
-        LastName:
-          type:
-          - string
-          - 'null'
-        AvatarUrl:
-          type:
-          - string
-          - 'null'
       additionalProperties: false
     BIMOne.BIMTrack.WebAPI.Models.Model.v2.ProjectTemplateInput:
       required:
@@ -1002,34 +1039,24 @@ components:
           type: integer
           format: int32
       additionalProperties: false
-    BIMOne.BIMTrack.WebAPI.Models.Model.v3.HubDetail:
+    BIMOne.BIMTrack.WebAPI.Models.Model.v2.ErrorStatus:
+      enum:
+      - Unspecified
+      - USER_PROFILE_NOT_CREATED
+      - EXPIRED_SUBSCRIPTION
+      - FUNCTIONALITY_NOT_AVAILABLE
+      type: string
+    BIMOne.BIMTrack.WebAPI.Models.Model.v3.RegionSummary:
       type: object
       properties:
-        Id:
+        Location:
           type:
           - string
           - 'null'
-        Name:
+        ApiRegionalUrl:
           type:
           - string
           - 'null'
-        Author:
-          $ref: '#/components/schemas/BIMOne.BIMTrack.WebAPI.Models.Model.v2.UserSummary'
-        Image:
-          $ref: '#/components/schemas/BIMOne.BIMTrack.WebAPI.Models.Model.v2.AttachmentWithThumbnail'
-        CreationDate:
-          type:
-          - string
-          - 'null'
-          format: date-time
-        RegionSummary:
-          $ref: '#/components/schemas/BIMOne.BIMTrack.WebAPI.Models.Model.v3.RegionSummary'
-        NumberOfUsers:
-          type: integer
-          format: int32
-        NumberOfProjects:
-          type: integer
-          format: int32
       additionalProperties: false
     BIMOne.BIMTrack.WebAPI.Models.Model.v2.AttachmentWithThumbnail:
       type: object
@@ -1070,73 +1097,46 @@ components:
           - 'null'
           format: date-time
       additionalProperties: false
-    BIMOne.BIMTrack.WebAPI.Models.Model.v3.HubUserPermissions:
+    BIMOne.BIMTrack.WebAPI.Models.Model.v2.HubUserPost:
+      required:
+      - Email
+      - Role
       type: object
       properties:
+        Email:
+          minLength: 1
+          type: string
         Role:
           $ref: '#/components/schemas/BIMOne.BIMTrack.Common.SharedTypes.Hubs.HubRole'
       additionalProperties: false
-    BIMOne.BIMTrack.Common.SharedTypes.Hubs.HubRole:
-      enum:
-      - Guest
-      - Admin
-      type: string
-    BIMOne.BIMTrack.WebAPI.Models.Model.v3.RegionSummary:
+    BIMOne.BIMTrack.WebAPI.Models.Model.v3.HubDetail:
       type: object
       properties:
-        Location:
-          type:
-          - string
-          - 'null'
-        ApiRegionalUrl:
-          type:
-          - string
-          - 'null'
-      additionalProperties: false
-    BIMOne.BIMTrack.WebAPI.Models.Model.v2.HubUser:
-      type: object
-      properties:
-        User:
-          $ref: '#/components/schemas/BIMOne.BIMTrack.WebAPI.Models.Model.v2.UserSummary'
-        Role:
-          $ref: '#/components/schemas/BIMOne.BIMTrack.Common.SharedTypes.Hubs.HubRole'
-        LastWebLogin:
-          type:
-          - string
-          - 'null'
-          format: date-time
-        LastAddinLogin:
-          type:
-          - string
-          - 'null'
-          format: date-time
-        LastHubProjectActivity:
-          type:
-          - string
-          - 'null'
-          format: date-time
-        IsActivated:
-          type: boolean
-      additionalProperties: false
-    BIMOne.BIMTrack.WebAPI.Models.Model.v3.ProjectTemplateSummary:
-      type: object
-      properties:
-        HubId:
-          type:
-          - string
-          - 'null'
         Id:
-          type: integer
-          format: int32
-        Author:
-          $ref: '#/components/schemas/BIMOne.BIMTrack.WebAPI.Models.Model.v2.UserSummary'
+          type:
+          - string
+          - 'null'
         Name:
           type:
           - string
           - 'null'
+        Author:
+          $ref: '#/components/schemas/BIMOne.BIMTrack.WebAPI.Models.Model.v2.UserSummary'
+        Image:
+          $ref: '#/components/schemas/BIMOne.BIMTrack.WebAPI.Models.Model.v2.AttachmentWithThumbnail'
         CreationDate:
-          type: string
+          type:
+          - string
+          - 'null'
           format: date-time
+        RegionSummary:
+          $ref: '#/components/schemas/BIMOne.BIMTrack.WebAPI.Models.Model.v3.RegionSummary'
+        NumberOfUsers:
+          type: integer
+          format: int32
+        NumberOfProjects:
+          type: integer
+          format: int32
       additionalProperties: false
   securitySchemes:
     Bearer:
