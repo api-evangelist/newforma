@@ -1,21 +1,22 @@
-generated: '2026-07-20'
+generated: '2026-09-23'
 method: generated
-source: openapi/newforma-konekt-openapi-original.json
+source: openapi/newforma-hub-api-openapi.yml, openapi/newforma-issue-api-openapi.yml, openapi/newforma-project-api-openapi.yml
 description: Recommended x-agentic-access execution contracts, classified heuristically from
   the OpenAPI. A governance starting point for exposing this API to AI agents — review and bind
   audience per deployment. See research/curity/agentic-governance/.
 summary:
   operations: 39
   by_action_class:
-    connected: 20
-    acting: 19
+    connected: 21
+    acting: 18
   by_consequence:
-    read: 20
-    write: 19
+    read: 21
+    write: 18
   human_in_the_loop_required: 0
 operations:
 - path: /v3/hubs/{hubId}
   method: get
+  operationId: getV3HubsByHubId
   x-agentic-access:
     action-class: connected
     consequence: read
@@ -25,6 +26,7 @@ operations:
     audit: none
 - path: /v3/hubs/name/{hubName}
   method: get
+  operationId: getV3HubsNameByHubName
   x-agentic-access:
     action-class: connected
     consequence: read
@@ -34,6 +36,7 @@ operations:
     audit: none
 - path: /v3/hubs
   method: get
+  operationId: getV3Hubs
   x-agentic-access:
     action-class: connected
     consequence: read
@@ -43,6 +46,7 @@ operations:
     audit: none
 - path: /v3/hubs/{hubId}/projecttemplates
   method: get
+  operationId: getV3HubsByHubIdProjecttemplates
   x-agentic-access:
     action-class: connected
     consequence: read
@@ -52,6 +56,7 @@ operations:
     audit: none
 - path: /v3/hubs/{hubId}/projecttemplates
   method: post
+  operationId: postV3HubsByHubIdProjecttemplates
   x-agentic-access:
     action-class: acting
     consequence: write
@@ -67,6 +72,7 @@ operations:
     audit: required
 - path: /v3/hubs/{hubId}/projecttemplates/{projectTemplateId}
   method: delete
+  operationId: deleteV3HubsByHubIdProjecttemplatesByProjectTemplateId
   x-agentic-access:
     action-class: acting
     consequence: write
@@ -82,6 +88,7 @@ operations:
     audit: required
 - path: /v3/hubs/{hubId}/users
   method: get
+  operationId: getV3HubsByHubIdUsers
   x-agentic-access:
     action-class: connected
     consequence: read
@@ -91,6 +98,7 @@ operations:
     audit: none
 - path: /v3/hubs/{hubId}/users
   method: post
+  operationId: postV3HubsByHubIdUsers
   x-agentic-access:
     action-class: acting
     consequence: write
@@ -106,6 +114,7 @@ operations:
     audit: required
 - path: /v3/hubs/{hubId}/users/{userId}
   method: put
+  operationId: putV3HubsByHubIdUsersByUserId
   x-agentic-access:
     action-class: acting
     consequence: write
@@ -121,6 +130,7 @@ operations:
     audit: required
 - path: /v3/hubs/{hubId}/users/{userId}
   method: delete
+  operationId: deleteV3HubsByHubIdUsersByUserId
   x-agentic-access:
     action-class: acting
     consequence: write
@@ -146,6 +156,7 @@ operations:
     audit: none
 - path: /v3/hubs/{hubId}/projects/{projectId}/archivedissues/{issueId}
   method: get
+  operationId: getV3HubsByHubIdProjectsByProjectIdArchivedissuesByIssueId
   x-agentic-access:
     action-class: connected
     consequence: read
@@ -155,6 +166,7 @@ operations:
     audit: none
 - path: /v3/hubs/{hubId}/projects/{projectId}/archivedissues/{archivedIssueId}
   method: patch
+  operationId: patchV3HubsByHubIdProjectsByProjectIdArchivedissuesByArchivedIssueId
   x-agentic-access:
     action-class: acting
     consequence: write
@@ -170,6 +182,7 @@ operations:
     audit: required
 - path: /v3/hubs/{hubId}/projects/{projectId}/archivedissues/{archivedIssueId}
   method: delete
+  operationId: deleteV3HubsByHubIdProjectsByProjectIdArchivedissuesByArchivedIssueId
   x-agentic-access:
     action-class: acting
     consequence: write
@@ -185,6 +198,7 @@ operations:
     audit: required
 - path: /v3/hubs/{hubId}/projects/{projectId}/issues/{issueId}/attachments
   method: get
+  operationId: getV3HubsByHubIdProjectsByProjectIdIssuesByIssueIdAttachments
   x-agentic-access:
     action-class: connected
     consequence: read
@@ -194,6 +208,7 @@ operations:
     audit: none
 - path: /v3/hubs/{hubId}/projects/{projectId}/issues/{issueId}/attachments
   method: post
+  operationId: postV3HubsByHubIdProjectsByProjectIdIssuesByIssueIdAttachments
   x-agentic-access:
     action-class: acting
     consequence: write
@@ -209,6 +224,7 @@ operations:
     audit: required
 - path: /v3/hubs/{hubId}/projects/{projectId}/issues/{issueId}/attachments/{attachmentId}
   method: delete
+  operationId: deleteV3HubsByHubIdProjectsByProjectIdIssuesByIssueIdAttachmentsByAttachmentId
   x-agentic-access:
     action-class: acting
     consequence: write
@@ -224,6 +240,7 @@ operations:
     audit: required
 - path: /v3/hubs/{hubId}/projects/{projectId}/issues/{issueId}/comments
   method: get
+  operationId: getV3HubsByHubIdProjectsByProjectIdIssuesByIssueIdComments
   x-agentic-access:
     action-class: connected
     consequence: read
@@ -233,6 +250,7 @@ operations:
     audit: none
 - path: /v3/hubs/{hubId}/projects/{projectId}/issues/{issueId}/comments
   method: post
+  operationId: postV3HubsByHubIdProjectsByProjectIdIssuesByIssueIdComments
   x-agentic-access:
     action-class: acting
     consequence: write
@@ -248,6 +266,7 @@ operations:
     audit: required
 - path: /v3/hubs/{hubId}/projects/{projectId}/issues/{issueId}/comments/{issueCommentId}
   method: delete
+  operationId: deleteV3HubsByHubIdProjectsByProjectIdIssuesByIssueIdCommentsByIssueCommentId
   x-agentic-access:
     action-class: acting
     consequence: write
@@ -273,6 +292,7 @@ operations:
     audit: none
 - path: /v3/hubs/{hubId}/projects/{projectId}/issues
   method: post
+  operationId: postV3HubsByHubIdProjectsByProjectIdIssues
   x-agentic-access:
     action-class: acting
     consequence: write
@@ -288,6 +308,7 @@ operations:
     audit: required
 - path: /v3/hubs/{hubId}/projects/{projectId}/issues
   method: patch
+  operationId: patchV3HubsByHubIdProjectsByProjectIdIssues
   x-agentic-access:
     action-class: acting
     consequence: write
@@ -333,6 +354,7 @@ operations:
     audit: none
 - path: /v3/hubs/{hubId}/projects/{projectId}/issues/{issueId}
   method: put
+  operationId: putV3HubsByHubIdProjectsByProjectIdIssuesByIssueId
   x-agentic-access:
     action-class: acting
     consequence: write
@@ -348,6 +370,7 @@ operations:
     audit: required
 - path: /v3/hubs/{hubId}/projects/{projectId}/issues/{issueId}
   method: patch
+  operationId: patchV3HubsByHubIdProjectsByProjectIdIssuesByIssueId
   x-agentic-access:
     action-class: acting
     consequence: write
@@ -373,6 +396,7 @@ operations:
     audit: none
 - path: /v3/hubs/{hubId}/projects/{projectId}/issues/number/{issueNumber}
   method: get
+  operationId: getV3HubsByHubIdProjectsByProjectIdIssuesNumberByIssueNumber
   x-agentic-access:
     action-class: connected
     consequence: read
@@ -382,6 +406,7 @@ operations:
     audit: none
 - path: /v3/hubs/{hubId}/projects/{projectId}/issues/archiveissues
   method: patch
+  operationId: patchV3HubsByHubIdProjectsByProjectIdIssuesArchiveissues
   x-agentic-access:
     action-class: acting
     consequence: write
@@ -395,26 +420,9 @@ operations:
       - abnormal
       - high-value
     audit: required
-- path: /v3/hubs/{hubId}/projects/{projectId}/issuefiltertemplate
-  method: get
-  x-agentic-access:
-    action-class: connected
-    consequence: read
-    subject: optional
-    token:
-      max-ttl: 3600
-    audit: none
-- path: /v3/hubs/{hubId}/projects/{projectId}/issuefiltertemplate/{userTemplateId}
-  method: get
-  x-agentic-access:
-    action-class: connected
-    consequence: read
-    subject: optional
-    token:
-      max-ttl: 3600
-    audit: none
 - path: /v3/hubs/{hubId}/projects/{projectId}/issues/{issueId}/history
   method: get
+  operationId: getV3HubsByHubIdProjectsByProjectIdIssuesByIssueIdHistory
   x-agentic-access:
     action-class: connected
     consequence: read
@@ -424,21 +432,37 @@ operations:
     audit: none
 - path: /v3/hubs/{hubId}/projects/{projectId}/issues/viewpoints/batch
   method: post
+  operationId: postV3HubsByHubIdProjectsByProjectIdIssuesViewpointsBatch
   x-agentic-access:
-    action-class: acting
-    consequence: write
-    subject: required
-    audience: null
+    action-class: connected
+    consequence: read
+    subject: optional
     token:
-      max-ttl: 900
-    escalation:
-      human-in-the-loop: conditional
-      triggers:
-      - abnormal
-      - high-value
-    audit: required
+      max-ttl: 3600
+    audit: none
 - path: /v3/hubs/{hubId}/projects/{projectId}/issues/{issueId}/viewpoints/{viewpointId}/viewstate
   method: get
+  operationId: getV3HubsByHubIdProjectsByProjectIdIssuesByIssueIdViewpointsByViewpointIdViewstate
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /v3/hubs/{hubId}/projects/{projectId}/issuefiltertemplate
+  method: get
+  operationId: getV3HubsByHubIdProjectsByProjectIdIssuefiltertemplate
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /v3/hubs/{hubId}/projects/{projectId}/issuefiltertemplate/{userTemplateId}
+  method: get
+  operationId: getV3HubsByHubIdProjectsByProjectIdIssuefiltertemplateByUserTemplateId
   x-agentic-access:
     action-class: connected
     consequence: read
@@ -448,6 +472,7 @@ operations:
     audit: none
 - path: /v3/hubs/{hubId}/projects/{projectId}/sheets
   method: get
+  operationId: getV3HubsByHubIdProjectsByProjectIdSheets
   x-agentic-access:
     action-class: connected
     consequence: read
@@ -457,6 +482,7 @@ operations:
     audit: none
 - path: /v3/hubs/{hubId}/projects/{projectId}/sheets
   method: post
+  operationId: postV3HubsByHubIdProjectsByProjectIdSheets
   x-agentic-access:
     action-class: acting
     consequence: write
@@ -472,6 +498,7 @@ operations:
     audit: required
 - path: /v3/hubs/{hubId}/projects/{projectId}/models/{modelId}/revisions/{revisionId}/disciplines
   method: put
+  operationId: putV3HubsByHubIdProjectsByProjectIdModelsByModelIdRevisionsByRevisionIdDisciplines
   x-agentic-access:
     action-class: acting
     consequence: write
